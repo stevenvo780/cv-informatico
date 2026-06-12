@@ -24,7 +24,7 @@ window.CV_DATA = {
       atsNote: "CV ATS: versión de texto plano optimizada, compatible con sistemas de selección automatizados (ATS).",
       aboutProfile: "Software Engineer con 10+ años de experiencia construyendo sistemas backend, plataformas SaaS, flujos de automatización e infraestructura cloud. Base sólida en Node.js/NestJS, PostgreSQL, Docker, Linux, GCP y automatización de procesos con IA. He trabajado como CTO / Jefe de Sistemas, ingeniero backend senior y administrador de sistemas, llevando productos de la idea a producción.",
       skillsTitle: "Skills & Tecnologías",
-      skillsLead: "118 tecnologías en 10 categorías, agrupadas por nivel cualitativo: Avanzado · Intermedio · Familiar.",
+      skillsLead: "Tecnologías que uso en producción, agrupadas por nivel cualitativo: Avanzado · Intermedio · Familiar.",
       expLead: "Vínculos confirmados con su tipo de contrato. Algunas vinculaciones son concurrentes: proyecto propio (Humanizar) + prestación de servicios (Finca Directa) + término fijo (Indie Levels).",
       eduTitle: "Formación",
       langTitle: "Idiomas",
@@ -57,7 +57,7 @@ window.CV_DATA = {
       atsNote: "ATS CV: plain-text optimized version, compatible with Applicant Tracking Systems (ATS).",
       aboutProfile: "Software Engineer with 10+ years of experience building backend systems, SaaS platforms, automation workflows and cloud infrastructure. Strong background in Node.js/NestJS, PostgreSQL, Docker, Linux, GCP and AI-powered process automation. I've worked as CTO / Head of Systems, senior backend engineer and systems administrator, taking products from idea to production.",
       skillsTitle: "Skills & Technologies",
-      skillsLead: "118 technologies in 10 categories, grouped by qualitative level: Advanced · Intermediate · Familiar.",
+      skillsLead: "Technologies I use in production, grouped by qualitative level: Advanced · Intermediate · Familiar.",
       expLead: "Confirmed engagements with their contract type. Some are concurrent: own project (Humanizar) + service contract (Finca Directa) + fixed-term (Indie Levels).",
       eduTitle: "Education",
       langTitle: "Languages",
@@ -358,8 +358,8 @@ window.CV_DATA = {
         { es: "En producción", en: "In production", t: "" }
       ],
       desc: {
-        es: "Arquitecté de extremo a extremo un ecosistema SaaS empresarial multi-tenant: e-commerce (Graf), POS con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería WhatsApp (EMW), orquestados con microservicios NestJS, comunicación vía pub/sub y webhooks firmados con HMAC, autenticación JWT/OAuth2 y despliegue con CI/CD. En producción con clientes reales.",
-        en: "Architected end to end an enterprise multi-tenant SaaS ecosystem: e-commerce (Graf), POS with DIAN electronic invoicing (Sinergia POS), credit fintech (FIAR), and WhatsApp messaging (EMW), orchestrated with NestJS microservices, pub/sub communication, HMAC-signed webhooks, JWT/OAuth2 auth and CI/CD deployment. Running in production with real clients."
+        es: "Construí un ecosistema SaaS empresarial multi-tenant —e-commerce (Graf), POS con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería WhatsApp (EMW)— usando microservicios NestJS con comunicación vía pub/sub y webhooks firmados con HMAC, autenticación JWT/OAuth2 y despliegue con CI/CD, para que PYMEs vendieran, facturaran legalmente y gestionaran créditos desde una sola plataforma. En producción con clientes reales.",
+        en: "Built an enterprise multi-tenant SaaS ecosystem —e-commerce (Graf), POS with DIAN electronic invoicing (Sinergia POS), credit fintech (FIAR), and WhatsApp messaging (EMW)— using NestJS microservices with pub/sub communication and HMAC-signed webhooks, JWT/OAuth2 auth and CI/CD deployment, so SMBs could sell, invoice legally and manage credit from a single platform. Running in production with real clients."
       }
     },
     {
@@ -379,7 +379,7 @@ window.CV_DATA = {
     },
     {
       own: false,
-      role: { es: "Desarrollador Backend Senior", en: "Senior Backend Developer" },
+      role: { es: "Desarrollador Backend", en: "Backend Developer" },
       org: "Indie Levels Studio S.A.S",
       period: { es: "ago. 2021 — actualidad", en: "Aug 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
@@ -546,8 +546,8 @@ window.CV_DATA = {
       name: "Ecosistema Humanizar",
       status: { es: "En producción con clientes reales", en: "In production with real clients" },
       desc: {
-        es: "Ecosistema SaaS empresarial multi-tenant arquitectado de extremo a extremo: e-commerce (Graf), punto de venta con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería WhatsApp (EMW), orquestados con microservicios NestJS, pub/sub y webhooks HMAC.",
-        en: "Multi-tenant enterprise SaaS ecosystem I architected end to end: e-commerce (Graf), point-of-sale with DIAN e-invoicing (Sinergia POS), credit fintech (FIAR), and WhatsApp messaging (EMW), orchestrated with NestJS microservices, pub/sub and HMAC-signed webhooks."
+        es: "Ecosistema SaaS empresarial multi-tenant que construí: e-commerce (Graf), punto de venta con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería WhatsApp (EMW), orquestados con microservicios NestJS, pub/sub y webhooks HMAC.",
+        en: "Multi-tenant enterprise SaaS ecosystem I built: e-commerce (Graf), point-of-sale with DIAN e-invoicing (Sinergia POS), credit fintech (FIAR), and WhatsApp messaging (EMW), orchestrated with NestJS microservices, pub/sub and HMAC-signed webhooks."
       },
       stack: "NestJS microservices · TypeORM · PostgreSQL · MySQL · Redis · Next.js · React 18 PWA · pub/sub · HMAC webhooks",
       sub: [
@@ -625,18 +625,18 @@ window.CV_DATA = {
     },
     {
       name: "Soy Digital (INDOTEL)", url: "https://www.soydigital.gob.do/",
-      es: "Portal del Gobierno Dominicano para el desarrollo de competencias digitales a escala nacional. Participé en el desarrollo de plataforma orientada a millones de usuarios.",
-      en: "Dominican Government portal (INDOTEL) for developing digital skills at national scale. I contributed to building a platform aimed at millions of users."
+      es: "Portal del Gobierno Dominicano para el desarrollo de competencias digitales a escala nacional. Construí el frontend offline con sincronización automática para que el registro funcionara en campo aun sin conexión estable.",
+      en: "Dominican Government portal (INDOTEL) for developing digital skills at national scale. I built the offline frontend with automatic sync so field registration worked even without a stable connection."
     },
     {
       name: "Indie Levels Studio", url: "https://indielevelstudio.com",
-      es: "Estudio de videojuegos en Medellín que desarrolla títulos para clientes de todo el mundo. Como Desarrollador Backend Senior, lidero servicios y APIs de los productos del estudio.",
-      en: "Video game studio in Medellín building titles for clients worldwide. As Senior Backend Developer, I lead the studio's product services and APIs."
+      es: "Estudio de videojuegos en Medellín que desarrolla títulos para clientes de todo el mundo. Como Desarrollador Backend, desarrollo y mantengo servicios y APIs de los productos del estudio.",
+      en: "Video game studio in Medellín building titles for clients worldwide. As Backend Developer, I develop and maintain the studio's product services and APIs."
     },
     {
       name: "Humanizar Systems", url: "https://www.humanizar.co/",
-      es: "Ecosistema SaaS empresarial multi-tenant arquitectado de extremo a extremo: e-commerce (Graf), POS con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería, en microservicios NestJS.",
-      en: "Multi-tenant enterprise SaaS ecosystem I architected end to end: e-commerce (Graf), POS with DIAN e-invoicing (Sinergia POS), credit fintech (FIAR), and messaging, orchestrated with NestJS microservices."
+      es: "Ecosistema SaaS empresarial multi-tenant que construí: e-commerce (Graf), POS con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería, en microservicios NestJS.",
+      en: "Multi-tenant enterprise SaaS ecosystem I built: e-commerce (Graf), POS with DIAN e-invoicing (Sinergia POS), credit fintech (FIAR), and messaging, orchestrated with NestJS microservices."
     },
     {
       name: "Agora Workspace", url: "https://agora.elenxos.com",
@@ -706,10 +706,10 @@ window.CV_DATA = {
         { name: "Estructuras Pre-Ontológicas", url: "https://estructuras-preontologicas.vercel.app", star: true, es: "Tesis doctoral ABM+ODE: motor de simulación con protocolo de validación ablativo (EDI), 40 casos, 30 órdenes de magnitud. AUC-ROC 0.886 vs ARIMA 0.600. App en vivo.", en: "Doctoral thesis ABM+ODE: simulation engine with ablative validation protocol (EDI), 40 cases, 30 orders of magnitude. AUC-ROC 0.886 vs ARIMA 0.600. Live app." },
         { name: "Tesis Jacob — Motor de Hiperobjetos", url: "https://github.com/stevenvo780/TesisJacobContenidos", star: true, es: "Motor ABM+ODE para medir el 'cierre operativo' de hiperobjetos (clima, epidemias, deforestación), 29 casos, métrica EDI original, tests de permutación vectorizados.", en: "ABM+ODE engine to measure the 'operational closure' of hyperobjects (climate, epidemics, deforestation), 29 cases, original EDI metric, vectorized permutation tests." },
         { name: "Fenomenología Urbana", url: "https://github.com/stevenvo780/FenomenologiaUrbana", star: true, es: "Simulación de Medellín: ABM + PDE en GPU + DRL (PyTorch) con análisis filosófico husserliano y foucaultiano.", en: "Medellín simulation: ABM + PDE on GPU + DRL (PyTorch) with Husserlian and Foucauldian philosophical analysis." },
-        { name: "Una Carta Para Isa (simulación)", url: "https://github.com/stevenvo780/UnaCartaParaIsa", star: true, es: "Motor de vida artificial: ABM con 30+ subsistemas y RAG sobre 227k líneas de corpus emocional real; render Phaser 3, backend WebSocket 50 Hz.", en: "Artificial-life engine: ABM with 30+ subsystems and RAG over 227k lines of real emotional corpus; Phaser 3 render, 50 Hz WebSocket backend." },
+        { name: "Motor de vida artificial (ABM + RAG)", url: "https://github.com/stevenvo780/UnaCartaParaIsa", star: true, es: "Motor de vida artificial: ABM con 30+ subsistemas y RAG sobre un corpus lingüístico propietario; render Phaser 3, backend WebSocket 50 Hz.", en: "Artificial-life engine: ABM with 30+ subsystems and RAG over a proprietary linguistic corpus; Phaser 3 render, 50 Hz WebSocket backend." },
         { name: "Redes Neuronales, Filosofía y Neurociencia", url: "https://github.com/stevenvo780/RedesNeuronalesFilosofiaNeurociencia", star: true, es: "Presentación interactiva con simulaciones en vivo (TensorFlow.js, Three.js, Game of Life) que conecta IA con filosofía de la mente.", en: "Interactive presentation with live simulations (TensorFlow.js, Three.js, Game of Life) connecting AI with philosophy of mind." },
-        { name: "Carta Para Isa", url: "https://github.com/stevenvo780/CartaParaIsa", star: false, es: "Mundo simulado ABM+PDE+RAG sobre 227k líneas de chat real, mecánicas de vínculo emocional entre agentes.", en: "Simulated world ABM+PDE+RAG over 227k lines of real chat, emotional-bond mechanics between agents." },
-        { name: "Un Mundo Para Isa", url: "https://github.com/stevenvo780/UnMundoParaIsa", star: false, es: "Motor de vida artificial con máquinas de estado, planificación por objetivos, campos difusión/reacción, economía interna, WebSocket 50 Hz.", en: "Artificial-life engine with state machines, goal planning, diffusion/reaction fields, internal economy, 50 Hz WebSocket." },
+        { name: "Mundo simulado (ABM + PDE + RAG)", url: "https://github.com/stevenvo780/CartaParaIsa", star: false, es: "Mundo simulado ABM+PDE+RAG sobre un corpus lingüístico propietario, con mecánicas de vínculo entre agentes.", en: "Simulated world ABM+PDE+RAG over a proprietary linguistic corpus, with bonding mechanics between agents." },
+        { name: "Simulación con planificación por objetivos", url: "https://github.com/stevenvo780/UnMundoParaIsa", star: false, es: "Motor de vida artificial con máquinas de estado, planificación por objetivos, campos difusión/reacción, economía interna, WebSocket 50 Hz.", en: "Artificial-life engine with state machines, goal planning, diffusion/reaction fields, internal economy, 50 Hz WebSocket." },
         { name: "Simulaciones de Hiperobjetos", url: "https://github.com/stevenvo780/hiper-objeto-simulaciones", star: false, es: "20+ simulaciones híbridas (ABM+ODE+SEIR) para validar computacionalmente la teoría filosófica del hiperobjeto, con métrica EDI.", en: "20+ hybrid simulations (ABM+ODE+SEIR) to computationally validate the philosophical hyperobject theory, with EDI metric." },
         { name: "Logic Education", url: "https://github.com/stevenvo780/LogicEducation", star: false, es: "Plataforma educativa para enseñar lógica formal interactivamente, apoyada en el ecosistema ST.", en: "Educational platform to teach formal logic interactively, supported by the ST ecosystem." },
         { name: "Dúo Eterno", url: "https://github.com/stevenvo780/duo-eterno", star: false, es: "Laboratorio interactivo de autopoiesis y vida artificial basado en la co-evolución.", en: "Interactive lab of autopoiesis and artificial life based on co-evolution." },
