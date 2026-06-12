@@ -15,7 +15,12 @@
     if (v && typeof v === "object" && (("es" in v) || ("en" in v))) return v[lang];
     return v;
   }
-  function lvlClass(n) { return n >= 80 ? "lvl-gold" : ""; }
+  // Qualitative level mapping (no percentages shown): >=85 Advanced, 60-84 Intermediate, <60 Familiar
+  function lvlBand(n) {
+    if (n >= 85) return "advanced";
+    if (n >= 60) return "intermediate";
+    return "familiar";
+  }
   function safeUrl(u) {
     // Allow http(s), mailto. Otherwise drop href.
     return /^(https?:|mailto:)/i.test(u) ? u : "#";
@@ -33,8 +38,8 @@
 
   /* ---------- Download buttons swap by language ---------- */
   function applyDownloads() {
-    var cv = "public/pdf/CV_tech_" + lang + ".pdf";
-    var ats = "public/pdf/CV_tech_ats_" + lang + ".pdf";
+    var cv = "pdf/CV_tech_" + lang + ".pdf";
+    var ats = "pdf/CV_tech_ats_" + lang + ".pdf";
     ["dl-cv", "dl-cv2"].forEach(function (id) { var n = el(id); if (n) n.setAttribute("href", cv); });
     ["dl-ats", "dl-ats2"].forEach(function (id) { var n = el(id); if (n) n.setAttribute("href", ats); });
   }
@@ -59,20 +64,32 @@
     }).join("");
   }
 
-  /* ---------- Skills ---------- */
+  /* ---------- Skills (grouped by qualitative level, no percentages) ---------- */
   function renderSkills() {
     var dict = D.ui[lang];
+    var bandLabel = {
+      advanced: dict.lvlAdvanced,
+      intermediate: dict.lvlInter,
+      familiar: dict.lvlFamiliar
+    };
+    var bandOrder = ["advanced", "intermediate", "familiar"];
     el("skillsGroups").innerHTML = D.skillCategories.map(function (cat) {
-      var rows = cat.skills.map(function (s) {
-        return '<div class="skill ' + lvlClass(s.lvl) + '">' +
-          '<span class="skill-name">' + esc(s[lang]) + "</span>" +
-          '<span class="skill-pct">' + s.lvl + "% · " + s.since + "</span>" +
-          '<span class="skill-bar"><i style="width:' + s.lvl + '%"></i></span>' +
-          "</div>";
+      // bucket the skills of this category by qualitative band, preserving every skill
+      var buckets = { advanced: [], intermediate: [], familiar: [] };
+      cat.skills.forEach(function (s) { buckets[lvlBand(s.lvl)].push(s[lang]); });
+      var tiers = bandOrder.map(function (band) {
+        if (!buckets[band].length) return "";
+        var chips = buckets[band].map(function (name) {
+          return '<span class="skill-chip">' + esc(name) + "</span>";
+        }).join("");
+        return '<div class="skill-tier tier-' + band + '">' +
+          '<span class="tier-label">' + esc(bandLabel[band]) +
+          ' <em>(' + buckets[band].length + ')</em></span>' +
+          '<div class="skill-chips">' + chips + "</div></div>";
       }).join("");
       return '<div class="skill-group"><h3>' + esc(cat[lang]) + "</h3>" +
         '<span class="count">' + cat.skills.length + " " + (lang === "es" ? "tecnologías" : "technologies") + "</span>" +
-        '<div class="skill-list">' + rows + "</div></div>";
+        '<div class="skill-tiers">' + tiers + "</div></div>";
     }).join("");
   }
 

@@ -12,20 +12,20 @@ window.CV_DATA = {
       role: "Software Engineer",
       navAbout: "Perfil", navSkills: "Skills", navExperience: "Experiencia",
       navProjects: "Proyectos", navPortfolio: "Portafolio", navContact: "Contacto",
-      heroKicker: "Software Engineer · IA agéntica + ingeniería de sistemas de extremo a extremo · 12+ años en producción",
-      heroHeadline: "12+ años construyendo y operando software en producción. Mi foco es la IA agéntica: diseño, dirijo y opero agentes y harnesses que multiplican lo que un equipo pequeño puede construir y sostener.",
-      heroSub: "No me defino por una lista de tecnologías: manejo el ecosistema moderno completo y elijo la herramienta según el problema. He ejercido como Jefe de sistemas / CTO, Backend Senior y SysAdmin, y fundé un ecosistema SaaS empresarial.",
+      heroKicker: "Software Engineer · Backend · Cloud/DevOps · automatización con IA · 10+ años en producción",
+      heroHeadline: "Construyo sistemas backend, plataformas SaaS, flujos de automatización e infraestructura cloud, y los llevo a producción de forma confiable.",
+      heroSub: "Trabajo principalmente con Node.js/NestJS, PostgreSQL, Docker, Linux y GCP. He trabajado como CTO / Jefe de Sistemas, ingeniero backend senior y SysAdmin, y construí un ecosistema SaaS empresarial multi-tenant.",
       heroChipLoc: "Medellín, Colombia · GMT-5",
-      heroChipExp: "12+ años en producción",
+      heroChipExp: "10+ años en producción",
       heroChipRemote: "Remoto · Híbrido · Reubicable a España",
       ctaCv: "Descargar CV (PDF)",
       ctaAts: "CV ATS",
       ctaEmail: "Escríbeme",
       atsNote: "CV ATS: versión de texto plano optimizada, compatible con sistemas de selección automatizados (ATS).",
-      aboutProfile: "Software engineer con más de 12 años construyendo y operando sistemas en producción. No lidero con un stack: trabajo a lo largo del ecosistema moderno y elijo lo que encaja con el problema; lo que aporto es entender a fondo cómo funcionan de verdad los sistemas y la IA, y la disciplina para llevar algo de la idea a un servicio corriendo de forma confiable en producción. Mi foco es la IA agéntica: diseño, dirijo y opero agentes y harnesses que multiplican lo que un equipo pequeño puede construir y mantener. He trabajado como Jefe de sistemas / CTO, como ingeniero backend senior y como fundador de un ecosistema SaaS empresarial.",
+      aboutProfile: "Software Engineer con 10+ años de experiencia construyendo sistemas backend, plataformas SaaS, flujos de automatización e infraestructura cloud. Base sólida en Node.js/NestJS, PostgreSQL, Docker, Linux, GCP y automatización de procesos con IA. He trabajado como CTO / Jefe de Sistemas, ingeniero backend senior y administrador de sistemas, llevando productos de la idea a producción.",
       skillsTitle: "Skills & Tecnologías",
-      skillsLead: "97 tecnologías con nivel, en 10 categorías. Nivel: Avanzado 80-100% · Intermedio 50-79% · Familiar <50%.",
-      expLead: "Vínculos confirmados y tipos de contrato exactos.",
+      skillsLead: "118 tecnologías en 10 categorías, agrupadas por nivel cualitativo: Avanzado · Intermedio · Familiar.",
+      expLead: "Vínculos confirmados con su tipo de contrato. Algunas vinculaciones son concurrentes: proyecto propio (Humanizar) + prestación de servicios (Finca Directa) + término fijo (Indie Levels).",
       eduTitle: "Formación",
       langTitle: "Idiomas",
       projTitle: "Proyectos propios principales",
@@ -45,20 +45,20 @@ window.CV_DATA = {
       role: "Software Engineer",
       navAbout: "Profile", navSkills: "Skills", navExperience: "Experience",
       navProjects: "Projects", navPortfolio: "Portfolio", navContact: "Contact",
-      heroKicker: "Software Engineer · End-to-end systems + agentic-AI integration · 12+ years in production",
-      heroHeadline: "12+ years building and operating software in production. My focus is agentic AI: I design, direct and operate AI agents and harnesses that multiply what a small team can build and keep running.",
-      heroSub: "I don't lead with a stack — I work across the modern toolset and pick what fits the problem. I've worked as Head of Systems / CTO, as a senior backend engineer, and as the founder of an enterprise SaaS ecosystem.",
+      heroKicker: "Software Engineer · Backend · Cloud/DevOps · AI-powered automation · 10+ years in production",
+      heroHeadline: "I build backend systems, SaaS platforms, automation workflows and cloud infrastructure, and ship them to production reliably.",
+      heroSub: "I work mainly with Node.js/NestJS, PostgreSQL, Docker, Linux and GCP. I've worked as CTO / Head of Systems, senior backend engineer and SysAdmin, and built a multi-tenant enterprise SaaS ecosystem.",
       heroChipLoc: "Medellín, Colombia · GMT-5",
-      heroChipExp: "12+ years in production",
+      heroChipExp: "10+ years in production",
       heroChipRemote: "Remote · Hybrid · Relocatable to Spain",
       ctaCv: "Download CV (PDF)",
       ctaAts: "ATS CV",
       ctaEmail: "Email me",
       atsNote: "ATS CV: plain-text optimized version, compatible with Applicant Tracking Systems (ATS).",
-      aboutProfile: "Software engineer with 12+ years building and operating systems in production. I don't lead with a stack — I work across the modern toolset and pick what fits the problem; what I bring is a deep understanding of how systems and AI actually work, and the discipline to take something from idea to a service running reliably in production. My focus is agentic AI: I design, direct and operate AI agents and harnesses that multiply what a small team can build and keep running. I've worked as Head of Systems / CTO, as a senior backend engineer, and as the founder of an enterprise SaaS ecosystem.",
+      aboutProfile: "Software Engineer with 10+ years of experience building backend systems, SaaS platforms, automation workflows and cloud infrastructure. Strong background in Node.js/NestJS, PostgreSQL, Docker, Linux, GCP and AI-powered process automation. I've worked as CTO / Head of Systems, senior backend engineer and systems administrator, taking products from idea to production.",
       skillsTitle: "Skills & Technologies",
-      skillsLead: "97 technologies with proficiency level, in 10 categories. Level: Advanced 80-100% · Intermediate 50-79% · Familiar <50%.",
-      expLead: "Confirmed engagements and exact contract types.",
+      skillsLead: "118 technologies in 10 categories, grouped by qualitative level: Advanced · Intermediate · Familiar.",
+      expLead: "Confirmed engagements with their contract type. Some are concurrent: own project (Humanizar) + service contract (Finca Directa) + fixed-term (Indie Levels).",
       eduTitle: "Education",
       langTitle: "Languages",
       projTitle: "Main own projects",
@@ -313,15 +313,15 @@ window.CV_DATA = {
       own: false,
       role: { es: "Administrador de Sistemas (SysAdmin)", en: "Systems Administrator (SysAdmin)" },
       org: "Critertec",
-      period: { es: "nov. 2024 — ~2026", en: "Nov 2024 — ~2026" },
+      period: { es: "nov. 2024 — 2026 (terminado)", en: "Nov 2024 — 2026 (ended)" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
         { es: "Contrato a término fijo", en: "Fixed-term contract", t: "" },
-        { es: "Terminado ~2026", en: "Ended ~2026", t: "muted" }
+        { es: "Terminado 2026", en: "Ended 2026", t: "muted" }
       ],
       desc: {
-        es: "Operé y aseguré la infraestructura en producción (Linux, Docker, CI/CD) que sostiene las soluciones digitales de la agencia, garantizando disponibilidad continua del servicio.",
-        en: "Operated and secured the production infrastructure (Linux, Docker, CI/CD) that kept the agency's digital solutions running, ensuring continuous service availability."
+        es: "Operé y aseguré la infraestructura en producción (Linux, Docker, CI/CD) que sostiene las soluciones digitales de la agencia para garantizar la disponibilidad continua del servicio.",
+        en: "Operated and secured the production infrastructure (Linux, Docker, CI/CD) running the agency's digital solutions to ensure continuous service availability."
       },
       note: {
         es: "Proyecto notable: Soy Digital / INDOTEL (ver abajo).",
@@ -516,8 +516,8 @@ window.CV_DATA = {
     {
       name: { es: "Inglés", en: "English" },
       lvl: {
-        es: "Técnico: lectura y escritura sólidas; conversación en desarrollo. Posicionamiento async/escrito primero.",
-        en: "Technical: strong reading and writing; conversational improving. Async/written-first positioning."
+        es: "Inglés técnico (escrito), nivel B1. Conversación en progreso. Trabajo cómodo en modo asíncrono/escrito.",
+        en: "Technical English (written), B1 level. Conversational in progress. Comfortable working async/written-first."
       }
     }
   ],
@@ -525,16 +525,16 @@ window.CV_DATA = {
   /* ---------- Main own projects ---------- */
   mainProjects: [
     {
-      name: "Agora — Plataforma distribuida de agentes IA",
-      status: { es: "En producción · Pre-revenue · TRL ~5", en: "In production · Pre-revenue · TRL ~5" },
+      name: "Agora — Plataforma SaaS de agentes IA",
+      status: { es: "En producción · Pre-revenue", en: "In production · Pre-revenue" },
       desc: {
-        es: "Plataforma SaaS distribuida de agentes IA: poly-repo de 7 servicios con frontend Next.js, backend agéntico en Cloud Run (~150 herramientas, multi-proveedor LLM: OpenAI/Anthropic/Gemini/DeepSeek/xAI), hub en tiempo real (socket.io) y flota de ~30 workers Docker con terminales Linux. Vault AES-256-GCM, servidor MCP, BYOK. Arquitectura, backend, IA, frontend y DevOps de extremo a extremo. En producción a <1 USD/mes.",
-        en: "Distributed AI-agent SaaS platform: a 7-service poly-repo with a Next.js frontend, agentic Cloud Run backend (~150 tools, multi-LLM: OpenAI/Anthropic/Gemini/DeepSeek/xAI), a real-time socket.io hub, and a fleet of ~30 Docker workers running Linux terminals. AES-256-GCM vault, MCP server, BYOK. Architecture, backend, AI, frontend, and DevOps end to end. Running in production for under $1/month."
+        es: "Construí una plataforma SaaS de agentes IA usando un poly-repo de servicios separados (frontend Next.js, backend en Cloud Run, hub en tiempo real con socket.io y workers en Docker) para aislar responsabilidades y desplegar cada parte de forma independiente. Decisiones de diseño: contratos tipados validados con Zod, webhooks firmados con HMAC, secretos cifrados con AES-256-GCM y un servidor MCP propio. Diseñé e implementé arquitectura, backend, frontend y DevOps.",
+        en: "Built an AI-agent SaaS platform using a poly-repo of separate services (Next.js frontend, Cloud Run backend, a real-time socket.io hub and Docker workers) to isolate concerns and deploy each part independently. Design decisions: typed contracts validated with Zod, HMAC-signed webhooks, secrets encrypted with AES-256-GCM, and a custom MCP server. I designed and implemented the architecture, backend, frontend and DevOps."
       },
-      stack: "Next.js 15 · React 18 · Redux · Express/TypeScript (Cloud Run) · socket.io · Docker PTY · Zod/HMAC · MCP server (~150 tools)",
+      stack: "Next.js 15 · React 18 · Redux · Express/TypeScript (Cloud Run) · socket.io · Docker PTY · Zod · HMAC · MCP server",
       noteLine: {
-        es: "Proyecto propio y prueba técnica, no empleo ni caso de adopción comercial. Repos: EducacionCooperativa (frontend, 937 commits), agora-backend (145 tools, Cloud Run), agora-hub (socket.io, VPS), agora-worker (Docker PTY), agora-contracts (Zod/HMAC), agora-workspace (meta-repo), agora-mcp (MCP server zero-deps).",
-        en: "Own project and technical proof, not employment or a commercial-adoption case. Repos: EducacionCooperativa (frontend, 937 commits), agora-backend (145 tools, Cloud Run), agora-hub (socket.io, VPS), agora-worker (Docker PTY), agora-contracts (Zod/HMAC), agora-workspace (meta-repo), agora-mcp (zero-deps MCP server)."
+        es: "Proyecto propio y prueba técnica, no empleo ni caso de adopción comercial. Repos: EducacionCooperativa (frontend), agora-backend (Cloud Run), agora-hub (socket.io), agora-worker (Docker PTY), agora-contracts (Zod/HMAC), agora-workspace (meta-repo), agora-mcp (servidor MCP sin dependencias).",
+        en: "Own project and technical proof, not employment or a commercial-adoption case. Repos: EducacionCooperativa (frontend), agora-backend (Cloud Run), agora-hub (socket.io), agora-worker (Docker PTY), agora-contracts (Zod/HMAC), agora-workspace (meta-repo), agora-mcp (zero-dependency MCP server)."
       },
       links: [
         { label: { es: "En vivo", en: "Live" }, url: "https://agora.elenxos.com" },
@@ -640,8 +640,8 @@ window.CV_DATA = {
     },
     {
       name: "Agora Workspace", url: "https://agora.elenxos.com",
-      es: "Plataforma SaaS distribuida de agentes IA: poly-repo de 7 servicios, ~150 herramientas, multi-LLM, hub tiempo real (socket.io) y flota de ~30 workers Docker. En producción a <1 USD/mes.",
-      en: "Distributed AI-agent SaaS platform: 7-service poly-repo, ~150 tools, multi-LLM, real-time hub (socket.io), ~30 Docker workers. In production for under $1/month."
+      es: "Plataforma SaaS de agentes IA: poly-repo de servicios separados (frontend Next.js, backend Cloud Run, hub socket.io, workers Docker), contratos Zod, webhooks HMAC y servidor MCP propio. En producción.",
+      en: "AI-agent SaaS platform: poly-repo of separate services (Next.js frontend, Cloud Run backend, socket.io hub, Docker workers), Zod contracts, HMAC webhooks and a custom MCP server. In production."
     },
     {
       name: "Cafetería del Caos", url: "https://www.cafeteriadelcaos.com/",
@@ -667,11 +667,11 @@ window.CV_DATA = {
       items: [
         { name: "Symploque CRM SaaS", url: "https://github.com/stevenvo780/symploque-crm", star: true, es: "SaaS CRM personalizado full-stack con autenticación, PostgreSQL (Neon) y UI premium.", en: "Full-stack custom CRM SaaS with auth, PostgreSQL (Neon) and premium UI." },
         { name: "ST — Lenguaje lógica formal", url: "https://github.com/stevenvo780/ST", star: true, es: "DSL con 30+ perfiles lógicos, SAT solver CDCL, teoría de tipos MLTT, 6.000+ tests.", en: "DSL with 30+ logic profiles, CDCL SAT solver, MLTT type theory, 6,000+ tests." },
-        { name: "Agora (plataforma)", url: "https://agora.elenxos.com", star: true, es: "Plataforma SaaS distribuida de agentes IA en producción: 7 servicios, ~150 herramientas y ~30 workers Docker.", en: "Distributed AI-agent SaaS platform in production: 7 services, ~150 tools and ~30 Docker workers." },
+        { name: "Agora (plataforma)", url: "https://agora.elenxos.com", star: true, es: "Plataforma SaaS de agentes IA en producción: poly-repo de servicios separados (frontend Next.js, backend Cloud Run, hub socket.io, workers Docker).", en: "AI-agent SaaS platform in production: poly-repo of separate services (Next.js frontend, Cloud Run backend, socket.io hub, Docker workers)." },
         { name: "MCP Delegate Agents", url: "https://github.com/stevenvo780/MCP-delegate-agents", star: true, es: "Servidor MCP tipo 'swarm' que delega tareas a LLMs locales con Ollama (planner → workers → reviewer).", en: "'Swarm' MCP server that delegates tasks to local LLMs with Ollama (planner → workers → reviewer)." },
         { name: "auto.logic", url: "https://github.com/stevenvo780/auto.logic", star: true, es: "NLP a lógica formal ejecutable sin IA, 11 perfiles lógicos y fine-tuning SLM local.", en: "NLP to executable formal logic without AI, 11 logic profiles and local SLM fine-tuning." },
         { name: "Agora (frontend) — EducacionCooperativa", url: "https://github.com/stevenvo780/EducacionCooperativa", star: true, es: "Next.js 15 + React 18 + Redux: editor MDX, terminal web (xterm.js), grafo de conocimiento y chat IA.", en: "Next.js 15 + React 18 + Redux: MDX editor, web terminal (xterm.js), knowledge graph and AI chat." },
-        { name: "Agora (backend)", url: "https://github.com/stevenvo780/agora-backend", star: true, es: "Backend agéntico Express/TypeScript en Cloud Run: 145 tools, vault AES-256-GCM, streaming ilimitado.", en: "Agentic Express/TypeScript backend on Cloud Run: 145 tools, AES-256-GCM vault, unlimited streaming." },
+        { name: "Agora (backend)", url: "https://github.com/stevenvo780/agora-backend", star: true, es: "Backend agéntico Express/TypeScript en Cloud Run: registro de herramientas, secretos cifrados AES-256-GCM, respuestas en streaming.", en: "Agentic Express/TypeScript backend on Cloud Run: tool registry, AES-256-GCM encrypted secrets, streaming responses." },
         { name: "Helenikos", url: "https://github.com/stevenvo780/helenikos", star: true, es: "Plataforma universitaria de griego antiguo (Next.js 15 + TypeScript + Tailwind): analizador morfológico, diccionario etimológico, corpus anotado.", en: "University ancient-Greek platform (Next.js 15 + TypeScript + Tailwind): morphological analyzer, etymological dictionary, annotated corpus." },
         { name: "Graf (e-commerce)", url: "https://totalpedidosv2-client.vercel.app", star: true, es: "E-commerce multi-tienda: catálogo, inventario en tiempo real, checkout y pasarela Wompi. En producción.", en: "Multi-store e-commerce: catalog, real-time inventory, checkout and Wompi gateway. In production." },
         { name: "Sinergia POS", url: "https://pos-frond.vercel.app", star: true, es: "POS con facturación electrónica DIAN, caja, impuestos y múltiples pasarelas. NestJS + React 18 PWA. En producción.", en: "POS with DIAN e-invoicing, cash register, taxes and multiple gateways. NestJS + React 18 PWA. In production." },
