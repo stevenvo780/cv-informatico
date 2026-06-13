@@ -503,8 +503,8 @@ window.CV_DATA = {
     }
   ],
   educationNote: {
-    es: "Perfil esencialmente empírico/autodidacta. Los cargos y proyectos son la credencial principal; el CV técnico lidera con experiencia.",
-    en: "Essentially empirical/self-taught profile. Roles and projects are the main credential; this technical CV leads with experience."
+    es: "Formación autodidacta con más de 10 años de experiencia en producción. El CV técnico lidera con la experiencia y los proyectos reales.",
+    en: "Self-taught background with 10+ years of hands-on production experience. This technical CV leads with experience and real projects."
   },
 
   /* ---------- Languages ---------- */
@@ -516,8 +516,8 @@ window.CV_DATA = {
     {
       name: { es: "Inglés", en: "English" },
       lvl: {
-        es: "Inglés técnico (escrito), nivel B1. Conversación en progreso. Trabajo cómodo en modo asíncrono/escrito.",
-        en: "Technical English (written), B1 level. Conversational in progress. Comfortable working async/written-first."
+        es: "Lectura y escritura técnica sólidas; conversación a nivel funcional (B1).",
+        en: "Strong technical reading and writing; conversational at a working level (B1)."
       }
     }
   ],
