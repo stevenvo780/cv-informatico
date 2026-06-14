@@ -601,18 +601,21 @@ window.CV_DATA = {
       ]
     },
     {
-      name: "Automatización Finca Directa (RPA)",
-      status: { es: "Harness empresarial en operación", en: "Enterprise harness in operation" },
+      name: "Estructuras Pre-Ontológicas — motor de simulación científica",
+      status: { es: "Investigación · En desarrollo activo", en: "Research · Actively developed" },
       desc: {
-        es: "Harness RPA empresarial real: clasificación de correos, descarga de extractos bancarios, OCR de facturas, sincronización a CRM. Con idempotencia, human-in-the-loop y decision-log. Node.js + Python sobre Linux.",
-        en: "Real enterprise RPA harness: email classification, bank-statement downloads, invoice OCR, CRM sync. With idempotency, human-in-the-loop and decision log. Node.js + Python on Linux."
+        es: "Ingeniería computacional de una investigación doctoral en ciencias de la complejidad. Construí el motor de simulación que acopla modelos basados en agentes (ABM) y ecuaciones diferenciales (ODE), y la tubería de validación estadística por intervención ablativa: tests de permutación (999), bootstrap (500) y AUC-ROC contra línea base ARIMA. Incluye un harness de hostile-testing (0/2000 falsos positivos bajo random walk) y simulaciones sobre 30 órdenes de magnitud espaciales y temporales con sondas físicas. CLI propia, entorno aislado, CPU/GPU.",
+        en: "Computational engineering for a doctoral research project in complexity science. I built the simulation engine coupling agent-based models (ABM) and differential equations (ODE), plus the statistical validation pipeline via ablative intervention: permutation tests (999), bootstrap (500) and AUC-ROC against an ARIMA baseline. It includes a hostile-testing harness (0/2000 false positives under random walk) and simulations spanning 30 orders of magnitude in space and time with physically-motivated probes. Custom CLI, isolated environment, CPU/GPU."
       },
-      stack: "Node.js · Python · Linux · OCR · idempotencia · HITL · decision-log",
+      stack: "Python · numpy/scipy/pandas · ABM+ODE · PyTorch/CUDA · permutación/bootstrap · AUC-ROC · CLI",
       noteLine: {
-        es: "Repo privado (requiere limpieza de datos de cliente antes de publicar).",
-        en: "Private repo (requires client-data cleanup before publishing)."
+        es: "Rol: colaborador de ingeniería computacional (autoría conceptual: Jacob Agudelo, U. de Antioquia).",
+        en: "Role: computational-engineering collaborator (conceptual authorship: Jacob Agudelo, U. de Antioquia)."
       },
-      links: []
+      links: [
+        { label: { es: "En vivo", en: "Live" }, url: "https://estructuras-preontologicas.vercel.app" },
+        { label: { es: "Repo", en: "Repo" }, url: "https://github.com/stevenvo780/EstructurasPreontologicas" }
+      ]
     }
   ],
 
@@ -703,7 +706,7 @@ window.CV_DATA = {
     {
       cat: { es: "Literatura y Filosofía", en: "Literature & Philosophy" },
       items: [
-        { name: "Estructuras Pre-Ontológicas", url: "https://estructuras-preontologicas.vercel.app", star: true, es: "Tesis doctoral ABM+ODE: motor de simulación con protocolo de validación ablativo (EDI), 40 casos, 30 órdenes de magnitud. AUC-ROC 0.886 vs ARIMA 0.600. App en vivo.", en: "Doctoral thesis ABM+ODE: simulation engine with ablative validation protocol (EDI), 40 cases, 30 orders of magnitude. AUC-ROC 0.886 vs ARIMA 0.600. Live app." },
+        { name: "Estructuras Pre-Ontológicas", url: "https://estructuras-preontologicas.vercel.app", star: true, es: "Motor de simulación ABM+ODE para una tesis doctoral (mi rol: ingeniería computacional): protocolo de validación ablativo (EDI), 40 casos, 30 órdenes de magnitud, AUC-ROC 0.886 vs ARIMA 0.600. App en vivo.", en: "ABM+ODE simulation engine for a doctoral thesis (my role: computational engineering): ablative validation protocol (EDI), 40 cases, 30 orders of magnitude, AUC-ROC 0.886 vs ARIMA 0.600. Live app." },
         { name: "Tesis Jacob — Motor de Hiperobjetos", url: "https://github.com/stevenvo780/TesisJacobContenidos", star: true, es: "Motor ABM+ODE para medir el 'cierre operativo' de hiperobjetos (clima, epidemias, deforestación), 29 casos, métrica EDI original, tests de permutación vectorizados.", en: "ABM+ODE engine to measure the 'operational closure' of hyperobjects (climate, epidemics, deforestation), 29 cases, original EDI metric, vectorized permutation tests." },
         { name: "Fenomenología Urbana", url: "https://github.com/stevenvo780/FenomenologiaUrbana", star: true, es: "Simulación de Medellín: ABM + PDE en GPU + DRL (PyTorch) con análisis filosófico husserliano y foucaultiano.", en: "Medellín simulation: ABM + PDE on GPU + DRL (PyTorch) with Husserlian and Foucauldian philosophical analysis." },
         { name: "Motor de vida artificial (ABM + RAG)", url: "https://github.com/stevenvo780/UnaCartaParaIsa", star: true, es: "Motor de vida artificial: ABM con 30+ subsistemas y RAG sobre un corpus lingüístico propietario; render Phaser 3, backend WebSocket 50 Hz.", en: "Artificial-life engine: ABM with 30+ subsystems and RAG over a proprietary linguistic corpus; Phaser 3 render, 50 Hz WebSocket backend." },
