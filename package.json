@@ -1,0 +1,15 @@
+{
+  "name": "cv-informatico",
+  "version": "1.0.0",
+  "description": "Sitio web estático, bilingüe (ES/EN), del CV técnico de Steven Vallejo Ortiz. Sin paso de build: HTML + CSS + un único `app.js` (vanilla JS) que renderiza los datos y maneja el toggle ES/EN. Cero riesgo de build en Vercel.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer-core": "^25.1.0"
+  }
+}

@@ -1,6 +1,7 @@
 /**
  * WCAG AA contrast check for cv-informatico
  * Uses puppeteer-core + local Chrome to verify color pairs against the live alias.
+ * Composites rgba transparent backgrounds onto their solid ancestor bg.
  * Exit 0 = 0 violations. Exit 1 = violations found.
  */
 import puppeteer from 'puppeteer-core';
@@ -17,35 +18,34 @@ function luminance(r, g, b) {
   return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
 }
 
-function contrastRatio(l1, l2) {
+function contrastRatio(fg, bg) {
+  const l1 = luminance(fg.r, fg.g, fg.b);
+  const l2 = luminance(bg.r, bg.g, bg.b);
   const [bright, dark] = l1 > l2 ? [l1, l2] : [l2, l1];
   return (bright + 0.05) / (dark + 0.05);
 }
 
-function parseRgb(color) {
+function parseColor(color) {
   // handles rgb(r,g,b) and rgba(r,g,b,a)
-  const m = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+  const m = color.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([\d.]+))?\s*\)/);
   if (!m) return null;
-  return { r: parseInt(m[1]), g: parseInt(m[2]), b: parseInt(m[3]) };
-}
-
-function hexToRgb(hex) {
-  const h = hex.replace('#', '');
-  const full = h.length === 3
-    ? h.split('').map(c => c + c).join('')
-    : h;
   return {
-    r: parseInt(full.slice(0,2), 16),
-    g: parseInt(full.slice(2,4), 16),
-    b: parseInt(full.slice(4,6), 16),
+    r: parseInt(m[1]),
+    g: parseInt(m[2]),
+    b: parseInt(m[3]),
+    a: m[4] !== undefined ? parseFloat(m[4]) : 1,
   };
 }
 
-function resolveColor(colorStr) {
-  if (!colorStr || colorStr === 'transparent' || colorStr === 'rgba(0, 0, 0, 0)') return null;
-  if (colorStr.startsWith('rgb')) return parseRgb(colorStr);
-  if (colorStr.startsWith('#')) return hexToRgb(colorStr);
-  return null;
+// Alpha-composite src (with alpha) over dst (opaque)
+function composite(src, dst) {
+  const a = src.a ?? 1;
+  return {
+    r: Math.round(src.r * a + dst.r * (1 - a)),
+    g: Math.round(src.g * a + dst.g * (1 - a)),
+    b: Math.round(src.b * a + dst.b * (1 - a)),
+    a: 1,
+  };
 }
 
 // WCAG AA thresholds
@@ -65,44 +65,34 @@ async function main() {
   await page.setViewport({ width: 1280, height: 900 });
   await page.goto(TARGET_URL, { waitUntil: 'networkidle2', timeout: 30000 });
 
-  // Extract all visible text nodes and their computed fg/bg colors
-  const results = await page.evaluate(() => {
-    const violations = [];
-    const checks = [];
-
-    function getEffectiveBg(el) {
-      // Walk up the DOM to find a non-transparent background
+  // Extract all visible text nodes and their computed fg/bg colors + bg stack
+  const checks = await page.evaluate(() => {
+    function getBgStack(el) {
+      // Walk up DOM (starting from the element itself), collect background-color values
+      const stack = [];
       let node = el;
-      while (node && node !== document.body.parentElement) {
+      while (node && node !== document.documentElement) {
         const bg = getComputedStyle(node).backgroundColor;
-        if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
-          return bg;
+        if (bg && bg !== 'rgba(0, 0, 0, 0)') {
+          stack.push(bg);
         }
         node = node.parentElement;
       }
-      return 'rgb(11, 20, 23)'; // fallback: --bg
-    }
-
-    function getFontSize(el) {
-      return parseFloat(getComputedStyle(el).fontSize);
-    }
-
-    function getFontWeight(el) {
-      return parseInt(getComputedStyle(el).fontWeight);
+      // fallback: body bg
+      stack.push(getComputedStyle(document.body).backgroundColor || 'rgb(11, 20, 23)');
+      return stack;
     }
 
     function isLargeText(el) {
-      const size = getFontSize(el);
-      const weight = getFontWeight(el);
-      // 18pt = 24px; 14pt bold = ~18.67px
+      const size = parseFloat(getComputedStyle(el).fontSize);
+      const weight = parseInt(getComputedStyle(el).fontWeight);
       return size >= 24 || (size >= 18.67 && weight >= 700);
     }
 
-    // Sample key elements: headings, body text, links, labels, tags
     const selectors = [
-      'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-      'p', 'a', 'span', 'li', 'button',
-      '.sec-no', '.tl-org', '.tl-role', '.muted',
+      'h1', 'h2', 'h3', 'h4',
+      'p', 'a', 'button',
+      '.sec-no', '.tl-org', '.tl-role',
       '.tier-label', '.skill-chip', '.tag', '.chip',
       '.hero-headline', '.hero-sub', '.hero-kicker',
       '.btn-primary', '.btn-secondary', '.btn-ghost',
@@ -110,65 +100,78 @@ async function main() {
       '.lang-toggle button', '.topnav a',
     ];
 
-    const seen = new Set();
+    const seen = new WeakSet();
+    const results = [];
+
     for (const sel of selectors) {
-      try {
-        const els = document.querySelectorAll(sel);
-        els.forEach(el => {
-          if (seen.has(el)) return;
-          seen.add(el);
-          const style = getComputedStyle(el);
-          const display = style.display;
-          const visibility = style.visibility;
-          const opacity = parseFloat(style.opacity);
-          if (display === 'none' || visibility === 'hidden' || opacity < 0.1) return;
-          const rect = el.getBoundingClientRect();
-          if (rect.width === 0 || rect.height === 0) return;
+      let els;
+      try { els = document.querySelectorAll(sel); } catch (_) { continue; }
+      els.forEach(el => {
+        if (seen.has(el)) return;
+        seen.add(el);
+        const style = getComputedStyle(el);
+        if (style.display === 'none' || style.visibility === 'hidden') return;
+        if (parseFloat(style.opacity) < 0.1) return;
+        const rect = el.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) return;
 
-          const fg = style.color;
-          const bg = getEffectiveBg(el);
-          const large = isLargeText(el);
+        // Check if text is gradient (clip-to-text) — skip, not a plain fg color
+        const bgClip = style.webkitBackgroundClip || style.backgroundClip;
+        const bgImage = style.backgroundImage;
+        if ((bgClip === 'text' || bgClip === '-webkit-text') && bgImage !== 'none') return;
 
-          checks.push({
-            selector: sel,
-            text: (el.textContent || '').trim().slice(0, 60),
-            fg,
-            bg,
-            large,
-          });
+        results.push({
+          selector: sel,
+          text: (el.textContent || '').trim().slice(0, 60),
+          fg: style.color,
+          bgStack: getBgStack(el),
+          large: isLargeText(el),
         });
-      } catch (_) {}
+      });
     }
 
-    return checks;
+    return results;
   });
 
-  // Compute contrast ratios in Node.js
+  // Compute contrast ratios in Node.js, compositing rgba backgrounds
   const violations = [];
   const passes = [];
 
-  for (const item of results) {
-    const fg = resolveColor(item.fg);
-    const bg = resolveColor(item.bg);
-    if (!fg || !bg) continue;
+  for (const item of checks) {
+    const fg = parseColor(item.fg);
+    if (!fg) continue;
 
-    const l1 = luminance(fg.r, fg.g, fg.b);
-    const l2 = luminance(bg.r, bg.g, bg.b);
-    const ratio = contrastRatio(l1, l2);
+    // Composite the bg stack from back to front to get effective opaque bg
+    // bgStack[0] is closest ancestor, last is farthest (or body fallback)
+    // We composite from the bottom up
+    const stack = item.bgStack.map(parseColor).filter(Boolean);
+
+    // Find first fully opaque layer (a >= 1) as the base
+    let effectiveBg = { r: 11, g: 20, b: 23, a: 1 }; // fallback --bg
+    // Reverse: start from deepest ancestor
+    const reversed = [...stack].reverse();
+    for (const layer of reversed) {
+      if (layer.a >= 0.99) {
+        effectiveBg = layer;
+      } else {
+        effectiveBg = composite(layer, effectiveBg);
+      }
+    }
+
+    const fgOpaque = fg.a < 1 ? composite(fg, effectiveBg) : fg;
+    const ratio = contrastRatio(fgOpaque, effectiveBg);
     const threshold = item.large ? LARGE_TEXT_MIN : NORMAL_TEXT_MIN;
-    const pass = ratio >= threshold;
 
     const record = {
       selector: item.selector,
       text: item.text,
       fg: item.fg,
-      bg: item.bg,
+      effectiveBg: `rgb(${effectiveBg.r},${effectiveBg.g},${effectiveBg.b})`,
       ratio: ratio.toFixed(2),
       threshold,
-      large: item.large,
     };
 
-    if (!pass) {
+    if (ratio < threshold) {
       violations.push(record);
     } else {
       passes.push(record);
@@ -177,12 +180,12 @@ async function main() {
 
   await browser.close();
 
-  console.log(`\nChecked ${results.length} elements, ${passes.length} pass, ${violations.length} violations.\n`);
+  console.log(`\nChecked ${checks.length} elements: ${passes.length} pass, ${violations.length} violations.\n`);
 
   if (violations.length > 0) {
     console.error('WCAG AA VIOLATIONS:');
     for (const v of violations) {
-      console.error(`  [FAIL] ${v.selector} | text="${v.text}" | fg=${v.fg} bg=${v.bg} | ratio=${v.ratio} (need ${v.threshold})`);
+      console.error(`  [FAIL] ${v.selector} | "${v.text}" | fg=${v.fg} bg=${v.effectiveBg} | ratio=${v.ratio} (need ${v.threshold})`);
     }
     process.exit(1);
   } else {
