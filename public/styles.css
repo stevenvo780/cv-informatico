@@ -76,6 +76,8 @@ a:hover { color: var(--gold); }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-text strong { font-size: 15px; }
 .brand-text em { font-style: normal; font-size: 12px; color: var(--muted); font-family: var(--mono); }
+.brand-subtitle { font-style: normal; font-size: 11px; color: var(--muted); font-family: var(--mono); }
+.brand-subtitle .brand-ecosystem { color: var(--teal); }
 .topnav { display: flex; gap: 18px; margin-left: auto; }
 .topnav a { color: var(--muted); font-size: 14px; font-weight: 500; }
 .topnav a:hover { color: var(--teal); }
@@ -291,8 +293,17 @@ a:hover { color: var(--gold); }
 .contact-cta { margin-top: 8px; }
 
 /* ---------- Footer ---------- */
-.footer { padding: 30px 0; }
-.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: var(--muted); font-size: 13px; }
+.footer { padding: 22px 0 30px; border-top: 1px solid var(--line); }
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; color: var(--muted); font-size: 13px; padding-bottom: 16px; }
+.footer-ecosystem {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
+  padding-top: 14px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--muted);
+}
+.footer-ecosystem strong { color: var(--teal); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 12px; margin-left: auto; }
+.footer-links a { color: var(--muted); font-size: 12px; font-family: var(--mono); }
+.footer-links a:hover { color: var(--teal); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 820px) {
