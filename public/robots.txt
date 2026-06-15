@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stevenvallejo.com/sitemap.xml
+Sitemap: https://informatico.stevenvallejo.com/sitemap.xml
