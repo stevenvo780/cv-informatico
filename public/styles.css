@@ -7,19 +7,21 @@
   --bg: #0b1417;
   --bg-2: #0f1c20;
   --bg-3: #102327;
-  --cream: #f3ece0;
-  --cream-dim: #c9c2b6;
+  --surface: #152028;
+  --cream: #e8e0d4;
+  --cream-dim: #8fa3a8;
   --teal: #43b5a6;
   --teal-light: #6fd3c4;
-  --teal-dim: #2f8478;
+  --teal-dim: #1a9c8c;
+  --acento-3: #1a9c8c;
   --gold: #e0a85e;
   --gold-light: #f0c887;
   --gold-dim: #b9854a;
   --orange: #cf6a3c;
   --violet: #8d7cc0;
-  --gradient-firma: linear-gradient(110deg, #e0a85e 0%, #cf6a3c 35%, #43b5a6 100%);
+  --gradient-firma: linear-gradient(135deg, #43b5a6 0%, #1a9c8c 60%, #0b1417 100%);
   --ink: #091012;
-  --muted: #c9c2b6;
+  --muted: #8fa3a8;
   --line: rgba(243, 236, 224, 0.10);
   --line-2: rgba(67, 181, 166, 0.22);
   --r-sm: 16px;
@@ -27,7 +29,7 @@
   --r-lg: 28px;
   --maxw: 1080px;
   --shadow: 0 18px 48px rgba(0, 0, 0, 0.38);
-  --font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -42,9 +44,7 @@ body {
   color: var(--cream);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(900px 500px at 12% -8%, rgba(67, 181, 166, 0.10), transparent 60%),
-    radial-gradient(800px 480px at 100% 0%, rgba(224, 168, 94, 0.07), transparent 55%);
+  background-image: radial-gradient(ellipse at 20% 50%, #0d1e24 0%, #0b1417 60%);
   background-attachment: fixed;
 }
 
