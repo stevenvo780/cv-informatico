@@ -313,7 +313,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Administrador de Sistemas (SysAdmin)", en: "Systems Administrator (SysAdmin)" },
       org: "Critertec",
-      period: { es: "nov. 2024 — 2026 (terminado)", en: "Nov 2024 — 2026 (ended)" },
+      period: { es: "nov. 2024 — jun. 2026 (terminado)", en: "Nov 2024 — Jun 2026 (ended)" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
         { es: "Contrato a término fijo", en: "Fixed-term contract", t: "" },
@@ -332,7 +332,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Frontend Developer / Contratista de ingeniería de software", en: "Frontend Developer / Software Engineering Contractor" },
       org: "Soy Digital / INDOTEL (proyecto de gobierno, República Dominicana)",
-      period: { es: "Cerrado (2023) · vía Critertec", en: "Closed (2023) · via Critertec" },
+      period: { es: "nov. 2024 — jun. 2026 (~2 años) · vía Critertec", en: "Nov 2024 — Jun 2026 (~2 years) · via Critertec" },
       loc: "República Dominicana (remoto)",
       tags: [
         { es: "Prestación de servicios", en: "Service contract", t: "" },
