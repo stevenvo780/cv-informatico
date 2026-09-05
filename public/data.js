@@ -17,15 +17,16 @@ window.CV_DATA = {
       heroSub: "Trabajo principalmente con Node.js/NestJS, PostgreSQL, Docker, Linux y GCP. He trabajado como CTO / Jefe de Sistemas, ingeniero backend senior y SysAdmin, y construí un ecosistema SaaS empresarial multi-tenant.",
       heroChipLoc: "Medellín, Colombia · GMT-5",
       heroChipExp: "10+ años en producción",
-      heroChipRemote: "Remoto · Híbrido · Reubicable a España",
+      heroChipRemote: "Remoto desde Colombia · Presencial/híbrido en Medellín y Valle de Aburrá",
       ctaCv: "Descargar CV (PDF)",
       ctaAts: "CV ATS",
       ctaEmail: "Escríbeme",
-      atsNote: "CV ATS: versión de texto plano optimizada, compatible con sistemas de selección automatizados (ATS).",
-      aboutProfile: "Software Engineer con 10+ años de experiencia construyendo sistemas backend, plataformas SaaS, flujos de automatización e infraestructura cloud. Base sólida en Node.js/NestJS, PostgreSQL, Docker, Linux, GCP y automatización de procesos con IA. He trabajado como CTO / Jefe de Sistemas, ingeniero backend senior y administrador de sistemas, llevando productos de la idea a producción.",
+      atsNote: "Mismo perfil en dos formatos: visual y de una columna para selección. Ambos incluyen enlaces a proyectos y trayectoria completa.",
+      aboutProfile: "Construyo backend, SaaS y automatización con IA sobre Node.js/NestJS, PostgreSQL, Docker y Linux. Más de 10 años de trayectoria. Mi formación en filosofía y lógica formal se concreta en ST y auto.logic; Cauce V3 y Ágora llevan ese trabajo a sistemas de agentes y colaboración. Busco trabajo remoto desde Colombia o presencial/híbrido en Medellín y Valle de Aburrá.",
       skillsTitle: "Skills & Tecnologías",
       skillsLead: "Tecnologías que uso en producción, agrupadas por nivel cualitativo: Avanzado · Intermedio · Familiar.",
-      expLead: "Vínculos confirmados con su tipo de contrato. Algunas vinculaciones son concurrentes: proyecto propio (Humanizar) + prestación de servicios (Finca Directa) + término fijo (Indie Levels).",
+      expLead: "Tres vínculos vigentes relevantes para backend e IA. La trayectoria completa, incluidos Critertec e INDOTEL, se conserva debajo. Los vínculos concurrentes mantienen su tipo de contrato.",
+      expArchive: "Ver trayectoria completa",
       eduTitle: "Formación",
       langTitle: "Idiomas",
       projTitle: "Proyectos propios principales",
@@ -50,15 +51,16 @@ window.CV_DATA = {
       heroSub: "I work mainly with Node.js/NestJS, PostgreSQL, Docker, Linux and GCP. I've worked as CTO / Head of Systems, senior backend engineer and SysAdmin, and built a multi-tenant enterprise SaaS ecosystem.",
       heroChipLoc: "Medellín, Colombia · GMT-5",
       heroChipExp: "10+ years in production",
-      heroChipRemote: "Remote · Hybrid · Relocatable to Spain",
+      heroChipRemote: "Remote from Colombia · On-site/hybrid in Medellín and Valle de Aburrá",
       ctaCv: "Download CV (PDF)",
       ctaAts: "ATS CV",
       ctaEmail: "Email me",
-      atsNote: "ATS CV: plain-text optimized version, compatible with Applicant Tracking Systems (ATS).",
-      aboutProfile: "Software Engineer with 10+ years of experience building backend systems, SaaS platforms, automation workflows and cloud infrastructure. Strong background in Node.js/NestJS, PostgreSQL, Docker, Linux, GCP and AI-powered process automation. I've worked as CTO / Head of Systems, senior backend engineer and systems administrator, taking products from idea to production.",
+      atsNote: "One profile, two formats: visual and single-column for recruiting. Both link to projects and the full career history.",
+      aboutProfile: "I build backend systems, SaaS and AI automation with Node.js/NestJS, PostgreSQL, Docker and Linux. Over 10 years of experience. My background in philosophy and formal logic takes concrete form in ST and auto.logic; Cauce V3 and Agora bring that work into agent systems and collaboration. Available remotely from Colombia or on-site/hybrid in Medellín and Valle de Aburrá.",
       skillsTitle: "Skills & Technologies",
       skillsLead: "Technologies I use in production, grouped by qualitative level: Advanced · Intermediate · Familiar.",
-      expLead: "Confirmed engagements with their contract type. Some are concurrent: own project (Humanizar) + service contract (Finca Directa) + fixed-term (Indie Levels).",
+      expLead: "Three current engagements relevant to backend and AI. The full history, including Critertec and INDOTEL, is preserved below. Concurrent engagements retain their contract types.",
+      expArchive: "View full career history",
       eduTitle: "Education",
       langTitle: "Languages",
       projTitle: "Main own projects",
@@ -524,8 +526,9 @@ window.CV_DATA = {
 
   /* ---------- Main own projects ---------- */
   mainProjects: [
+    {"name": "Cauce V3", "status": {"es": "Proyecto estrella en ingeniería · En producción", "en": "Flagship engineering project · In production"}, "desc": {"es": "Construí el orquestador de la flota agéntica del ecosistema Humanizar: despliegues, monitoreo, contratos de entrega entre agentes y CRM multi-tenant. Mi proyecto estrella de ingeniería en Mouseîon.", "en": "Built the orchestrator for the Humanizar agent fleet: deployments, monitoring, delivery contracts between agents and a multi-tenant CRM. My flagship engineering project in Mouseîon."}, "stack": "Orquestación agéntica · Contratos de entrega · Multi-tenant", "links": [{"label": {"es": "Presentación pública", "en": "Public overview"}, "url": "https://humanizar.tech"}]},
     {
-      name: "Agora — Plataforma SaaS de agentes IA",
+      name: "Ágora — Plataforma académica y agentes IA",
       status: { es: "En producción · Pre-revenue", en: "In production · Pre-revenue" },
       desc: {
         es: "Construí una plataforma SaaS de agentes IA usando un poly-repo de servicios separados (frontend Next.js, backend en Cloud Run, hub en tiempo real con socket.io y workers en Docker) para aislar responsabilidades y desplegar cada parte de forma independiente. Decisiones de diseño: contratos tipados validados con Zod, webhooks firmados con HMAC, secretos cifrados con AES-256-GCM y un servidor MCP propio. Diseñé e implementé arquitectura, backend, frontend y DevOps.",
@@ -584,6 +587,7 @@ window.CV_DATA = {
       stack: "TypeScript · SAT solver CDCL · MLTT (teoría de tipos) · 30+ perfiles lógicos · bilingüe",
       links: [
         { label: { es: "Repo", en: "Repo" }, url: "https://github.com/stevenvo780/ST" },
+        { label: { es: "Probar Órganon", en: "Try Órganon" }, url: "https://organon.stevenvallejo.com" },
         { label: { es: "npm @stevenvo780/st-lang", en: "npm @stevenvo780/st-lang" }, url: "https://www.npmjs.com/package/@stevenvo780/st-lang" }
       ]
     },
@@ -787,4 +791,55 @@ window.CV_DATA = {
     { label: { es: "Agora (proyecto)", en: "Agora (project)" }, value: "agora.elenxos.com", url: "https://agora.elenxos.com" },
     { label: { es: "Facturación", en: "Billing" }, value: { es: "Persona natural con RUT", en: "Independent contractor with Colombian RUT" } }
   ]
+};
+
+// Compact exports and featured experience share this source with the website.
+window.CV_RESUME = {
+  "profile": {
+    "es": "Construyo backend, SaaS y automatización con IA sobre Node.js/NestJS, PostgreSQL, Docker y Linux. Más de 10 años de trayectoria. Mi formación en filosofía y lógica formal se concreta en ST y auto.logic; Cauce V3 y Ágora llevan ese trabajo a sistemas de agentes y colaboración. Busco trabajo remoto desde Colombia o presencial/híbrido en Medellín y Valle de Aburrá.",
+    "en": "I build backend systems, SaaS and AI automation with Node.js/NestJS, PostgreSQL, Docker and Linux. Over 10 years of experience. My background in philosophy and formal logic takes concrete form in ST and auto.logic; Cauce V3 and Agora bring that work into agent systems and collaboration. Available remotely from Colombia or on-site/hybrid in Medellín and Valle de Aburrá."
+  },
+  "featuredOrgs": [
+    "Humanizar Systems",
+    "Finca Directa S.A.S",
+    "Indie Levels Studio S.A.S"
+  ],
+  "experienceSummary": [
+    {
+      "es": "Construí un SaaS multi-tenant con e-commerce, POS y facturación DIAN, y créditos. Microservicios NestJS, PostgreSQL y Docker; pub/sub, webhooks HMAC, JWT/OAuth2 y CI/CD. En producción con clientes reales.",
+      "en": "Built a multi-tenant SaaS ecosystem with e-commerce, POS and DIAN e-invoicing, and credit management. NestJS, PostgreSQL and Docker; pub/sub, HMAC webhooks, JWT/OAuth2 and CI/CD. In production with real clients."
+    },
+    {
+      "es": "Construí automatización administrativa con Node.js y Python: OCR de facturas, extractos bancarios, clasificación de correos y sincronización con CRM. Idempotencia, validación humana y registro de decisiones.",
+      "en": "Built administrative automation with Node.js and Python: invoice OCR, bank statements, email classification and CRM sync. Idempotency, human validation and decision logging."
+    },
+    {
+      "es": "Desarrollé y mantuve APIs REST y servicios backend con Node.js/TypeScript y PostgreSQL para productos de videojuegos con usuarios en varios países. Control de versiones y pruebas para sostener releases estables.",
+      "en": "Developed and maintained REST APIs and backend services with Node.js/TypeScript and PostgreSQL for game products used across countries. Version control and testing to support stable releases."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Cauce V3",
+      "url": "https://humanizar.tech",
+      "es": "Orquestador de flota agéntica: contratos de entrega, despliegues, monitoreo y CRM multi-tenant en producción. Proyecto estrella de ingeniería en mi portafolio.",
+      "en": "Agent-fleet orchestrator: delivery contracts, deployments, monitoring and multi-tenant CRM in production. My flagship engineering project."
+    },
+    {
+      "name": "ST · auto.logic · Órganon",
+      "url": "https://organon.stevenvallejo.com",
+      "es": "Lógica formal ejecutable: SAT solver CDCL propio y teoría de tipos. auto.logic traduce lenguaje natural mediante reglas, sin IA; Órganon permite probar ambos. Filosofía convertida en software.",
+      "en": "Executable formal logic: custom CDCL SAT solver and type theory. auto.logic translates natural language using rules, without AI; Órganon lets you try both. Philosophy turned into software."
+    },
+    {
+      "name": "Ágora",
+      "url": "https://agora.elenxos.com",
+      "es": "Plataforma académica, colaboración y agentes de IA. Diseñé arquitectura, backend y herramientas MCP con contratos Zod y comunicación en tiempo real. Proyecto propio; no presentado como empleo.",
+      "en": "Academic platform, collaboration and AI agents. Designed architecture, backend and MCP tools with Zod contracts and real-time communication. Own project, not employment."
+    }
+  ],
+  "archive": {
+    "es": "Trayectoria completa —incluidos Critertec / INDOTEL (2024–2026)— y portafolio:",
+    "en": "Full history —including Critertec / INDOTEL (2024–2026)— and portfolio:"
+  }
 };

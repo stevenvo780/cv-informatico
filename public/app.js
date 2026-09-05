@@ -95,7 +95,10 @@
 
   /* ---------- Experience ---------- */
   function renderExperience() {
-    el("timeline").innerHTML = D.experience.map(function (e) {
+    var featured = window.CV_RESUME.featuredOrgs.map(function (org) {
+      return D.experience.find(function (e) { return e.org === org; });
+    });
+    function cards(entries) { return entries.map(function (e) {
       var tags = (e.tags || []).map(function (t) {
         return '<span class="tag ' + (t.t || "") + '">' + esc(t[lang]) + "</span>";
       }).join("");
@@ -112,7 +115,9 @@
         (desc ? '<p class="tl-desc">' + esc(desc) + "</p>" : "") +
         (note ? '<p class="tl-note">' + esc(note) + "</p>" : "") +
         "</div>";
-    }).join("");
+    }).join(""); }
+    el("timeline").innerHTML = cards(featured);
+    el("timeline-full").innerHTML = cards(D.experience);
   }
 
   /* ---------- Education ---------- */

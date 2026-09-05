@@ -323,3 +323,8 @@ a:hover { color: var(--gold); }
 }
 
 [hidden] { display: none !important; }
+
+.career-archive { margin: 24px 0; padding: 20px; border: 1px solid var(--line); border-radius: 16px; }
+.career-archive summary { cursor: pointer; color: var(--teal); font-weight: 600; padding: 6px; }
+.career-archive summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.career-archive[open] .timeline { margin-top: 24px; }
