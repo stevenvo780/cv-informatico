@@ -420,7 +420,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Administrador de Sistemas (SysAdmin)", en: "Systems Administrator (SysAdmin)" },
       org: "Critertec",
-      tech: { es: "Linux · Bash · Docker · CI/CD · administración de servidores · redes · respaldos · monitoreo · hardening · DevOps · SQL · PostgreSQL · MySQL · TypeScript · JavaScript · Node.js · Python · Git", en: "Linux · Bash · Docker · CI/CD · server administration · networking · backups · monitoring · hardening · DevOps · SQL · PostgreSQL · MySQL · TypeScript · JavaScript · Node.js · Python · Git" },
+      tech: { es: "SQL · PostgreSQL · MySQL · Linux · Bash · Docker · CI/CD · DevOps · TypeScript · Python", en: "SQL · PostgreSQL · MySQL · Linux · Bash · Docker · CI/CD · DevOps · TypeScript · Python" },
       period: { es: "nov. 2024 — jun. 2026 (terminado)", en: "Nov 2024 — Jun 2026 (ended)" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -440,7 +440,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Frontend Developer / Contratista de ingeniería de software", en: "Frontend Developer / Software Engineering Contractor" },
       org: "Soy Digital · INDOTEL",
-      tech: { es: "TypeScript · JavaScript · React · Next.js · PWA · offline-first · sincronización de datos · SQL · PostgreSQL · Python · C++ · Node.js · Docker · Linux · CI/CD · Git · dashboards de auditoría", en: "TypeScript · JavaScript · React · Next.js · PWA · offline-first · data sync · SQL · PostgreSQL · Python · C++ · Node.js · Docker · Linux · CI/CD · Git · audit dashboards" },
+      tech: { es: "SQL · PostgreSQL · TypeScript · JavaScript · React · Next.js · PWA · Python · C++ · Linux", en: "SQL · PostgreSQL · TypeScript · JavaScript · React · Next.js · PWA · Python · C++ · Linux" },
       period: { es: "nov. 2024 — jun. 2026 (~2 años) · vía Critertec", en: "Nov 2024 — Jun 2026 (~2 years) · via Critertec" },
       loc: "República Dominicana (remoto)",
       tags: [
@@ -460,7 +460,7 @@ window.CV_DATA = {
       own: true,
       role: { es: "Fundador / Lead Developer", en: "Founder / Lead Developer" },
       org: "Humanizar Systems",
-      tech: { es: "TypeScript · Node.js · NestJS · JavaScript · Python · Bash · SQL · PostgreSQL · Redis · Docker · Linux · administración manual de servidores · microservicios · pub/sub · webhooks HMAC · JWT · OAuth2 · CI/CD · React · Next.js · facturación electrónica DIAN · Wompi · Mercado Pago · LLM · MCP · RAG · OCR", en: "TypeScript · Node.js · NestJS · JavaScript · Python · Bash · SQL · PostgreSQL · Redis · Docker · Linux · hands-on server administration · microservices · pub/sub · HMAC webhooks · JWT · OAuth2 · CI/CD · React · Next.js · DIAN e-invoicing · Wompi · Mercado Pago · LLM · MCP · RAG · OCR" },
+      tech: { es: "SQL · PostgreSQL · TypeScript · Node.js · NestJS · Python · Bash · Docker · Linux · React", en: "SQL · PostgreSQL · TypeScript · Node.js · NestJS · Python · Bash · Docker · Linux · React" },
       period: { es: "2022 — actualidad", en: "2022 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -468,15 +468,15 @@ window.CV_DATA = {
         { es: "En producción", en: "In production", t: "" }
       ],
       desc: {
-        es: "Construí un ecosistema SaaS empresarial multi-tenant —e-commerce (Graf), POS con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería WhatsApp (EMW)— usando microservicios NestJS con comunicación vía pub/sub y webhooks firmados con HMAC, autenticación JWT/OAuth2 y despliegue con CI/CD, para que PYMEs vendieran, facturaran legalmente y gestionaran créditos desde una sola plataforma. En producción con clientes reales.",
-        en: "Built an enterprise multi-tenant SaaS ecosystem —e-commerce (Graf), POS with DIAN electronic invoicing (Sinergia POS), credit fintech (FIAR), and WhatsApp messaging (EMW)— using NestJS microservices with pub/sub communication and HMAC-signed webhooks, JWT/OAuth2 auth and CI/CD deployment, so SMBs could sell, invoice legally and manage credit from a single platform. Running in production with real clients."
+        es: "Construí un ecosistema SaaS empresarial multi-tenant —e-commerce (Graf), POS con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería WhatsApp (EMW)— usando microservicios NestJS con comunicación vía pub/sub y webhooks firmados con HMAC, autenticación JWT/OAuth2 y despliegue con CI/CD. Escribí SQL a diario (modelado, consultas y optimización) para que PYMEs vendieran, facturaran legalmente y gestionaran créditos desde una sola plataforma. En producción con clientes reales.",
+        en: "Built an enterprise multi-tenant SaaS ecosystem —e-commerce (Graf), POS with DIAN electronic invoicing (Sinergia POS), credit fintech (FIAR), and WhatsApp messaging (EMW)— using NestJS microservices with pub/sub communication and HMAC-signed webhooks, JWT/OAuth2 auth and CI/CD deployment. I wrote SQL daily (modelling, queries and tuning) so SMBs could sell, invoice legally and manage credit from a single platform. Running in production with real clients."
       }
     },
     {
       own: false,
       role: { es: "CTO / Jefe de Sistemas", en: "CTO / Systems Manager" },
       org: "Finca Directa S.A.S",
-      tech: { es: "TypeScript · JavaScript · Node.js · Python · Bash · SQL · PostgreSQL · Linux · Docker · OCR · RPA · integración con CRM · webhooks · idempotencia · Git", en: "TypeScript · JavaScript · Node.js · Python · Bash · SQL · PostgreSQL · Linux · Docker · OCR · RPA · CRM integration · webhooks · idempotency · Git" },
+      tech: { es: "SQL · PostgreSQL · TypeScript · JavaScript · Node.js · Python · Bash · Linux · OCR · RPA", en: "SQL · PostgreSQL · TypeScript · JavaScript · Node.js · Python · Bash · Linux · OCR · RPA" },
       period: { es: "nov. 2021 — actualidad", en: "Nov 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -492,7 +492,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Desarrollador Backend", en: "Backend Developer" },
       org: "Indie Levels Studio S.A.S",
-      tech: { es: "TypeScript · JavaScript · Node.js · REST APIs · SQL · PostgreSQL · Python · Unity · Unreal Engine · Roblox · C# · Docker · CI/CD · Git · pruebas automatizadas", en: "TypeScript · JavaScript · Node.js · REST APIs · SQL · PostgreSQL · Python · Unity · Unreal Engine · Roblox · C# · Docker · CI/CD · Git · automated testing" },
+      tech: { es: "SQL · PostgreSQL · TypeScript · JavaScript · Node.js · Python · Unity · Unreal Engine · Roblox · C#", en: "SQL · PostgreSQL · TypeScript · JavaScript · Node.js · Python · Unity · Unreal Engine · Roblox · C#" },
       period: { es: "ago. 2021 — actualidad", en: "Aug 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -500,15 +500,15 @@ window.CV_DATA = {
         { es: "Vigente", en: "Active", t: "gold" }
       ],
       desc: {
-        es: "Desarrollé y mantuve servicios y APIs REST backend (Node.js/TypeScript) con PostgreSQL para los productos de un estudio de videojuegos con clientes en todo el mundo, aplicando control de versiones con Git y pruebas para sostener releases estables.",
-        en: "Developed and maintained backend REST APIs (Node.js/TypeScript + PostgreSQL) for a video game studio's products used by clients worldwide, with Git version control and testing to keep releases stable."
+        es: "Desarrollé y mantuve servicios y APIs REST backend (Node.js/TypeScript) para los productos de un estudio de videojuegos con clientes en todo el mundo. Escribí SQL para las consultas, las migraciones y los índices de la base de datos, y apliqué control de versiones con Git y pruebas para sostener releases estables. También trabajé con motores de videojuego: Unity, Unreal Engine y Roblox en C#.",
+        en: "Developed and maintained backend REST APIs (Node.js/TypeScript) for a video game studio's products used by clients worldwide. I wrote SQL for queries, migrations and database indexes, and used Git version control and testing to keep releases stable. I also worked with game engines: Unity, Unreal Engine and Roblox in C#."
       }
     },
     {
       own: false,
       role: { es: "Desarrollador Full Stack Semi-Senior", en: "Semi-Senior Full Stack Developer" },
       org: "ZENIT S.A.S",
-      tech: { es: "JavaScript · TypeScript · PHP · SQL · MySQL · HTML · CSS · Node.js · Python · Git", en: "JavaScript · TypeScript · PHP · SQL · MySQL · HTML · CSS · Node.js · Python · Git" },
+      tech: { es: "SQL · MySQL · JavaScript · TypeScript · PHP · Node.js · Python · HTML · CSS · Git", en: "SQL · MySQL · JavaScript · TypeScript · PHP · Node.js · Python · HTML · CSS · Git" },
       period: { es: "oct. 2020 — ago. 2021", en: "Oct 2020 — Aug 2021" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Empleo", en: "Employment", t: "muted" }],
@@ -518,7 +518,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Desarrollador Full Stack Junior", en: "Junior Full Stack Developer" },
       org: "INS S.A.S",
-      tech: { es: "JavaScript · PHP · SQL · MySQL · HTML · CSS · Node.js · Python · Git", en: "JavaScript · PHP · SQL · MySQL · HTML · CSS · Node.js · Python · Git" },
+      tech: { es: "SQL · MySQL · JavaScript · PHP · Node.js · Python · HTML · CSS · Git", en: "SQL · MySQL · JavaScript · PHP · Node.js · Python · HTML · CSS · Git" },
       period: { es: "feb. 2019 — oct. 2020", en: "Feb 2019 — Oct 2020" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Empleo", en: "Employment", t: "muted" }],
@@ -528,7 +528,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Desarrollador Full Stack Junior", en: "Junior Full Stack Developer" },
       org: "Kambban S.A.S",
-      tech: { es: "JavaScript · PHP · SQL · MySQL · HTML · CSS · Git", en: "JavaScript · PHP · SQL · MySQL · HTML · CSS · Git" },
+      tech: { es: "SQL · MySQL · JavaScript · PHP · HTML · CSS · Git", en: "SQL · MySQL · JavaScript · PHP · HTML · CSS · Git" },
       period: { es: "feb. 2020 — may. 2020", en: "Feb 2020 — May 2020" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Empleo", en: "Employment", t: "muted" }],
@@ -538,7 +538,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Practicante en el semillero SIPAEM", en: "Intern at SIPAEM research group" },
       org: "SENA / SIPAEM",
-      tech: { es: "JavaScript · SQL · MySQL · HTML · CSS · Python · Git", en: "JavaScript · SQL · MySQL · HTML · CSS · Python · Git" },
+      tech: { es: "SQL · MySQL · JavaScript · Python · HTML · CSS · Git", en: "SQL · MySQL · JavaScript · Python · HTML · CSS · Git" },
       period: { es: "mar. 2018 — oct. 2018", en: "Mar 2018 — Oct 2018" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Práctica", en: "Internship", t: "muted" }],
@@ -548,7 +548,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Gerente - Developer", en: "Manager - Developer" },
       org: "IQpixels S.A.S",
-      tech: { es: "Unity · C# · JavaScript · SQL · MySQL · gestión de proyecto · Git", en: "Unity · C# · JavaScript · SQL · MySQL · project management · Git" },
+      tech: { es: "SQL · MySQL · Unity · C# · JavaScript · Git", en: "SQL · MySQL · Unity · C# · JavaScript · Git" },
       period: { es: "jul. 2016 — ene. 2017", en: "Jul 2016 — Jan 2017" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Empleo", en: "Employment", t: "muted" }],
@@ -557,7 +557,7 @@ window.CV_DATA = {
     {
       own: true,
       role: { es: "Freelance — Infraestructura IT", en: "Freelance — IT Infrastructure" },
-      tech: { es: "Linux · Bash · Docker · redes · hosting · respaldos · virtualización · monitoreo · SQL · MySQL · Git", en: "Linux · Bash · Docker · networking · hosting · backups · virtualization · monitoring · SQL · MySQL · Git" },
+      tech: { es: "SQL · MySQL · Linux · Bash · Docker · redes · hosting · respaldos · virtualización · Git", en: "SQL · MySQL · Linux · Bash · Docker · networking · hosting · backups · virtualization · Git" },
       org: "Independiente",
       period: { es: "feb. 2014 — actualidad", en: "Feb 2014 — present" },
       loc: "Medellín, Antioquia, Colombia",
@@ -570,20 +570,20 @@ window.CV_DATA = {
     {
       own: true,
       role: { es: "Freelance — Desarrollo de videojuegos", en: "Freelance — Video Game Development" },
-      tech: { es: "Unity · Unreal Engine · Roblox · C# · C++ · JavaScript · TypeScript · realidad virtual (Oculus, HTC VIVE) · realidad aumentada (Vuforia) · Phaser 3 · SQL", en: "Unity · Unreal Engine · Roblox · C# · C++ · JavaScript · TypeScript · virtual reality (Oculus, HTC VIVE) · augmented reality (Vuforia) · Phaser 3 · SQL" },
+      tech: { es: "Unity · Unreal Engine · Roblox · C# · C++ · JavaScript · TypeScript · SQL · realidad virtual · realidad aumentada", en: "Unity · Unreal Engine · Roblox · C# · C++ · JavaScript · TypeScript · SQL · virtual reality · augmented reality" },
       org: "Independiente",
       period: { es: "2013 — actualidad", en: "2013 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Freelance", en: "Freelance", t: "gold" }],
       desc: {
-        es: "Desarrollo de videojuegos por cuenta propia desde 2013, cuando publiqué mi primer videojuego en Google Play. Es el punto de partida de mi trayectoria programando.",
+        es: "Desarrollo de videojuegos por cuenta propia desde 2013, cuando publiqué mi primer videojuego en Google Play. Trabajo con Unity, Unreal Engine y Roblox en C# y C++, y uso SQL para la persistencia de los juegos. Es el punto de partida de mi trayectoria programando.",
         en: "Independent video game development since 2013, when I published my first game on Google Play. It is the starting point of my career in programming."
       }
     },
     {
       own: true,
       role: { es: "Freelance — Desarrollo de aplicaciones web", en: "Freelance — Web App Development" },
-      tech: { es: "TypeScript · JavaScript · React · Next.js · Node.js · Python · PHP · Laravel · SQL · MySQL · MariaDB · PostgreSQL · Git", en: "TypeScript · JavaScript · React · Next.js · Node.js · Python · PHP · Laravel · SQL · MySQL · MariaDB · PostgreSQL · Git" },
+      tech: { es: "SQL · MySQL · MariaDB · PostgreSQL · TypeScript · JavaScript · React · Next.js · Node.js · PHP", en: "SQL · MySQL · MariaDB · PostgreSQL · TypeScript · JavaScript · React · Next.js · Node.js · PHP" },
       org: "Independiente",
       period: { es: "2018 — actualidad", en: "2018 — present" },
       loc: "Medellín, Antioquia, Colombia",
