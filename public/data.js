@@ -918,11 +918,16 @@ window.CV_RESUME = {
     "en": "Backend software engineer with 13 years of coding —since the game I published on Google Play in 2013— and over a decade of systems in production. Node.js/NestJS, TypeScript, PostgreSQL, Docker, Linux and GCP: I built and run a multi-tenant SaaS with e-commerce, POS with Colombian DIAN e-invoicing and credit management, live with real clients, plus AI automation (LLM, RAG, MCP, OCR) that replaces manual work. I have worked as CTO / Head of Systems, senior backend engineer and SysAdmin. I turn the philosophy I study at Universidad de Antioquia into engineering: executable formal logic with a custom CDCL SAT solver and 6,000+ tests, now running in production agent systems (Cauce V3, Agora)."
   },
   "featuredOrgs": [
+    "Critertec",
     "Humanizar Systems",
     "Finca Directa S.A.S",
     "Indie Levels Studio S.A.S"
   ],
   "experienceSummary": [
+    {
+      "es": "Administré y aseguré la infraestructura en producción que sostenía las soluciones digitales de la agencia: Linux, Docker, CI/CD, redes, respaldos, monitoreo y hardening, con SQL sobre PostgreSQL y MySQL. Rol de SysAdmin y DevOps de punta a punta.",
+      "en": "Administered and secured the production infrastructure running the agency's digital solutions: Linux, Docker, CI/CD, networking, backups, monitoring and hardening, with SQL over PostgreSQL and MySQL. End-to-end SysAdmin and DevOps role."
+    },
     {
       "es": "Construí un SaaS multi-tenant con e-commerce, POS y facturación DIAN, y créditos. Microservicios NestJS, PostgreSQL y Docker; pub/sub, webhooks HMAC, JWT/OAuth2 y CI/CD. En producción con clientes reales.",
       "en": "Built a multi-tenant SaaS ecosystem with e-commerce, POS and DIAN e-invoicing, and credit management. NestJS, PostgreSQL and Docker; pub/sub, HMAC webhooks, JWT/OAuth2 and CI/CD. In production with real clients."
@@ -957,7 +962,7 @@ window.CV_RESUME = {
     }
   ],
   "archive": {
-    "es": "Trayectoria completa —incluidos Critertec / INDOTEL (2024–2026)— y portafolio:",
-    "en": "Full history —including Critertec / INDOTEL (2024–2026)— and portfolio:"
+    "es": "Trayectoria completa —Soy Digital · INDOTEL, ZENIT, INS, Kambban, SENA/SIPAEM, IQpixels y el freelance desde 2013— y portafolio:",
+    "en": "Full history —Soy Digital · INDOTEL, ZENIT, INS, Kambban, SENA/SIPAEM, IQpixels and freelance work since 2013— and portfolio:"
   }
 };
