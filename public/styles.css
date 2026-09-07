@@ -328,3 +328,12 @@ a:hover { color: var(--gold); }
 .career-archive summary { cursor: pointer; color: var(--teal); font-weight: 600; padding: 6px; }
 .career-archive summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .career-archive[open] .timeline { margin-top: 24px; }
+
+/* --- Full skill inventory ("ver más") --- */
+.skills-all { margin-top: 1.6rem; border: 1px solid var(--line, #2a3339); border-radius: 8px; padding: .9rem 1.1rem; }
+.skills-all > summary { cursor: pointer; font-weight: 600; letter-spacing: .02em; }
+.skills-all > summary:hover { color: var(--teal, #43b5a6); }
+.skills-all[open] > summary { margin-bottom: .6rem; }
+.skills-all-note { font-size: .85rem; opacity: .75; margin: .2rem 0 .8rem; }
+
+.tl-tech { font-size: .82rem; opacity: .8; margin-top: .35rem; }

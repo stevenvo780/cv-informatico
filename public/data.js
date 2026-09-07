@@ -20,11 +20,15 @@ window.CV_DATA = {
       heroChipRemote: "Remoto desde Colombia · Presencial/híbrido en Medellín y Valle de Aburrá",
       ctaCv: "Descargar CV (PDF)",
       ctaAts: "CV ATS",
+      ctaAi: "CV completo (para bots)",
+      aiNote: "CV completo: trayectoria entera, tecnologías por empresa e inventario íntegro, para formularios y filtros automáticos.",
       ctaEmail: "Escríbeme",
       atsNote: "Mismo perfil en dos formatos: visual y de una columna para selección. Ambos incluyen enlaces a proyectos y trayectoria completa.",
       aboutProfile: "Construyo backend, SaaS y automatización con IA sobre Node.js/NestJS, PostgreSQL, Docker y Linux. Más de 10 años de trayectoria. Mi formación en filosofía y lógica formal se concreta en ST y auto.logic; Cauce V3 y Ágora llevan ese trabajo a sistemas de agentes y colaboración. Busco trabajo remoto desde Colombia o presencial/híbrido en Medellín y Valle de Aburrá.",
       skillsTitle: "Skills & Tecnologías",
       skillsLead: "Tecnologías que uso en producción, agrupadas por nivel cualitativo: Avanzado · Intermedio · Familiar.",
+      skillsAllOpen: "Ver todas mis tecnologías",
+      skillsAllNote: "Inventario completo, sin recortes: todo lo que he usado en producción o en proyectos propios, en orden alfabético.",
       expLead: "Tres vínculos vigentes relevantes para backend e IA. La trayectoria completa, incluidos Critertec e INDOTEL, se conserva debajo. Los vínculos concurrentes mantienen su tipo de contrato.",
       expArchive: "Ver trayectoria completa",
       eduTitle: "Formación",
@@ -54,11 +58,15 @@ window.CV_DATA = {
       heroChipRemote: "Remote from Colombia · On-site/hybrid in Medellín and Valle de Aburrá",
       ctaCv: "Download CV (PDF)",
       ctaAts: "ATS CV",
+      ctaAi: "Full CV (for bots)",
+      aiNote: "Full CV: entire career history, technologies per company and the complete inventory, for automated forms and filters.",
       ctaEmail: "Email me",
       atsNote: "One profile, two formats: visual and single-column for recruiting. Both link to projects and the full career history.",
       aboutProfile: "I build backend systems, SaaS and AI automation with Node.js/NestJS, PostgreSQL, Docker and Linux. Over 10 years of experience. My background in philosophy and formal logic takes concrete form in ST and auto.logic; Cauce V3 and Agora bring that work into agent systems and collaboration. Available remotely from Colombia or on-site/hybrid in Medellín and Valle de Aburrá.",
       skillsTitle: "Skills & Technologies",
       skillsLead: "Technologies I use in production, grouped by qualitative level: Advanced · Intermediate · Familiar.",
+      skillsAllOpen: "See every technology",
+      skillsAllNote: "Full inventory, nothing trimmed: everything I have used in production or in my own projects, alphabetically.",
       expLead: "Three current engagements relevant to backend and AI. The full history, including Critertec and INDOTEL, is preserved below. Concurrent engagements retain their contract types.",
       expArchive: "View full career history",
       eduTitle: "Education",
@@ -122,6 +130,8 @@ window.CV_DATA = {
       { k: "Infra/DevOps", v: "Docker · Linux · GCP/Cloud Run · Vercel · Git · CI/CD · GitHub Actions · RabbitMQ · Firebase · Render · AWS · Azure · Neon" },
       { k: "IA/Agentes", v: "LLMs (OpenAI, Anthropic, Gemini, DeepSeek, xAI) · RAG · Agentes · MCP · PyTorch · TensorFlow · Hugging Face · CUDA · vLLM · Ollama · Whisper · Stable Diffusion" },
       { k: "Seguridad", v: "Firebase Auth · JWT · OAuth2 · HMAC · AES-256-GCM · bcrypt · PBKDF2" },
+      { k: "Agentes/MCP", v: "Orquestación de flotas (Cauce V3) · servidores MCP propios · tool-calling · sub-agentes · BYOK · multi-LLM con fallback · observabilidad" },
+      { k: "Automatización", v: "RPA · CDP/Puppeteer · APIs Google Workspace · Telegram Bot API · WhatsApp Cloud API · facturación DIAN · Wompi/Mercado Pago · webhooks firmados" },
       { k: "Métodos", v: "SAT solver CDCL · MLTT · ABM · ODE/PDE · DRL · NLP sin IA · OCR · RPA · pub/sub · CQRS" },
       { k: "Hardware propio", v: "PC 32 hilos · 2 GPUs (RTX 5070 Ti + RTX 2060) · 125 GB RAM · 5 monitores · servidores en casa" }
     ],
@@ -132,12 +142,14 @@ window.CV_DATA = {
       { k: "Infra/DevOps", v: "Docker · Linux · GCP/Cloud Run · Vercel · Git · CI/CD · GitHub Actions · RabbitMQ · Firebase · Render · AWS · Azure · Neon" },
       { k: "AI/Agents", v: "LLMs (OpenAI, Anthropic, Gemini, DeepSeek, xAI) · RAG · Agents · MCP · PyTorch · TensorFlow · Hugging Face · CUDA · vLLM · Ollama · Whisper · Stable Diffusion" },
       { k: "Security", v: "Firebase Auth · JWT · OAuth2 · HMAC · AES-256-GCM · bcrypt · PBKDF2" },
+      { k: "Agents/MCP", v: "Fleet orchestration (Cauce V3) · custom MCP servers · tool-calling · sub-agents · BYOK · multi-LLM fallback · observability" },
+      { k: "Automation", v: "RPA · CDP/Puppeteer · Google Workspace APIs · Telegram Bot API · WhatsApp Cloud API · DIAN e-invoicing · Wompi/Mercado Pago · signed webhooks" },
       { k: "Methods", v: "SAT solver CDCL · MLTT · ABM · ODE/PDE · DRL · NLP without AI · OCR · RPA · pub/sub · CQRS" },
       { k: "Own hardware", v: "32-thread PC · 2 GPUs (RTX 5070 Ti + RTX 2060) · 125 GB RAM · 5 monitors · home servers" }
     ]
   },
 
-  /* ---------- Skills (97 with level, 10 categories) ---------- */
+  /* ---------- Skills (196 with level, 13 categories) ---------- */
   skillCategories: [
     {
       es: "Desarrollo Backend", en: "Backend Development",
@@ -154,7 +166,18 @@ window.CV_DATA = {
         { es: "Bash", en: "Bash", lvl: 65, since: 2019 },
         { es: "SLIM Framework", en: "SLIM Framework", lvl: 60, since: 2019 },
         { es: ".NET", en: ".NET", lvl: 45, since: 2021 },
-        { es: "C#", en: "C#", lvl: 40, since: 2012 }
+        { es: "C#", en: "C#", lvl: 40, since: 2012 },
+        { es: "Fastify", en: "Fastify", lvl: 88, since: 2026 },
+        { es: "FastAPI", en: "FastAPI", lvl: 85, since: 2024 },
+        { es: "Zod (contratos tipados)", en: "Zod (typed contracts)", lvl: 90, since: 2024 },
+        { es: "TypeORM", en: "TypeORM", lvl: 88, since: 2021 },
+        { es: "socket.io (tiempo real)", en: "socket.io (real-time)", lvl: 85, since: 2023 },
+        { es: "Turborepo / monorepos", en: "Turborepo / monorepos", lvl: 80, since: 2025 },
+        { es: "Vitest", en: "Vitest", lvl: 85, since: 2025 },
+        { es: "Jest", en: "Jest", lvl: 90, since: 2018 },
+        { es: "Testcontainers", en: "Testcontainers", lvl: 70, since: 2026 },
+        { es: "esbuild / SWC", en: "esbuild / SWC", lvl: 75, since: 2024 },
+        { es: "better-sqlite3", en: "better-sqlite3", lvl: 70, since: 2025 }
       ]
     },
     {
@@ -170,7 +193,14 @@ window.CV_DATA = {
         { es: "Angular", en: "Angular", lvl: 75, since: 2018 },
         { es: "React Native", en: "React Native", lvl: 75, since: 2018 },
         { es: "Laravel Blade / Symfony Twig", en: "Laravel Blade / Symfony Twig", lvl: 70, since: 2018 },
-        { es: "Vue.js (Vuex)", en: "Vue.js (Vuex)", lvl: 60, since: 2019 }
+        { es: "Vue.js (Vuex)", en: "Vue.js (Vuex)", lvl: 60, since: 2019 },
+        { es: "Tailwind CSS", en: "Tailwind CSS", lvl: 88, since: 2023 },
+        { es: "Vite", en: "Vite", lvl: 85, since: 2023 },
+        { es: "Radix UI / shadcn", en: "Radix UI / shadcn", lvl: 80, since: 2025 },
+        { es: "MDX", en: "MDX", lvl: 78, since: 2024 },
+        { es: "xterm.js (terminal web)", en: "xterm.js (web terminal)", lvl: 70, since: 2024 },
+        { es: "D3.js", en: "D3.js", lvl: 65, since: 2024 },
+        { es: "Phaser 3", en: "Phaser 3", lvl: 65, since: 2025 }
       ]
     },
     {
@@ -191,7 +221,18 @@ window.CV_DATA = {
         { es: "Google Pub/Sub", en: "Google Pub/Sub", lvl: 30, since: 2024 },
         { es: "ZeroMQ", en: "ZeroMQ", lvl: 30, since: 2022 },
         { es: "Neon", en: "Neon", lvl: 30, since: 2024 },
-        { es: "Azure", en: "Azure", lvl: 25, since: 2024 }
+        { es: "Azure", en: "Azure", lvl: 25, since: 2024 },
+        { es: "Docker Compose", en: "Docker Compose", lvl: 92, since: 2020 },
+        { es: "Caddy (reverse proxy, TLS)", en: "Caddy (reverse proxy, TLS)", lvl: 88, since: 2024 },
+        { es: "systemd / cron", en: "systemd / cron", lvl: 88, since: 2018 },
+        { es: "Cloud Run", en: "Cloud Run", lvl: 85, since: 2023 },
+        { es: "Headscale / Tailscale / NetBird (malla VPN)", en: "Headscale / Tailscale / NetBird (VPN mesh)", lvl: 82, since: 2025 },
+        { es: "Nginx", en: "Nginx", lvl: 75, since: 2019 },
+        { es: "ZFS / RAID / NAS", en: "ZFS / RAID / NAS", lvl: 72, since: 2023 },
+        { es: "Wazuh (SIEM)", en: "Wazuh (SIEM)", lvl: 62, since: 2025 },
+        { es: "fail2ban / hardening Linux", en: "fail2ban / Linux hardening", lvl: 70, since: 2024 },
+        { es: "Empaquetado .deb", en: "Debian .deb packaging", lvl: 60, since: 2024 },
+        { es: "Prometheus", en: "Prometheus", lvl: 55, since: 2025 }
       ]
     },
     {
@@ -209,7 +250,12 @@ window.CV_DATA = {
         { es: "Apache Kafka", en: "Apache Kafka", lvl: 40, since: 2020 },
         { es: "CouchDB", en: "CouchDB", lvl: 30, since: 2019 },
         { es: "Cassandra", en: "Cassandra", lvl: 20, since: 2019 },
-        { es: "ElasticSearch", en: "ElasticSearch", lvl: 10, since: 2023 }
+        { es: "ElasticSearch", en: "ElasticSearch", lvl: 10, since: 2023 },
+        { es: "SQL (consultas, migraciones, índices, optimización)", en: "SQL (queries, migrations, indexing, tuning)", lvl: 95, since: 2016 },
+        { es: "SQL Server", en: "SQL Server", lvl: 62, since: 2018 },
+        { es: "ChromaDB (vectorial)", en: "ChromaDB (vector store)", lvl: 75, since: 2024 },
+        { es: "Upstash / Redis serverless", en: "Upstash / serverless Redis", lvl: 68, since: 2026 },
+        { es: "Firestore", en: "Firestore", lvl: 80, since: 2020 }
       ]
     },
     {
@@ -226,7 +272,14 @@ window.CV_DATA = {
         { es: "PyTorch", en: "PyTorch", lvl: 60, since: 2019 },
         { es: "OpenCV", en: "OpenCV", lvl: 40, since: 2019 },
         { es: "Keras", en: "Keras", lvl: 35, since: 2019 },
-        { es: "Pandas", en: "Pandas", lvl: 30, since: 2018 }
+        { es: "Pandas", en: "Pandas", lvl: 30, since: 2018 },
+        { es: "RAG híbrido (BGE-M3 + BM25)", en: "Hybrid RAG (BGE-M3 + BM25)", lvl: 85, since: 2024 },
+        { es: "vLLM", en: "vLLM", lvl: 78, since: 2025 },
+        { es: "llama.cpp / GGUF (cuantización)", en: "llama.cpp / GGUF (quantization)", lvl: 75, since: 2024 },
+        { es: "faster-whisper (STT)", en: "faster-whisper (STT)", lvl: 80, since: 2025 },
+        { es: "TTS (Kokoro, ElevenLabs)", en: "TTS (Kokoro, ElevenLabs)", lvl: 78, since: 2025 },
+        { es: "OCR (Surya, Tesseract)", en: "OCR (Surya, Tesseract)", lvl: 82, since: 2023 },
+        { es: "Fine-tuning / cuantización en GPU", en: "Fine-tuning / GPU quantization", lvl: 65, since: 2024 }
       ]
     },
     {
@@ -240,7 +293,14 @@ window.CV_DATA = {
         { es: "DeepSeek", en: "DeepSeek", lvl: 70, since: 2024 },
         { es: "Claude (Anthropic)", en: "Claude (Anthropic)", lvl: 65, since: 2024 },
         { es: "Llama", en: "Llama", lvl: 60, since: 2023 },
-        { es: "Whisper", en: "Whisper", lvl: 55, since: 2023 }
+        { es: "Whisper", en: "Whisper", lvl: 55, since: 2023 },
+        { es: "MCP · Model Context Protocol (servidores propios)", en: "MCP · Model Context Protocol (own servers)", lvl: 92, since: 2025 },
+        { es: "Claude Code", en: "Claude Code", lvl: 90, since: 2025 },
+        { es: "Codex CLI", en: "Codex CLI", lvl: 85, since: 2025 },
+        { es: "Gemini CLI", en: "Gemini CLI", lvl: 80, since: 2025 },
+        { es: "Ollama", en: "Ollama", lvl: 78, since: 2024 },
+        { es: "MiniMax", en: "MiniMax", lvl: 70, since: 2026 },
+        { es: "xAI / Grok", en: "xAI / Grok", lvl: 60, since: 2025 }
       ]
     },
     {
@@ -278,7 +338,9 @@ window.CV_DATA = {
         { es: "Jira", en: "Jira", lvl: 60, since: 2019 },
         { es: "ClickUp", en: "ClickUp", lvl: 55, since: 2020 },
         { es: "Notion", en: "Notion", lvl: 50, since: 2020 },
-        { es: "Excel", en: "Excel", lvl: 35, since: 2013 }
+        { es: "Excel", en: "Excel", lvl: 35, since: 2013 },
+        { es: "Obsidian / documentación viva", en: "Obsidian / living documentation", lvl: 80, since: 2022 },
+        { es: "Runbooks y postmortems", en: "Runbooks and postmortems", lvl: 78, since: 2024 }
       ]
     },
     {
@@ -289,7 +351,50 @@ window.CV_DATA = {
         { es: "Realidad Aumentada (Vuforia)", en: "Augmented Reality (Vuforia)", lvl: 70, since: 2015 },
         { es: "Captura de datos en juegos", en: "In-game data capture", lvl: 70, since: 2022 },
         { es: "Roblox", en: "Roblox", lvl: 65, since: 2019 },
-        { es: "Decentraland", en: "Decentraland", lvl: 60, since: 2019 }
+        { es: "Decentraland", en: "Decentraland", lvl: 60, since: 2019 },
+        { es: "Phaser 3 (2D web)", en: "Phaser 3 (2D web)", lvl: 65, since: 2025 }
+      ]
+    },
+    {
+      es: "Agentes y Orquestación de IA", en: "AI Agents & Orchestration",
+      skills: [
+        { es: "Orquestación de flotas de agentes (Cauce V3)", en: "Agent-fleet orchestration (Cauce V3)", lvl: 92, since: 2025 },
+        { es: "Servidores MCP propios", en: "Custom MCP servers", lvl: 90, since: 2025 },
+        { es: "Tool-calling y registro de herramientas", en: "Tool-calling and tool registries", lvl: 90, since: 2024 },
+        { es: "Contratos de entrega y enrutamiento multi-tenant", en: "Delivery contracts and multi-tenant routing", lvl: 88, since: 2025 },
+        { es: "Sub-agentes y ejecución en paralelo", en: "Sub-agents and parallel execution", lvl: 88, since: 2025 },
+        { es: "BYOK y gestión de credenciales de modelo", en: "BYOK and model credential management", lvl: 85, since: 2024 },
+        { es: "Multi-LLM con cadena de reserva", en: "Multi-LLM with fallback chains", lvl: 85, since: 2025 },
+        { es: "Observabilidad y trazas de agentes", en: "Agent observability and tracing", lvl: 78, since: 2025 },
+        { es: "Evaluación y guardas de salida", en: "Evaluation and output guards", lvl: 75, since: 2025 }
+      ]
+    },
+    {
+      es: "Automatización e Integraciones", en: "Automation & Integrations",
+      skills: [
+        { es: "RPA / automatización de procesos", en: "RPA / process automation", lvl: 92, since: 2021 },
+        { es: "Chrome DevTools Protocol (CDP)", en: "Chrome DevTools Protocol (CDP)", lvl: 88, since: 2024 },
+        { es: "Puppeteer / Playwright", en: "Puppeteer / Playwright", lvl: 85, since: 2022 },
+        { es: "APIs de Google Workspace (Gmail, Calendar, Drive, Docs, Sheets)", en: "Google Workspace APIs (Gmail, Calendar, Drive, Docs, Sheets)", lvl: 88, since: 2024 },
+        { es: "Telegram Bot API", en: "Telegram Bot API", lvl: 85, since: 2025 },
+        { es: "WhatsApp Business Cloud API", en: "WhatsApp Business Cloud API", lvl: 80, since: 2024 },
+        { es: "Facturación electrónica DIAN", en: "DIAN e-invoicing (Colombia)", lvl: 85, since: 2023 },
+        { es: "Pasarelas de pago (Wompi, Mercado Pago)", en: "Payment gateways (Wompi, Mercado Pago)", lvl: 82, since: 2022 },
+        { es: "Webhooks firmados y colas idempotentes", en: "Signed webhooks and idempotent queues", lvl: 88, since: 2022 },
+        { es: "Scraping y extracción estructurada", en: "Scraping and structured extraction", lvl: 82, since: 2020 }
+      ]
+    },
+    {
+      es: "Simulación y Métodos Computacionales", en: "Simulation & Computational Methods",
+      skills: [
+        { es: "Modelado basado en agentes (ABM)", en: "Agent-based modelling (ABM)", lvl: 88, since: 2022 },
+        { es: "ODE / PDE (incl. GPU)", en: "ODE / PDE (incl. GPU)", lvl: 82, since: 2022 },
+        { es: "Aprendizaje por refuerzo profundo (PyTorch)", en: "Deep reinforcement learning (PyTorch)", lvl: 75, since: 2023 },
+        { es: "CuPy / cómputo en GPU", en: "CuPy / GPU computing", lvl: 80, since: 2022 },
+        { es: "Tests de permutación y validación ablativa", en: "Permutation tests and ablative validation", lvl: 75, since: 2024 },
+        { es: "SAT solving (CDCL)", en: "SAT solving (CDCL)", lvl: 78, since: 2022 },
+        { es: "Teoría de tipos (MLTT)", en: "Type theory (MLTT)", lvl: 75, since: 2023 },
+        { es: "ffmpeg / render programático", en: "ffmpeg / programmatic rendering", lvl: 78, since: 2025 }
       ]
     },
     {
@@ -315,6 +420,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Administrador de Sistemas (SysAdmin)", en: "Systems Administrator (SysAdmin)" },
       org: "Critertec",
+      tech: { es: "Linux · Docker · CI/CD · PostgreSQL · SQL · administración de servidores · respaldos · hardening", en: "Linux · Docker · CI/CD · PostgreSQL · SQL · server administration · backups · hardening" },
       period: { es: "nov. 2024 — jun. 2026 (terminado)", en: "Nov 2024 — Jun 2026 (ended)" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -334,6 +440,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Frontend Developer / Contratista de ingeniería de software", en: "Frontend Developer / Software Engineering Contractor" },
       org: "Soy Digital / INDOTEL (proyecto de gobierno, República Dominicana)",
+      tech: { es: "React · Next.js · PWA · offline-first · sincronización automática · SQL · dashboards de auditoría", en: "React · Next.js · PWA · offline-first · automatic sync · SQL · audit dashboards" },
       period: { es: "nov. 2024 — jun. 2026 (~2 años) · vía Critertec", en: "Nov 2024 — Jun 2026 (~2 years) · via Critertec" },
       loc: "República Dominicana (remoto)",
       tags: [
@@ -353,6 +460,7 @@ window.CV_DATA = {
       own: true,
       role: { es: "Fundador / Lead Developer", en: "Founder / Lead Developer" },
       org: "Humanizar Systems",
+      tech: { es: "Node.js · NestJS · TypeScript · PostgreSQL · SQL · Docker · microservicios · pub/sub · webhooks HMAC · JWT/OAuth2 · CI/CD · React · Next.js · facturación electrónica DIAN · Wompi · Mercado Pago", en: "Node.js · NestJS · TypeScript · PostgreSQL · SQL · Docker · microservices · pub/sub · HMAC webhooks · JWT/OAuth2 · CI/CD · React · Next.js · DIAN e-invoicing · Wompi · Mercado Pago" },
       period: { es: "2022 — actualidad", en: "2022 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -368,6 +476,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "CTO / Jefe de Sistemas", en: "CTO / Systems Manager" },
       org: "Finca Directa S.A.S",
+      tech: { es: "Node.js · Python · SQL · PostgreSQL · Linux · OCR · RPA · integración con CRM · idempotencia · webhooks", en: "Node.js · Python · SQL · PostgreSQL · Linux · OCR · RPA · CRM integration · idempotency · webhooks" },
       period: { es: "nov. 2021 — actualidad", en: "Nov 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -383,6 +492,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Desarrollador Backend", en: "Backend Developer" },
       org: "Indie Levels Studio S.A.S",
+      tech: { es: "Node.js · TypeScript · REST APIs · PostgreSQL · SQL · Git · pruebas automatizadas", en: "Node.js · TypeScript · REST APIs · PostgreSQL · SQL · Git · automated testing" },
       period: { es: "ago. 2021 — actualidad", en: "Aug 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -444,6 +554,7 @@ window.CV_DATA = {
       role: { es: "Freelance — Infraestructura IT", en: "Freelance — IT Infrastructure" },
       org: "Independiente",
       period: { es: "feb. 2014 — actualidad", en: "Feb 2014 — present" },
+      tech: { es: "Linux · Docker · redes · hosting · respaldos · virtualización · monitoreo", en: "Linux · Docker · networking · hosting · backups · virtualization · monitoring" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Freelance", en: "Freelance", t: "gold" }],
       desc: {
@@ -456,6 +567,7 @@ window.CV_DATA = {
       role: { es: "Freelance — Desarrollo de videojuegos", en: "Freelance — Video Game Development" },
       org: "Independiente",
       period: { es: "feb. 2015 — actualidad", en: "Feb 2015 — present" },
+      tech: { es: "Unity 3D · C# · Roblox · realidad virtual (Oculus, HTC VIVE) · realidad aumentada (Vuforia)", en: "Unity 3D · C# · Roblox · virtual reality (Oculus, HTC VIVE) · augmented reality (Vuforia)" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Freelance", en: "Freelance", t: "gold" }],
       desc: {
@@ -468,6 +580,7 @@ window.CV_DATA = {
       role: { es: "Freelance — Desarrollo de aplicaciones web", en: "Freelance — Web App Development" },
       org: "Independiente",
       period: { es: "2018 — actualidad", en: "2018 — present" },
+      tech: { es: "React · Next.js · Node.js · PHP · Laravel · MySQL / MariaDB · SQL", en: "React · Next.js · Node.js · PHP · Laravel · MySQL / MariaDB · SQL" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Freelance", en: "Freelance", t: "gold" }],
       desc: {

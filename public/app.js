@@ -42,6 +42,8 @@
     var ats = "pdf/CV_tech_ats_" + lang + ".pdf";
     ["dl-cv", "dl-cv2"].forEach(function (id) { var n = el(id); if (n) n.setAttribute("href", cv); });
     ["dl-ats", "dl-ats2"].forEach(function (id) { var n = el(id); if (n) n.setAttribute("href", ats); });
+    var ai = "pdf/CV_ai_" + lang + ".pdf";
+    ["dl-ai", "dl-ai2"].forEach(function (id) { var n = el(id); if (n) n.setAttribute("href", ai); });
   }
 
   /* ---------- Epigraphs ---------- */
@@ -91,6 +93,23 @@
         '<span class="count">' + cat.skills.length + " " + (lang === "es" ? "tecnologías" : "technologies") + "</span>" +
         '<div class="skill-tiers">' + tiers + "</div></div>";
     }).join("");
+
+    /* "Ver más": complete flat inventory, alphabetical, nothing trimmed */
+    var all = [];
+    D.skillCategories.forEach(function (cat) {
+      cat.skills.forEach(function (s) { if (all.indexOf(s[lang]) === -1) all.push(s[lang]); });
+    });
+    all.sort(function (a, b) { return a.localeCompare(b, lang); });
+    var host = el("skillsAllChips");
+    if (host) {
+      host.innerHTML = all.map(function (n) {
+        return '<span class="skill-chip">' + esc(n) + "</span>";
+      }).join("");
+    }
+    var sum = document.querySelector("#skillsAll > summary");
+    if (sum) {
+      sum.textContent = D.ui[lang].skillsAllOpen + " (" + all.length + ")";
+    }
   }
 
   /* ---------- Experience ---------- */
@@ -113,6 +132,7 @@
         '<div class="tl-loc tl-period">' + esc(e.loc) + "</div>" +
         (tags ? '<div class="tl-tags">' + tags + "</div>" : "") +
         (desc ? '<p class="tl-desc">' + esc(desc) + "</p>" : "") +
+        (e.tech ? '<p class="tl-tech"><b>' + (lang === "es" ? "Tecnologías" : "Technologies") + ':</b> ' + esc(pick(e.tech)) + "</p>" : "") +
         (note ? '<p class="tl-note">' + esc(note) + "</p>" : "") +
         "</div>";
     }).join(""); }
