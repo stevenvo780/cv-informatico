@@ -420,7 +420,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Administrador de Sistemas (SysAdmin)", en: "Systems Administrator (SysAdmin)" },
       org: "Critertec",
-      tech: { es: "Linux · Docker · CI/CD · PostgreSQL · SQL · administración de servidores · respaldos · hardening", en: "Linux · Docker · CI/CD · PostgreSQL · SQL · server administration · backups · hardening" },
+      tech: { es: "Linux · Bash · Docker · CI/CD · administración de servidores · redes · respaldos · monitoreo · hardening · DevOps · SQL · PostgreSQL · MySQL · TypeScript · JavaScript · Node.js · Python · Git", en: "Linux · Bash · Docker · CI/CD · server administration · networking · backups · monitoring · hardening · DevOps · SQL · PostgreSQL · MySQL · TypeScript · JavaScript · Node.js · Python · Git" },
       period: { es: "nov. 2024 — jun. 2026 (terminado)", en: "Nov 2024 — Jun 2026 (ended)" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -439,8 +439,8 @@ window.CV_DATA = {
     {
       own: false,
       role: { es: "Frontend Developer / Contratista de ingeniería de software", en: "Frontend Developer / Software Engineering Contractor" },
-      org: "Soy Digital / INDOTEL (proyecto de gobierno, República Dominicana)",
-      tech: { es: "React · Next.js · PWA · offline-first · sincronización automática · SQL · dashboards de auditoría", en: "React · Next.js · PWA · offline-first · automatic sync · SQL · audit dashboards" },
+      org: "Soy Digital · INDOTEL",
+      tech: { es: "TypeScript · JavaScript · React · Next.js · PWA · offline-first · sincronización de datos · SQL · PostgreSQL · Python · C++ · Node.js · Docker · Linux · CI/CD · Git · dashboards de auditoría", en: "TypeScript · JavaScript · React · Next.js · PWA · offline-first · data sync · SQL · PostgreSQL · Python · C++ · Node.js · Docker · Linux · CI/CD · Git · audit dashboards" },
       period: { es: "nov. 2024 — jun. 2026 (~2 años) · vía Critertec", en: "Nov 2024 — Jun 2026 (~2 years) · via Critertec" },
       loc: "República Dominicana (remoto)",
       tags: [
@@ -460,7 +460,7 @@ window.CV_DATA = {
       own: true,
       role: { es: "Fundador / Lead Developer", en: "Founder / Lead Developer" },
       org: "Humanizar Systems",
-      tech: { es: "Node.js · NestJS · TypeScript · PostgreSQL · SQL · Docker · microservicios · pub/sub · webhooks HMAC · JWT/OAuth2 · CI/CD · React · Next.js · facturación electrónica DIAN · Wompi · Mercado Pago", en: "Node.js · NestJS · TypeScript · PostgreSQL · SQL · Docker · microservices · pub/sub · HMAC webhooks · JWT/OAuth2 · CI/CD · React · Next.js · DIAN e-invoicing · Wompi · Mercado Pago" },
+      tech: { es: "TypeScript · Node.js · NestJS · JavaScript · Python · Bash · SQL · PostgreSQL · Redis · Docker · Linux · administración manual de servidores · microservicios · pub/sub · webhooks HMAC · JWT · OAuth2 · CI/CD · React · Next.js · facturación electrónica DIAN · Wompi · Mercado Pago · LLM · MCP · RAG · OCR", en: "TypeScript · Node.js · NestJS · JavaScript · Python · Bash · SQL · PostgreSQL · Redis · Docker · Linux · hands-on server administration · microservices · pub/sub · HMAC webhooks · JWT · OAuth2 · CI/CD · React · Next.js · DIAN e-invoicing · Wompi · Mercado Pago · LLM · MCP · RAG · OCR" },
       period: { es: "2022 — actualidad", en: "2022 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -476,7 +476,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "CTO / Jefe de Sistemas", en: "CTO / Systems Manager" },
       org: "Finca Directa S.A.S",
-      tech: { es: "Node.js · Python · SQL · PostgreSQL · Linux · OCR · RPA · integración con CRM · idempotencia · webhooks", en: "Node.js · Python · SQL · PostgreSQL · Linux · OCR · RPA · CRM integration · idempotency · webhooks" },
+      tech: { es: "TypeScript · JavaScript · Node.js · Python · Bash · SQL · PostgreSQL · Linux · Docker · OCR · RPA · integración con CRM · webhooks · idempotencia · Git", en: "TypeScript · JavaScript · Node.js · Python · Bash · SQL · PostgreSQL · Linux · Docker · OCR · RPA · CRM integration · webhooks · idempotency · Git" },
       period: { es: "nov. 2021 — actualidad", en: "Nov 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -492,7 +492,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Desarrollador Backend", en: "Backend Developer" },
       org: "Indie Levels Studio S.A.S",
-      tech: { es: "Node.js · TypeScript · REST APIs · PostgreSQL · SQL · Git · pruebas automatizadas", en: "Node.js · TypeScript · REST APIs · PostgreSQL · SQL · Git · automated testing" },
+      tech: { es: "TypeScript · JavaScript · Node.js · REST APIs · SQL · PostgreSQL · Python · Unity · Unreal Engine · Roblox · C# · Docker · CI/CD · Git · pruebas automatizadas", en: "TypeScript · JavaScript · Node.js · REST APIs · SQL · PostgreSQL · Python · Unity · Unreal Engine · Roblox · C# · Docker · CI/CD · Git · automated testing" },
       period: { es: "ago. 2021 — actualidad", en: "Aug 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -508,6 +508,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Desarrollador Full Stack Semi-Senior", en: "Semi-Senior Full Stack Developer" },
       org: "ZENIT S.A.S",
+      tech: { es: "JavaScript · TypeScript · PHP · SQL · MySQL · HTML · CSS · Node.js · Python · Git", en: "JavaScript · TypeScript · PHP · SQL · MySQL · HTML · CSS · Node.js · Python · Git" },
       period: { es: "oct. 2020 — ago. 2021", en: "Oct 2020 — Aug 2021" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Empleo", en: "Employment", t: "muted" }],
@@ -517,6 +518,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Desarrollador Full Stack Junior", en: "Junior Full Stack Developer" },
       org: "INS S.A.S",
+      tech: { es: "JavaScript · PHP · SQL · MySQL · HTML · CSS · Node.js · Python · Git", en: "JavaScript · PHP · SQL · MySQL · HTML · CSS · Node.js · Python · Git" },
       period: { es: "feb. 2019 — oct. 2020", en: "Feb 2019 — Oct 2020" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Empleo", en: "Employment", t: "muted" }],
@@ -526,6 +528,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Desarrollador Full Stack Junior", en: "Junior Full Stack Developer" },
       org: "Kambban S.A.S",
+      tech: { es: "JavaScript · PHP · SQL · MySQL · HTML · CSS · Git", en: "JavaScript · PHP · SQL · MySQL · HTML · CSS · Git" },
       period: { es: "feb. 2020 — may. 2020", en: "Feb 2020 — May 2020" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Empleo", en: "Employment", t: "muted" }],
@@ -535,6 +538,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Practicante en el semillero SIPAEM", en: "Intern at SIPAEM research group" },
       org: "SENA / SIPAEM",
+      tech: { es: "JavaScript · SQL · MySQL · HTML · CSS · Python · Git", en: "JavaScript · SQL · MySQL · HTML · CSS · Python · Git" },
       period: { es: "mar. 2018 — oct. 2018", en: "Mar 2018 — Oct 2018" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Práctica", en: "Internship", t: "muted" }],
@@ -544,6 +548,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Gerente - Developer", en: "Manager - Developer" },
       org: "IQpixels S.A.S",
+      tech: { es: "Unity · C# · JavaScript · SQL · MySQL · gestión de proyecto · Git", en: "Unity · C# · JavaScript · SQL · MySQL · project management · Git" },
       period: { es: "jul. 2016 — ene. 2017", en: "Jul 2016 — Jan 2017" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Empleo", en: "Employment", t: "muted" }],
@@ -552,9 +557,9 @@ window.CV_DATA = {
     {
       own: true,
       role: { es: "Freelance — Infraestructura IT", en: "Freelance — IT Infrastructure" },
+      tech: { es: "Linux · Bash · Docker · redes · hosting · respaldos · virtualización · monitoreo · SQL · MySQL · Git", en: "Linux · Bash · Docker · networking · hosting · backups · virtualization · monitoring · SQL · MySQL · Git" },
       org: "Independiente",
       period: { es: "feb. 2014 — actualidad", en: "Feb 2014 — present" },
-      tech: { es: "Linux · Docker · redes · hosting · respaldos · virtualización · monitoreo", en: "Linux · Docker · networking · hosting · backups · virtualization · monitoring" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Freelance", en: "Freelance", t: "gold" }],
       desc: {
@@ -565,9 +570,9 @@ window.CV_DATA = {
     {
       own: true,
       role: { es: "Freelance — Desarrollo de videojuegos", en: "Freelance — Video Game Development" },
+      tech: { es: "Unity · Unreal Engine · Roblox · C# · C++ · JavaScript · TypeScript · realidad virtual (Oculus, HTC VIVE) · realidad aumentada (Vuforia) · Phaser 3 · SQL", en: "Unity · Unreal Engine · Roblox · C# · C++ · JavaScript · TypeScript · virtual reality (Oculus, HTC VIVE) · augmented reality (Vuforia) · Phaser 3 · SQL" },
       org: "Independiente",
       period: { es: "2013 — actualidad", en: "2013 — present" },
-      tech: { es: "Unity 3D · C# · Roblox · realidad virtual (Oculus, HTC VIVE) · realidad aumentada (Vuforia)", en: "Unity 3D · C# · Roblox · virtual reality (Oculus, HTC VIVE) · augmented reality (Vuforia)" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Freelance", en: "Freelance", t: "gold" }],
       desc: {
@@ -578,9 +583,9 @@ window.CV_DATA = {
     {
       own: true,
       role: { es: "Freelance — Desarrollo de aplicaciones web", en: "Freelance — Web App Development" },
+      tech: { es: "TypeScript · JavaScript · React · Next.js · Node.js · Python · PHP · Laravel · SQL · MySQL · MariaDB · PostgreSQL · Git", en: "TypeScript · JavaScript · React · Next.js · Node.js · Python · PHP · Laravel · SQL · MySQL · MariaDB · PostgreSQL · Git" },
       org: "Independiente",
       period: { es: "2018 — actualidad", en: "2018 — present" },
-      tech: { es: "React · Next.js · Node.js · PHP · Laravel · MySQL / MariaDB · SQL", en: "React · Next.js · Node.js · PHP · Laravel · MySQL / MariaDB · SQL" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Freelance", en: "Freelance", t: "gold" }],
       desc: {

@@ -41,7 +41,9 @@ function jobs(lang) {
       <div class="job-head">${esc(e.role[lang])} — ${esc(e.org)}</div>
       <div class="job-meta">${esc(e.period[lang])}${tags ? ' · ' + esc(tags) : ''} · ${esc(e.loc)}</div>
       <p>${esc(e.desc[lang])}${esc(note)}</p>
-      ${e.tech ? `<div class="small">${lang === 'es' ? 'Tecnologías' : 'Technologies'}: ${esc(e.tech[lang])}</div>` : ''}
+      ${e.tech ? `<p class="small">${lang === 'es'
+        ? `Tecnologías que usé en ${esc(e.org)}: ${esc(e.tech[lang])}.`
+        : `Technologies I used at ${esc(e.org)}: ${esc(e.tech[lang])}.`}</p>` : ''}
     </div>`;
   }).join('\n');
 }
