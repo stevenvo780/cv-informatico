@@ -12,11 +12,11 @@ window.CV_DATA = {
       role: "Software Engineer",
       navAbout: "Perfil", navSkills: "Skills", navExperience: "Experiencia",
       navProjects: "Proyectos", navPortfolio: "Portafolio", navContact: "Contacto",
-      heroKicker: "Software Engineer · Backend · Cloud/DevOps · automatización con IA · 10+ años en producción",
+      heroKicker: "Software Engineer · Backend · Cloud/DevOps · automatización con IA · programando desde 2013",
       heroHeadline: "Construyo sistemas backend, plataformas SaaS, flujos de automatización e infraestructura cloud, y los llevo a producción de forma confiable.",
       heroSub: "Trabajo principalmente con Node.js/NestJS, PostgreSQL, Docker, Linux y GCP. He trabajado como CTO / Jefe de Sistemas, ingeniero backend senior y SysAdmin, y construí un ecosistema SaaS empresarial multi-tenant.",
       heroChipLoc: "Medellín, Colombia · GMT-5",
-      heroChipExp: "10+ años en producción",
+      heroChipExp: "Programando desde 2013 · 13 años",
       heroChipRemote: "Remoto desde Colombia · Presencial/híbrido en Medellín y Valle de Aburrá",
       ctaCv: "Descargar CV (PDF)",
       ctaAts: "CV ATS",
@@ -24,7 +24,7 @@ window.CV_DATA = {
       aiNote: "CV completo: trayectoria entera, tecnologías por empresa e inventario íntegro, para formularios y filtros automáticos.",
       ctaEmail: "Escríbeme",
       atsNote: "Mismo perfil en dos formatos: visual y de una columna para selección. Ambos incluyen enlaces a proyectos y trayectoria completa.",
-      aboutProfile: "Construyo backend, SaaS y automatización con IA sobre Node.js/NestJS, PostgreSQL, Docker y Linux. Más de 10 años de trayectoria. Mi formación en filosofía y lógica formal se concreta en ST y auto.logic; Cauce V3 y Ágora llevan ese trabajo a sistemas de agentes y colaboración. Busco trabajo remoto desde Colombia o presencial/híbrido en Medellín y Valle de Aburrá.",
+      aboutProfile: "Construyo backend, SaaS y automatización con IA sobre Node.js/NestJS, PostgreSQL, Docker y Linux. Programo desde 2013, cuando publiqué mi primer videojuego en Google Play; 13 años de trayectoria. Mi formación en filosofía y lógica formal se concreta en ST y auto.logic; Cauce V3 y Ágora llevan ese trabajo a sistemas de agentes y colaboración. Busco trabajo remoto desde Colombia o presencial/híbrido en Medellín y Valle de Aburrá.",
       skillsTitle: "Skills & Tecnologías",
       skillsLead: "Tecnologías que uso en producción, agrupadas por nivel cualitativo: Avanzado · Intermedio · Familiar.",
       skillsAllOpen: "Ver todas mis tecnologías",
@@ -50,11 +50,11 @@ window.CV_DATA = {
       role: "Software Engineer",
       navAbout: "Profile", navSkills: "Skills", navExperience: "Experience",
       navProjects: "Projects", navPortfolio: "Portfolio", navContact: "Contact",
-      heroKicker: "Software Engineer · Backend · Cloud/DevOps · AI-powered automation · 10+ years in production",
+      heroKicker: "Software Engineer · Backend · Cloud/DevOps · AI-powered automation · coding since 2013",
       heroHeadline: "I build backend systems, SaaS platforms, automation workflows and cloud infrastructure, and ship them to production reliably.",
       heroSub: "I work mainly with Node.js/NestJS, PostgreSQL, Docker, Linux and GCP. I've worked as CTO / Head of Systems, senior backend engineer and SysAdmin, and built a multi-tenant enterprise SaaS ecosystem.",
       heroChipLoc: "Medellín, Colombia · GMT-5",
-      heroChipExp: "10+ years in production",
+      heroChipExp: "Coding since 2013 · 13 years",
       heroChipRemote: "Remote from Colombia · On-site/hybrid in Medellín and Valle de Aburrá",
       ctaCv: "Download CV (PDF)",
       ctaAts: "ATS CV",
@@ -62,7 +62,7 @@ window.CV_DATA = {
       aiNote: "Full CV: entire career history, technologies per company and the complete inventory, for automated forms and filters.",
       ctaEmail: "Email me",
       atsNote: "One profile, two formats: visual and single-column for recruiting. Both link to projects and the full career history.",
-      aboutProfile: "I build backend systems, SaaS and AI automation with Node.js/NestJS, PostgreSQL, Docker and Linux. Over 10 years of experience. My background in philosophy and formal logic takes concrete form in ST and auto.logic; Cauce V3 and Agora bring that work into agent systems and collaboration. Available remotely from Colombia or on-site/hybrid in Medellín and Valle de Aburrá.",
+      aboutProfile: "I build backend systems, SaaS and AI automation with Node.js/NestJS, PostgreSQL, Docker and Linux. I have been coding since 2013, when I published my first game on Google Play; 13 years of experience. My background in philosophy and formal logic takes concrete form in ST and auto.logic; Cauce V3 and Agora bring that work into agent systems and collaboration. Available remotely from Colombia or on-site/hybrid in Medellín and Valle de Aburrá.",
       skillsTitle: "Skills & Technologies",
       skillsLead: "Technologies I use in production, grouped by qualitative level: Advanced · Intermediate · Familiar.",
       skillsAllOpen: "See every technology",
@@ -566,13 +566,13 @@ window.CV_DATA = {
       own: true,
       role: { es: "Freelance — Desarrollo de videojuegos", en: "Freelance — Video Game Development" },
       org: "Independiente",
-      period: { es: "feb. 2015 — actualidad", en: "Feb 2015 — present" },
+      period: { es: "2013 — actualidad", en: "2013 — present" },
       tech: { es: "Unity 3D · C# · Roblox · realidad virtual (Oculus, HTC VIVE) · realidad aumentada (Vuforia)", en: "Unity 3D · C# · Roblox · virtual reality (Oculus, HTC VIVE) · augmented reality (Vuforia)" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [{ es: "Freelance", en: "Freelance", t: "gold" }],
       desc: {
-        es: "Freelance en desarrollo de videojuegos.",
-        en: "Freelance in video game development."
+        es: "Desarrollo de videojuegos por cuenta propia desde 2013, cuando publiqué mi primer videojuego en Google Play. Es el punto de partida de mi trayectoria programando.",
+        en: "Independent video game development since 2013, when I published my first game on Google Play. It is the starting point of my career in programming."
       }
     },
     {
@@ -618,8 +618,8 @@ window.CV_DATA = {
     }
   ],
   educationNote: {
-    es: "Formación autodidacta con más de 10 años de experiencia en producción. El CV técnico lidera con la experiencia y los proyectos reales.",
-    en: "Self-taught background with 10+ years of hands-on production experience. This technical CV leads with experience and real projects."
+    es: "Formación autodidacta: programo desde 2013 (13 años) y llevo más de una década de sistemas en producción. El CV técnico lidera con la experiencia y los proyectos reales.",
+    en: "Self-taught background, coding since 2013 (13 years) with over a decade of hands-on production experience. This technical CV leads with experience and real projects."
   },
 
   /* ---------- Languages ---------- */
@@ -909,8 +909,8 @@ window.CV_DATA = {
 // Compact exports and featured experience share this source with the website.
 window.CV_RESUME = {
   "profile": {
-    "es": "Construyo backend, SaaS y automatización con IA sobre Node.js/NestJS, PostgreSQL, Docker y Linux. Más de 10 años de trayectoria. Mi formación en filosofía y lógica formal se concreta en ST y auto.logic; Cauce V3 y Ágora llevan ese trabajo a sistemas de agentes y colaboración. Busco trabajo remoto desde Colombia o presencial/híbrido en Medellín y Valle de Aburrá.",
-    "en": "I build backend systems, SaaS and AI automation with Node.js/NestJS, PostgreSQL, Docker and Linux. Over 10 years of experience. My background in philosophy and formal logic takes concrete form in ST and auto.logic; Cauce V3 and Agora bring that work into agent systems and collaboration. Available remotely from Colombia or on-site/hybrid in Medellín and Valle de Aburrá."
+    "es": "Construyo backend, SaaS y automatización con IA sobre Node.js/NestJS, PostgreSQL, Docker y Linux. Programo desde 2013, cuando publiqué mi primer videojuego en Google Play; 13 años de trayectoria. Mi formación en filosofía y lógica formal se concreta en ST y auto.logic; Cauce V3 y Ágora llevan ese trabajo a sistemas de agentes y colaboración. Busco trabajo remoto desde Colombia o presencial/híbrido en Medellín y Valle de Aburrá.",
+    "en": "I build backend systems, SaaS and AI automation with Node.js/NestJS, PostgreSQL, Docker and Linux. I have been coding since 2013, when I published my first game on Google Play; 13 years of experience. My background in philosophy and formal logic takes concrete form in ST and auto.logic; Cauce V3 and Agora bring that work into agent systems and collaboration. Available remotely from Colombia or on-site/hybrid in Medellín and Valle de Aburrá."
   },
   "featuredOrgs": [
     "Humanizar Systems",
