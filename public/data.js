@@ -440,7 +440,7 @@ window.CV_DATA = {
       own: false,
       role: { es: "Frontend Developer / Contratista de ingeniería de software", en: "Frontend Developer / Software Engineering Contractor" },
       org: "Soy Digital · INDOTEL",
-      tech: { es: "SQL · PostgreSQL · TypeScript · JavaScript · React · Next.js · PWA · Python · C++ · Linux", en: "SQL · PostgreSQL · TypeScript · JavaScript · React · Next.js · PWA · Python · C++ · Linux" },
+      tech: { es: "SQL · PostgreSQL · TypeScript · JavaScript · React · Next.js · PWA · C++ · English · Linux", en: "SQL · PostgreSQL · TypeScript · JavaScript · React · Next.js · PWA · C++ · English · Linux" },
       period: { es: "nov. 2024 — jun. 2026 (~2 años) · vía Critertec", en: "Nov 2024 — Jun 2026 (~2 years) · via Critertec" },
       loc: "República Dominicana (remoto)",
       tags: [
@@ -448,7 +448,7 @@ window.CV_DATA = {
         { es: "Proyecto de gobierno", en: "Government project", t: "gold" }
       ],
       desc: {
-        es: "Frontend con soporte offline y sincronización automática para una plataforma nacional de habilitación digital del gobierno dominicano, usando React/Next.js y PWA, para que el registro funcionara aun sin conexión estable en campo. Análisis de datos y dashboards de auditoría.",
+        es: "Frontend con soporte offline y sincronización automática para una plataforma nacional de habilitación digital del gobierno dominicano, usando React/Next.js y PWA, para que el registro funcionara aun sin conexión estable en campo. Escribí SQL para depurar la sincronización y me comuniqué en English con la contraparte del gobierno dominicano. Análisis de datos y dashboards de auditoría.",
         en: "Built the frontend with offline support and automatic sync for a national digital-skills platform of the Dominican government (INDOTEL), using React/Next.js PWA so registration worked without a stable connection in the field. Data analysis and audit dashboards."
       },
       note: {
@@ -460,7 +460,7 @@ window.CV_DATA = {
       own: true,
       role: { es: "Fundador / Lead Developer", en: "Founder / Lead Developer" },
       org: "Humanizar Systems",
-      tech: { es: "SQL · PostgreSQL · TypeScript · Node.js · NestJS · Python · Bash · Docker · Linux · React", en: "SQL · PostgreSQL · TypeScript · Node.js · NestJS · Python · Bash · Docker · Linux · React" },
+      tech: { es: "SQL · ETL · AI · NestJS · Node.js · PostgreSQL", en: "SQL · ETL · AI · NestJS · Node.js · PostgreSQL" },
       period: { es: "2022 — actualidad", en: "2022 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -468,15 +468,15 @@ window.CV_DATA = {
         { es: "En producción", en: "In production", t: "" }
       ],
       desc: {
-        es: "Construí un ecosistema SaaS empresarial multi-tenant —e-commerce (Graf), POS con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería WhatsApp (EMW)— usando microservicios NestJS con comunicación vía pub/sub y webhooks firmados con HMAC, autenticación JWT/OAuth2 y despliegue con CI/CD. Escribí SQL a diario (modelado, consultas y optimización) para que PYMEs vendieran, facturaran legalmente y gestionaran créditos desde una sola plataforma. En producción con clientes reales.",
-        en: "Built an enterprise multi-tenant SaaS ecosystem —e-commerce (Graf), POS with DIAN electronic invoicing (Sinergia POS), credit fintech (FIAR), and WhatsApp messaging (EMW)— using NestJS microservices with pub/sub communication and HMAC-signed webhooks, JWT/OAuth2 auth and CI/CD deployment. I wrote SQL daily (modelling, queries and tuning) so SMBs could sell, invoice legally and manage credit from a single platform. Running in production with real clients."
+        es: "Construí un ecosistema SaaS empresarial multi-tenant —e-commerce (Graf), POS con facturación electrónica DIAN (Sinergia POS), fintech de créditos (FIAR) y mensajería WhatsApp (EMW)— usando microservicios NestJS con comunicación vía pub/sub y webhooks firmados con HMAC, autenticación JWT/OAuth2 y despliegue con CI/CD. Escribí SQL todos los días: modelado de esquema, consultas y optimización sobre PostgreSQL. Construí procesos ETL entre los servicios del ecosistema. Integré AI en el producto (LLM, RAG, MCP y OCR). Todo para que las PYMEs vendieran, facturaran legalmente y gestionaran créditos desde una sola plataforma. En producción con clientes reales.",
+        en: "Built an enterprise multi-tenant SaaS ecosystem —e-commerce (Graf), POS with DIAN electronic invoicing (Sinergia POS), credit fintech (FIAR), and WhatsApp messaging (EMW)— using NestJS microservices with pub/sub communication and HMAC-signed webhooks, JWT/OAuth2 auth and CI/CD deployment. I wrote SQL every day: schema modelling, queries and tuning over PostgreSQL. I built ETL processes across the ecosystem services. I integrated AI into the product (LLM, RAG, MCP and OCR). All so SMBs could sell, invoice legally and manage credit from a single platform. Running in production with real clients."
       }
     },
     {
       own: false,
       role: { es: "CTO / Jefe de Sistemas", en: "CTO / Systems Manager" },
       org: "Finca Directa S.A.S",
-      tech: { es: "SQL · PostgreSQL · TypeScript · JavaScript · Node.js · Python · Bash · Linux · OCR · RPA", en: "SQL · PostgreSQL · TypeScript · JavaScript · Node.js · Python · Bash · Linux · OCR · RPA" },
+      tech: { es: "SQL · PostgreSQL · ETL · AI · Python · TypeScript · Node.js · OCR · RPA · Linux", en: "SQL · PostgreSQL · ETL · AI · Python · TypeScript · Node.js · OCR · RPA · Linux" },
       period: { es: "nov. 2021 — actualidad", en: "Nov 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -484,15 +484,15 @@ window.CV_DATA = {
         { es: "Vigente", en: "Active", t: "gold" }
       ],
       desc: {
-        es: "Lidero los sistemas en producción y construí un harness de automatización empresarial real (RPA): clasificación de correos, descarga de extractos bancarios, OCR de facturas, sincronización a CRM, con idempotencia, validación humana (HITL) y registro de decisiones. Eliminó trabajo manual repetitivo del día a día.",
-        en: "Lead production systems and built a real enterprise automation harness (RPA): email classification, bank-statement downloads, invoice OCR, CRM sync — with idempotency, human-in-the-loop validation and a decision log. Eliminated day-to-day manual repetitive work."
+        es: "Lidero los sistemas en producción y construí un harness de automatización empresarial real (RPA): clasificación de correos, descarga de extractos bancarios, OCR de facturas, sincronización a CRM. Escribí SQL sobre PostgreSQL para consolidar y conciliar la información. Construí un ETL de punta a punta: extrae de facturas y extractos, transforma y carga en el CRM. Apliqué AI para clasificar los correos y los documentos. Todo con idempotencia, validación humana (HITL) y registro de decisiones. Eliminó trabajo manual repetitivo del día a día.",
+        en: "Lead production systems and built a real enterprise automation harness (RPA): email classification, bank-statement downloads, invoice OCR, CRM sync. I wrote SQL over PostgreSQL to consolidate and reconcile the data. I built an end-to-end ETL: extract from invoices and statements, transform, load into the CRM. I applied AI to classify emails and documents. All with idempotency, human-in-the-loop validation and a decision log. Eliminated day-to-day manual repetitive work."
       }
     },
     {
       own: false,
       role: { es: "Desarrollador Backend", en: "Backend Developer" },
       org: "Indie Levels Studio S.A.S",
-      tech: { es: "SQL · PostgreSQL · TypeScript · JavaScript · Node.js · Python · Unity · Unreal Engine · Roblox · C#", en: "SQL · PostgreSQL · TypeScript · JavaScript · Node.js · Python · Unity · Unreal Engine · Roblox · C#" },
+      tech: { es: "SQL · English · Unity · Unreal Engine · Roblox · C#", en: "SQL · English · Unity · Unreal Engine · Roblox · C#" },
       period: { es: "ago. 2021 — actualidad", en: "Aug 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
@@ -500,8 +500,8 @@ window.CV_DATA = {
         { es: "Vigente", en: "Active", t: "gold" }
       ],
       desc: {
-        es: "Desarrollé y mantuve servicios y APIs REST backend (Node.js/TypeScript) para los productos de un estudio de videojuegos con clientes en todo el mundo. Escribí SQL para las consultas, las migraciones y los índices de la base de datos, y apliqué control de versiones con Git y pruebas para sostener releases estables. También trabajé con motores de videojuego: Unity, Unreal Engine y Roblox en C#.",
-        en: "Developed and maintained backend REST APIs (Node.js/TypeScript) for a video game studio's products used by clients worldwide. I wrote SQL for queries, migrations and database indexes, and used Git version control and testing to keep releases stable. I also worked with game engines: Unity, Unreal Engine and Roblox in C#."
+        es: "Desarrollé y mantuve servicios y APIs REST backend (Node.js/TypeScript) para los productos de un estudio de videojuegos con clientes en todo el mundo. Escribí SQL para las consultas, las migraciones y los índices de la base de datos, y apliqué control de versiones con Git y pruebas para sostener releases estables. También trabajé con motores de videojuego: Unity, Unreal Engine y Roblox en C#. Trabajé en English con clientes de varios países.",
+        en: "Developed and maintained backend REST APIs (Node.js/TypeScript) for a video game studio's products used by clients worldwide. I wrote SQL for queries, migrations and database indexes, and used Git version control and testing to keep releases stable. I also worked with game engines: Unity, Unreal Engine and Roblox in C#. I worked in English with clients from several countries."
       }
     },
     {
