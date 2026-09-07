@@ -919,18 +919,14 @@ window.CV_RESUME = {
   },
   "featuredOrgs": [
     "Critertec",
-    "Humanizar Systems",
     "Finca Directa S.A.S",
-    "Indie Levels Studio S.A.S"
+    "Indie Levels Studio S.A.S",
+    "Humanizar Systems"
   ],
   "experienceSummary": [
     {
       "es": "Administré y aseguré la infraestructura en producción que sostenía las soluciones digitales de la agencia: Linux, Docker, CI/CD, redes, respaldos, monitoreo y hardening, con SQL sobre PostgreSQL y MySQL. Rol de SysAdmin y DevOps de punta a punta.",
       "en": "Administered and secured the production infrastructure running the agency's digital solutions: Linux, Docker, CI/CD, networking, backups, monitoring and hardening, with SQL over PostgreSQL and MySQL. End-to-end SysAdmin and DevOps role."
-    },
-    {
-      "es": "Construí un SaaS multi-tenant con e-commerce, POS y facturación DIAN, y créditos. Microservicios NestJS, PostgreSQL y Docker; pub/sub, webhooks HMAC, JWT/OAuth2 y CI/CD. En producción con clientes reales.",
-      "en": "Built a multi-tenant SaaS ecosystem with e-commerce, POS and DIAN e-invoicing, and credit management. NestJS, PostgreSQL and Docker; pub/sub, HMAC webhooks, JWT/OAuth2 and CI/CD. In production with real clients."
     },
     {
       "es": "Construí automatización administrativa con Node.js y Python: OCR de facturas, extractos bancarios, clasificación de correos y sincronización con CRM. Idempotencia, validación humana y registro de decisiones.",
@@ -939,6 +935,10 @@ window.CV_RESUME = {
     {
       "es": "Desarrollé y mantuve APIs REST y servicios backend con Node.js/TypeScript y PostgreSQL para productos de videojuegos con usuarios en varios países. Control de versiones y pruebas para sostener releases estables.",
       "en": "Developed and maintained REST APIs and backend services with Node.js/TypeScript and PostgreSQL for game products used across countries. Version control and testing to support stable releases."
+    },
+    {
+      "es": "Construí un SaaS multi-tenant con e-commerce, POS y facturación DIAN, y créditos. Microservicios NestJS, PostgreSQL y Docker; pub/sub, webhooks HMAC, JWT/OAuth2 y CI/CD. En producción con clientes reales.",
+      "en": "Built a multi-tenant SaaS ecosystem with e-commerce, POS and DIAN e-invoicing, and credit management. NestJS, PostgreSQL and Docker; pub/sub, HMAC webhooks, JWT/OAuth2 and CI/CD. In production with real clients."
     }
   ],
   "projects": [
