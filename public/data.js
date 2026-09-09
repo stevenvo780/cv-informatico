@@ -149,11 +149,12 @@ window.CV_DATA = {
     ]
   },
 
-  /* ---------- Skills (196 with level, 13 categories) ---------- */
+  /* ---------- Skills (with level, 13 categories) ---------- */
   skillCategories: [
     {
       es: "Desarrollo Backend", en: "Backend Development",
       skills: [
+        { es: "Flask", en: "Flask", lvl: 80, since: 2017 },
         { es: "TypeScript", en: "TypeScript", lvl: 99, since: 2016 },
         { es: "Node.js", en: "Node.js", lvl: 95, since: 2016 },
         { es: "NestJS", en: "NestJS", lvl: 93, since: 2016 },
@@ -188,7 +189,6 @@ window.CV_DATA = {
         { es: "JavaScript", en: "JavaScript", lvl: 90, since: 2016 },
         { es: "HTML", en: "HTML", lvl: 85, since: 2017 },
         { es: "CSS3 (Bootstrap, MaterialUI, Bulma)", en: "CSS3 (Bootstrap, MaterialUI, Bulma)", lvl: 80, since: 2017 },
-        { es: "Flask", en: "Flask", lvl: 80, since: 2017 },
         { es: "PySimpleGUI", en: "PySimpleGUI", lvl: 78, since: 2018 },
         { es: "Angular", en: "Angular", lvl: 75, since: 2018 },
         { es: "React Native", en: "React Native", lvl: 75, since: 2018 },
@@ -200,7 +200,6 @@ window.CV_DATA = {
         { es: "MDX", en: "MDX", lvl: 78, since: 2024 },
         { es: "xterm.js (terminal web)", en: "xterm.js (web terminal)", lvl: 70, since: 2024 },
         { es: "D3.js", en: "D3.js", lvl: 65, since: 2024 },
-        { es: "Phaser 3", en: "Phaser 3", lvl: 65, since: 2025 }
       ]
     },
     {
@@ -243,18 +242,15 @@ window.CV_DATA = {
         { es: "MySQL", en: "MySQL", lvl: 95, since: 2016 },
         { es: "MongoDB", en: "MongoDB", lvl: 93, since: 2018 },
         { es: "Neo4j / GraphDB (Grafos)", en: "Neo4j / GraphDB", lvl: 80, since: 2023 },
-        { es: "Neo4j", en: "Neo4j", lvl: 75, since: 2020 },
         { es: "SQLite", en: "SQLite", lvl: 60, since: 2018 },
-        { es: "Redis", en: "Redis", lvl: 43, since: 2021 },
         { es: "DynamoDB", en: "DynamoDB", lvl: 41, since: 2022 },
-        { es: "Apache Kafka", en: "Apache Kafka", lvl: 40, since: 2020 },
         { es: "CouchDB", en: "CouchDB", lvl: 30, since: 2019 },
         { es: "Cassandra", en: "Cassandra", lvl: 20, since: 2019 },
         { es: "ElasticSearch", en: "ElasticSearch", lvl: 10, since: 2023 },
         { es: "SQL (consultas, migraciones, índices, optimización)", en: "SQL (queries, migrations, indexing, tuning)", lvl: 95, since: 2016 },
         { es: "SQL Server", en: "SQL Server", lvl: 62, since: 2018 },
         { es: "ChromaDB (vectorial)", en: "ChromaDB (vector store)", lvl: 75, since: 2024 },
-        { es: "Upstash / Redis serverless", en: "Upstash / serverless Redis", lvl: 68, since: 2026 },
+        { es: "Redis / Upstash (Redis serverless)", en: "Redis / Upstash (serverless Redis)", lvl: 68, since: 2026 },
         { es: "Firestore", en: "Firestore", lvl: 80, since: 2020 }
       ]
     },
@@ -262,21 +258,19 @@ window.CV_DATA = {
       es: "Inteligencia Artificial y Machine Learning", en: "AI & Machine Learning",
       skills: [
         { es: "Numpy, Wolfram Alpha, PNL", en: "Numpy, Wolfram Alpha, NLP", lvl: 90, since: 2018 },
-        { es: "Cupy", en: "Cupy", lvl: 88, since: 2018 },
         { es: "TensorFlow, PyTorch", en: "TensorFlow, PyTorch", lvl: 85, since: 2019 },
         { es: "Hugging Face", en: "Hugging Face", lvl: 83, since: 2019 },
-        { es: "Stable Diffusion (avanzado)", en: "Stable Diffusion (advanced)", lvl: 80, since: 2019 },
+        { es: "Stable Diffusion", en: "Stable Diffusion", lvl: 80, since: 2019 },
         { es: "CUDA", en: "CUDA", lvl: 75, since: 2019 },
         { es: "Paralelización", en: "Parallelization", lvl: 70, since: 2019 },
         { es: "Matplotlib", en: "Matplotlib", lvl: 65, since: 2019 },
-        { es: "PyTorch", en: "PyTorch", lvl: 60, since: 2019 },
         { es: "OpenCV", en: "OpenCV", lvl: 40, since: 2019 },
         { es: "Keras", en: "Keras", lvl: 35, since: 2019 },
         { es: "Pandas", en: "Pandas", lvl: 30, since: 2018 },
         { es: "RAG híbrido (BGE-M3 + BM25)", en: "Hybrid RAG (BGE-M3 + BM25)", lvl: 85, since: 2024 },
         { es: "vLLM", en: "vLLM", lvl: 78, since: 2025 },
         { es: "llama.cpp / GGUF (cuantización)", en: "llama.cpp / GGUF (quantization)", lvl: 75, since: 2024 },
-        { es: "faster-whisper (STT)", en: "faster-whisper (STT)", lvl: 80, since: 2025 },
+        { es: "Whisper / faster-whisper (STT)", en: "Whisper / faster-whisper (STT)", lvl: 80, since: 2025 },
         { es: "TTS (Kokoro, ElevenLabs)", en: "TTS (Kokoro, ElevenLabs)", lvl: 78, since: 2025 },
         { es: "OCR (Surya, Tesseract)", en: "OCR (Surya, Tesseract)", lvl: 82, since: 2023 },
         { es: "Fine-tuning / cuantización en GPU", en: "Fine-tuning / GPU quantization", lvl: 65, since: 2024 }
@@ -293,7 +287,6 @@ window.CV_DATA = {
         { es: "DeepSeek", en: "DeepSeek", lvl: 70, since: 2024 },
         { es: "Claude (Anthropic)", en: "Claude (Anthropic)", lvl: 65, since: 2024 },
         { es: "Llama", en: "Llama", lvl: 60, since: 2023 },
-        { es: "Whisper", en: "Whisper", lvl: 55, since: 2023 },
         { es: "MCP · Model Context Protocol (servidores propios)", en: "MCP · Model Context Protocol (own servers)", lvl: 92, since: 2025 },
         { es: "Claude Code", en: "Claude Code", lvl: 90, since: 2025 },
         { es: "Codex CLI", en: "Codex CLI", lvl: 85, since: 2025 },
@@ -313,8 +306,7 @@ window.CV_DATA = {
         { es: "Procedural", en: "Procedural", lvl: 85, since: 2015 },
         { es: "Reactivo", en: "Reactive", lvl: 80, since: 2015 },
         { es: "Orientado a Eventos", en: "Event-Driven", lvl: 80, since: 2016 },
-        { es: "SQS", en: "SQS", lvl: 75, since: 2024 },
-        { es: "Lógica", en: "Logic", lvl: 75, since: 2019 },
+        { es: "Programación lógica", en: "Logic programming", lvl: 75, since: 2019 },
         { es: "Concurrente", en: "Concurrent", lvl: 65, since: 2015 },
         { es: "WebSocket", en: "WebSocket", lvl: 60, since: 2013 },
         { es: "RPC", en: "RPC", lvl: 52, since: 2023 },
@@ -331,12 +323,8 @@ window.CV_DATA = {
       es: "Gestión de Proyectos", en: "Project Management",
       skills: [
         { es: "SCRUM, KANBAN, LEAN", en: "SCRUM, KANBAN, LEAN", lvl: 85, since: 2017 },
-        { es: "Advance Documents", en: "Advance Documents", lvl: 80, since: 2017 },
         { es: "Trello, JIRA, ClickUp", en: "Trello, JIRA, ClickUp", lvl: 70, since: 2018 },
         { es: "TDD, UML", en: "TDD, UML", lvl: 70, since: 2018 },
-        { es: "Kanban", en: "Kanban", lvl: 70, since: 2018 },
-        { es: "Jira", en: "Jira", lvl: 60, since: 2019 },
-        { es: "ClickUp", en: "ClickUp", lvl: 55, since: 2020 },
         { es: "Notion", en: "Notion", lvl: 50, since: 2020 },
         { es: "Excel", en: "Excel", lvl: 35, since: 2013 },
         { es: "Obsidian / documentación viva", en: "Obsidian / living documentation", lvl: 80, since: 2022 },
@@ -359,7 +347,6 @@ window.CV_DATA = {
       es: "Agentes y Orquestación de IA", en: "AI Agents & Orchestration",
       skills: [
         { es: "Orquestación de flotas de agentes (Cauce V3)", en: "Agent-fleet orchestration (Cauce V3)", lvl: 92, since: 2025 },
-        { es: "Servidores MCP propios", en: "Custom MCP servers", lvl: 90, since: 2025 },
         { es: "Tool-calling y registro de herramientas", en: "Tool-calling and tool registries", lvl: 90, since: 2024 },
         { es: "Contratos de entrega y enrutamiento multi-tenant", en: "Delivery contracts and multi-tenant routing", lvl: 88, since: 2025 },
         { es: "Sub-agentes y ejecución en paralelo", en: "Sub-agents and parallel execution", lvl: 88, since: 2025 },
@@ -390,7 +377,7 @@ window.CV_DATA = {
         { es: "Modelado basado en agentes (ABM)", en: "Agent-based modelling (ABM)", lvl: 88, since: 2022 },
         { es: "ODE / PDE (incl. GPU)", en: "ODE / PDE (incl. GPU)", lvl: 82, since: 2022 },
         { es: "Aprendizaje por refuerzo profundo (PyTorch)", en: "Deep reinforcement learning (PyTorch)", lvl: 75, since: 2023 },
-        { es: "CuPy / cómputo en GPU", en: "CuPy / GPU computing", lvl: 80, since: 2022 },
+        { es: "CuPy / cómputo en GPU", en: "CuPy / GPU computing", lvl: 88, since: 2022 },
         { es: "Tests de permutación y validación ablativa", en: "Permutation tests and ablative validation", lvl: 75, since: 2024 },
         { es: "SAT solving (CDCL)", en: "SAT solving (CDCL)", lvl: 78, since: 2022 },
         { es: "Teoría de tipos (MLTT)", en: "Type theory (MLTT)", lvl: 75, since: 2023 },
@@ -408,8 +395,6 @@ window.CV_DATA = {
         { es: "Filosofía de la IA", en: "Philosophy of AI", lvl: 85, since: 2020 },
         { es: "Lógica simbólica", en: "Symbolic logic", lvl: 82, since: 2019 },
         { es: "Ética", en: "Ethics", lvl: 80, since: 2019 },
-        { es: "Teoría de tipos", en: "Type theory", lvl: 75, since: 2021 },
-        { es: "SAT solving", en: "SAT solving", lvl: 70, since: 2022 }
       ]
     }
   ],
@@ -493,7 +478,7 @@ window.CV_DATA = {
       role: { es: "Desarrollador Backend", en: "Backend Developer" },
       org: "Indie Levels Studio S.A.S",
       tech: { es: "SQL · English · Unity · Unreal Engine · Roblox · C#", en: "SQL · English · Unity · Unreal Engine · Roblox · C#" },
-      period: { es: "ago. 2021 — actualidad", en: "Aug 2021 — present" },
+      period: { es: "jun. 2021 — actualidad", en: "Jun 2021 — present" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
         { es: "Contrato a término fijo", en: "Fixed-term contract", t: "" },
@@ -605,9 +590,9 @@ window.CV_DATA = {
     },
     {
       inst: "SENA",
-      prog: { es: "Técnico en Desarrollo de Software", en: "Software Development Technician" },
-      status: { es: "Graduado (título formal)", en: "Graduate (formal diploma)" },
-      period: "2017"
+      prog: { es: "Técnico en Programación de Software", en: "Software Programming Technician" },
+      status: { es: "Titulado — diploma del 6 de noviembre de 2019", en: "Diploma issued November 6, 2019" },
+      period: "2019"
     },
     {
       inst: "SENA",
