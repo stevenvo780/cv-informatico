@@ -476,13 +476,13 @@ window.CV_DATA = {
     {
       own: false,
       role: { es: "Desarrollador Backend", en: "Backend Developer" },
-      org: "Indie Levels Studio S.A.S",
+      org: "Indie Level Studio S.A.S.",
       tech: { es: "SQL · English · Unity · Unreal Engine · Roblox · C#", en: "SQL · English · Unity · Unreal Engine · Roblox · C#" },
-      period: { es: "jun. 2021 — actualidad", en: "Jun 2021 — present" },
+      period: { es: "jun. 2021 — sep. 2025", en: "Jun 2021 — Sep 2025" },
       loc: "Medellín, Antioquia, Colombia",
       tags: [
         { es: "Contrato a término fijo", en: "Fixed-term contract", t: "" },
-        { es: "Vigente", en: "Active", t: "gold" }
+        { es: "Finalizado", en: "Ended", t: "" }
       ],
       desc: {
         es: "Desarrollé y mantuve servicios y APIs REST backend (Node.js/TypeScript) para los productos de un estudio de videojuegos con clientes en todo el mundo. Escribí SQL para las consultas, las migraciones y los índices de la base de datos, y apliqué control de versiones con Git y pruebas para sostener releases estables. También trabajé con motores de videojuego: Unity, Unreal Engine y Roblox en C#. Trabajé en English con clientes de varios países.",
@@ -739,9 +739,9 @@ window.CV_DATA = {
       en: "Dominican Government portal (INDOTEL) for developing digital skills at national scale. I built the offline frontend with automatic sync so field registration worked even without a stable connection."
     },
     {
-      name: "Indie Levels Studio", url: "https://indielevelstudio.com",
-      es: "Estudio de videojuegos en Medellín que desarrolla títulos para clientes de todo el mundo. Como Desarrollador Backend, desarrollo y mantengo servicios y APIs de los productos del estudio.",
-      en: "Video game studio in Medellín building titles for clients worldwide. As Backend Developer, I develop and maintain the studio's product services and APIs."
+      name: "Indie Level Studio", url: "https://indielevelstudio.com",
+      es: "Estudio de videojuegos en Medellín que desarrolla títulos para clientes de todo el mundo. Como Desarrollador Backend desarrollé y mantuve servicios y APIs de los productos del estudio (jun. 2021 — sep. 2025).",
+      en: "Video game studio in Medellín building titles for clients worldwide. As Backend Developer I developed and maintained the studio's product services and APIs (Jun 2021 — Sep 2025)."
     },
     {
       name: "Humanizar Systems", url: "https://www.humanizar.co/",
@@ -905,7 +905,7 @@ window.CV_RESUME = {
   "featuredOrgs": [
     "Critertec",
     "Finca Directa S.A.S",
-    "Indie Levels Studio S.A.S",
+    "Indie Level Studio S.A.S.",
     "Humanizar Systems"
   ],
   "experienceSummary": [
