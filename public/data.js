@@ -882,7 +882,7 @@ window.CV_DATA = {
   /* ---------- Contact ---------- */
   contact: [
     { label: { es: "Email", en: "Email" }, value: "stevenvallejo780@gmail.com", url: "mailto:stevenvallejo780@gmail.com" },
-    { label: { es: "Teléfono / WhatsApp", en: "Phone / WhatsApp" }, value: "+57 304 637 4368", url: "https://wa.me/573046374368" },
+    { label: { es: "WhatsApp · asistente", en: "WhatsApp · assistant" }, value: "+57 302 395 4534", url: "https://wa.me/573023954534" },
     { label: { es: "Ubicación", en: "Location" }, value: { es: "Medellín, Antioquia, Colombia · GMT-5", en: "Medellín, Antioquia, Colombia · GMT-5" } },
     { label: { es: "Web personal", en: "Personal website" }, value: "stevenvallejo.com", url: "https://stevenvallejo.com" },
     { label: { es: "Servicios", en: "Services" }, value: "praxis.stevenvallejo.com", url: "https://praxis.stevenvallejo.com" },
