@@ -1,16 +1,24 @@
 # CV — Steven Vallejo Ortiz (Software Engineer)
 
 Sitio web estático, bilingüe (ES/EN), del CV técnico de Steven Vallejo Ortiz.
-Sin paso de build: HTML + CSS + un único `app.js` (vanilla JS) que renderiza
-los datos y maneja el toggle ES/EN. Cero riesgo de build en Vercel.
+Sin paso de build: HTML + CSS + `app.js` (vanilla JS) que renderiza los datos y
+maneja el toggle ES/EN, y `graph.js`, el grafo de dependencias del hero (canvas 2D,
+sin librerías). Cero riesgo de build en Vercel.
+
+Estética: la de la portada de stevenvallejo.com (negro profundo, acentos como luz,
+Cormorant + Geist + JetBrains Mono) llevada a código: call graph animado con las
+tecnologías y proyectos reales, un `steven.ts` que se escribe solo, la pila como
+`tree`, la experiencia como branch graph de git y el contacto como `contact.env`.
+Con `prefers-reduced-motion` el grafo queda estático y nada se anima.
 
 ## Estructura
 
 ```
 index.html        Estructura, <head> con SEO + JSON-LD schema.org Person
-styles.css        Estilos (paleta de marca: bg #0b1417, crema #f3ece0, teal #43b5a6, dorado #e0a85e)
+styles.css        Estilos (fondo #05090b, crema #e8e0d4, teal #43b5a6, dorado #e0a85e, violeta #8d7cc0, óxido #cf6a3c)
 data.js           Fuente de datos bilingüe (97 skills, 15 experiencias, 66+ proyectos, 8 logros, servicios)
-app.js            Render + toggle ES/EN (sin dependencias)
+app.js            Render + toggle ES/EN, editor que se escribe, índice activo (sin dependencias)
+graph.js          Grafo del hero: capas autor → proyectos → frameworks → lenguajes → infra
 vercel.json       Config Vercel (cleanUrls, headers, cache PDFs)
 robots.txt        SEO
 public/pdf/       PDFs descargables (CV y CV ATS, ES/EN)

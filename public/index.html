@@ -8,7 +8,7 @@
   <meta name="keywords" content="Steven Vallejo, Software Engineer, Backend Developer, NestJS, Node.js, TypeScript, Docker, PostgreSQL, Linux, GCP, Cloud Run, DevOps, automatización, Next.js, React, Medellín, Colombia, CTO, SysAdmin" />
   <meta name="author" content="Steven Vallejo Ortiz" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0b1417" />
+  <meta name="theme-color" content="#05090b" />
   <link rel="canonical" href="https://informatico.stevenvallejo.com/" />
   <link rel="alternate" hreflang="es" href="https://informatico.stevenvallejo.com/" />
   <link rel="alternate" hreflang="en" href="https://informatico.stevenvallejo.com/" />
@@ -98,37 +98,66 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skipLink">Saltar al contenido</a>
 
-  <header class="topbar">
-    <div class="wrap topbar-inner">
+  <header class="topbar" id="topbar">
+    <div class="bar-main">
       <a class="brand" href="https://stevenvallejo.com" aria-label="Steven Vallejo · CV técnico — parte de Mouseîon">
         <span class="brand-mark">
-          <img src="isotipo.png" alt="Steven Vallejo — informático" width="40" height="40" />
+          <img src="isotipo.png" alt="" width="30" height="30" />
         </span>
         <span class="brand-text">
           <strong class="brand-name">Steven Vallejo</strong>
-          <em class="brand-subtitle">CV técnico &middot; <span class="brand-ecosystem">Mouseîon</span></em>
+          <em class="brand-subtitle"><span class="brand-path">~/cv/</span>informatico <span class="brand-ecosystem">· Mouseîon</span></em>
         </span>
       </a>
-      <nav class="topnav" aria-label="primary">
-        <a href="#about" data-i18n="navAbout">Perfil</a>
-        <a href="#skills" data-i18n="navSkills">Skills</a>
-        <a href="#experience" data-i18n="navExperience">Experiencia</a>
-        <a href="#projects" data-i18n="navProjects">Proyectos</a>
-        <a href="#portfolio" data-i18n="navPortfolio">Portafolio</a>
-        <a href="#contact" data-i18n="navContact">Contacto</a>
-        <a href="https://stevenvallejo.com" class="topnav-home">stevenvallejo.com&nbsp;&#8599;</a>
+
+      <nav class="eco" aria-label="Mouseîon">
+        <a href="https://stevenvallejo.com" data-i18n="ecoHome">Inicio</a>
+        <a href="https://informatico.stevenvallejo.com/" aria-current="page" data-i18n="ecoTech">CV Informático</a>
+        <a href="https://filosofo.stevenvallejo.com/" data-i18n="ecoPhilo">CV Filósofo</a>
+        <a href="https://praxis.stevenvallejo.com/" data-i18n="ecoServices">Servicios</a>
+        <a href="https://schole.stevenvallejo.com/" data-i18n="ecoBlog">Blog · Scholḗ</a>
       </nav>
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <button type="button" data-lang="es" class="active" aria-pressed="true">ES</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+
+      <div class="bar-actions">
+        <a class="btn-wpp" href="https://wa.me/573046374368" target="_blank" rel="noopener" aria-label="WhatsApp +57 304 637 4368">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.23 8.23 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="es" class="active" aria-pressed="true">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <details class="eco-menu">
+          <summary aria-label="Mouseîon"><span class="burger" aria-hidden="true"></span><span class="eco-menu-label" data-i18n="menu">Menú</span></summary>
+          <nav class="eco-menu-panel" aria-label="Mouseîon">
+            <a href="https://stevenvallejo.com" data-i18n="ecoHome">Inicio</a>
+            <a href="https://informatico.stevenvallejo.com/" aria-current="page" data-i18n="ecoTech">CV Informático</a>
+            <a href="https://filosofo.stevenvallejo.com/" data-i18n="ecoPhilo">CV Filósofo</a>
+            <a href="https://praxis.stevenvallejo.com/" data-i18n="ecoServices">Servicios</a>
+            <a href="https://schole.stevenvallejo.com/" data-i18n="ecoBlog">Blog · Scholḗ</a>
+            <a href="https://wa.me/573046374368" target="_blank" rel="noopener">WhatsApp ↗</a>
+          </nav>
+        </details>
       </div>
     </div>
+
+    <nav class="topnav" aria-label="primary">
+      <a href="#about"><i>01</i><span data-i18n="navAbout">Perfil</span></a>
+      <a href="#skills"><i>02</i><span data-i18n="navSkills">Skills</span></a>
+      <a href="#experience"><i>03</i><span data-i18n="navExperience">Experiencia</span></a>
+      <a href="#projects"><i>04</i><span data-i18n="navProjects">Proyectos</span></a>
+      <a href="#achievements"><i>05</i><span data-i18n="achTitle">Logros</span></a>
+      <a href="#portfolio"><i>06</i><span data-i18n="navPortfolio">Portafolio</span></a>
+      <a href="#services"><i>07</i><span data-i18n="svcTitle">Servicios</span></a>
+      <a href="#contact"><i>08</i><span data-i18n="navContact">Contacto</span></a>
+    </nav>
+    <span class="scroll-progress" id="scrollProgress" aria-hidden="true"></span>
   </header>
 
   <main id="main" data-top>
@@ -136,51 +165,92 @@
 
     <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="wrap hero-inner">
-        <p class="hero-kicker" data-i18n="heroKicker">Software Engineer · IA agéntica + ingeniería de sistemas de extremo a extremo</p>
-        <h1 class="hero-name">Steven Vallejo Ortiz</h1>
-        <p class="hero-headline" data-i18n="heroHeadline"></p>
-        <p class="hero-sub" data-i18n="heroSub"></p>
-        <div class="hero-meta">
-          <span class="chip" data-i18n="heroChipLoc">Medellín, Colombia · GMT-5</span>
-          <span class="chip" data-i18n="heroChipExp">13 años programando · más de 10 en producción</span>
-          <span class="chip" data-i18n="heroChipRemote">Remoto · Híbrido · Reubicable</span>
+      <div class="hero-grid">
+        <div class="hero-head">
+          <p class="hero-kicker"><span class="prompt" aria-hidden="true">~ $</span> <span data-i18n="heroKicker">Software Engineer · IA agéntica + ingeniería de sistemas de extremo a extremo</span></p>
+          <h1 class="hero-name">Steven <span class="hero-name-2">Vallejo Ortiz<span class="caret" aria-hidden="true"></span></span></h1>
         </div>
-        <div class="hero-cta">
-          <a class="btn btn-primary" id="dl-cv" href="pdf/CV_tech_es.pdf" download>
-            <span data-i18n="ctaCv">Descargar CV (PDF)</span>
-          </a>
-          <a class="btn btn-secondary" id="dl-ats" href="pdf/CV_tech_ats_es.pdf" download>
-            <span data-i18n="ctaAts">CV ATS</span>
-          </a>
-          <a class="btn btn-secondary" id="dl-ai" href="pdf/CV_ai_es.pdf" download>
-            <span data-i18n="ctaAi">CV completo (para bots)</span>
-          </a>
-          <a class="btn btn-ghost" href="mailto:stevenvallejo780@gmail.com">
-            <span data-i18n="ctaEmail">Escríbeme</span>
-          </a>
+
+        <div class="graph-zone" id="graphZone">
+          <canvas id="heroGraph" aria-hidden="true"></canvas>
         </div>
-        <p class="hero-ats-note" data-i18n="atsNote">CV ATS: versión de texto plano, compatible con sistemas de selección automatizados.</p>
-        <p class="hero-ats-note" data-i18n="aiNote">CV completo: trayectoria entera, tecnologías por empresa e inventario íntegro, para formularios y filtros automáticos.</p>
+        <p class="graph-trace" id="graphTrace" aria-hidden="true"><span class="trace-k">trace</span><span class="trace-v" id="graphTraceV">@stevenvo780</span></p>
+
+        <div class="hero-body">
+          <p class="hero-headline" data-i18n="heroHeadline"></p>
+          <p class="hero-sub" data-i18n="heroSub"></p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" id="dl-cv" href="pdf/CV_tech_es.pdf" download>
+              <span data-i18n="ctaCv">Descargar CV (PDF)</span><span class="btn-ico" aria-hidden="true">↓</span>
+            </a>
+            <a class="btn btn-secondary" id="dl-ats" href="pdf/CV_tech_ats_es.pdf" download>
+              <span data-i18n="ctaAts">CV ATS</span>
+            </a>
+            <a class="btn btn-secondary" id="dl-ai" href="pdf/CV_ai_es.pdf" download>
+              <span data-i18n="ctaAi">CV completo (para bots)</span>
+            </a>
+            <a class="btn btn-ghost" href="mailto:stevenvallejo780@gmail.com">
+              <span data-i18n="ctaEmail">Escríbeme</span><span class="btn-ico" aria-hidden="true">→</span>
+            </a>
+          </div>
+          <p class="hero-ats-note" data-i18n="atsNote">CV ATS: versión de texto plano, compatible con sistemas de selección automatizados.</p>
+          <p class="hero-ats-note" data-i18n="aiNote">CV completo: trayectoria entera, tecnologías por empresa e inventario íntegro, para formularios y filtros automáticos.</p>
+        </div>
+
+        <div class="editor hero-editor" id="heroEditor">
+          <div class="editor-bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="editor-tab is-active">steven.ts</span>
+            <span class="editor-tab">stack.json</span>
+          </div>
+          <pre class="editor-code" id="heroCode" aria-hidden="true"></pre>
+          <div class="editor-status">
+            <span>TypeScript</span><span>UTF-8</span><span class="ok" id="heroCodeStatus"></span>
+          </div>
+          <ul class="hero-meta sr-only">
+            <li data-i18n="heroChipLoc">Medellín, Colombia · GMT-5</li>
+            <li data-i18n="heroChipExp">13 años programando · más de 10 en producción</li>
+            <li data-i18n="heroChipRemote">Remoto · Híbrido · Reubicable</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section class="section" id="about">
       <div class="wrap">
-        <h2 class="section-title"><span class="sec-no">01</span> <span data-i18n="navAbout">Perfil</span></h2>
-        <p class="prose" data-i18n="aboutProfile"></p>
-        <div class="epigraphs" id="epigraphs"></div>
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow"><span class="sec-no">01</span><span class="sec-cmd">cat profile.md</span></p>
+          <div class="sec-title-row"><h2 class="section-title" data-i18n="navAbout">Perfil</h2><span class="sec-type" aria-hidden="true">: Profile</span></div>
+        </header>
+        <div class="about-grid">
+          <p class="prose reveal" data-i18n="aboutProfile"></p>
+          <div class="epigraphs reveal" id="epigraphs"></div>
+        </div>
         <div class="cap-grid" id="capabilities"></div>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section class="section section-alt" id="skills">
+    <section class="section" id="skills">
       <div class="wrap">
-        <h2 class="section-title"><span class="sec-no">02</span> <span data-i18n="skillsTitle">Skills &amp; Tecnologías</span></h2>
-        <p class="section-lead" data-i18n="skillsLead">Tecnologías que uso en producción, agrupadas por nivel cualitativo: Avanzado · Intermedio · Familiar.</p>
-        <div class="stack-summary" id="stackSummary"></div>
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow"><span class="sec-no">02</span><span class="sec-cmd">tree ~/stack -L 1</span></p>
+          <div class="sec-title-row"><h2 class="section-title" data-i18n="skillsTitle">Skills &amp; Tecnologías</h2><span class="sec-type" aria-hidden="true">: Stack</span></div>
+          <p class="section-lead" data-i18n="skillsLead">Tecnologías que uso en producción, agrupadas por nivel cualitativo: Avanzado · Intermedio · Familiar.</p>
+        </header>
+        <div class="term reveal">
+          <div class="term-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="term-title">~/stack — zsh</span></div>
+          <div class="term-body">
+            <p class="term-cmd"><span class="prompt">~/stack $</span> tree -L 1</p>
+            <div class="stack-summary" id="stackSummary"></div>
+          </div>
+        </div>
+        <div class="skills-legend" aria-hidden="true">
+          <span class="lg lg-advanced" data-i18n="lvlAdvanced">Avanzado</span>
+          <span class="lg lg-intermediate" data-i18n="lvlInter">Intermedio</span>
+          <span class="lg lg-familiar" data-i18n="lvlFamiliar">Familiar</span>
+        </div>
         <div class="skills-groups" id="skillsGroups"></div>
         <details class="skills-all" id="skillsAll">
           <summary data-i18n="skillsAllOpen">Ver todas mis tecnologías</summary>
@@ -193,25 +263,35 @@
     <!-- EXPERIENCE -->
     <section class="section" id="experience">
       <div class="wrap">
-        <h2 class="section-title"><span class="sec-no">03</span> <span data-i18n="navExperience">Experiencia</span></h2>
-        <p class="section-lead" data-i18n="expLead">Vínculos confirmados con su tipo de contrato. Algunas vinculaciones son concurrentes: proyecto propio (Humanizar) + prestación de servicios (Finca Directa).</p>
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow"><span class="sec-no">03</span><span class="sec-cmd">git log --graph --all</span></p>
+          <div class="sec-title-row"><h2 class="section-title" data-i18n="navExperience">Experiencia</h2><span class="sec-type" aria-hidden="true">: Commit[]</span></div>
+          <p class="section-lead" data-i18n="expLead">Vínculos confirmados con su tipo de contrato. Algunas vinculaciones son concurrentes: proyecto propio (Humanizar) + prestación de servicios (Finca Directa).</p>
+        </header>
+        <div class="lanes-legend" aria-hidden="true">
+          <span class="lane-key lane-key-main" data-i18n="laneMain">main · empleo y contratos</span>
+          <span class="lane-key lane-key-own" data-i18n="laneOwn">own · proyecto propio y freelance</span>
+        </div>
         <div class="timeline" id="timeline"></div>
         <details class="career-archive">
           <summary data-i18n="expArchive">Ver trayectoria completa</summary>
           <div class="timeline" id="timeline-full"></div>
         </details>
-        <h3 class="subhead" data-i18n="eduTitle">Formación</h3>
+        <h3 class="subhead"><span class="subhead-k">$ ls</span> <span data-i18n="eduTitle">Formación</span></h3>
         <div class="edu-grid" id="education"></div>
-        <h3 class="subhead" data-i18n="langTitle">Idiomas</h3>
+        <h3 class="subhead"><span class="subhead-k">$ locale</span> <span data-i18n="langTitle">Idiomas</span></h3>
         <div class="lang-grid" id="languages"></div>
       </div>
     </section>
 
     <!-- PROJECTS (main own) -->
-    <section class="section section-alt" id="projects">
+    <section class="section" id="projects">
       <div class="wrap">
-        <h2 class="section-title"><span class="sec-no">04</span> <span data-i18n="projTitle">Proyectos propios principales</span></h2>
-        <p class="section-lead" data-i18n="projLead">Trabajo propio en producción y pruebas técnicas de extremo a extremo.</p>
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow"><span class="sec-no">04</span><span class="sec-cmd">ls ~/projects --sort=impact</span></p>
+          <div class="sec-title-row"><h2 class="section-title" data-i18n="projTitle">Proyectos propios principales</h2><span class="sec-type" aria-hidden="true">: Repo[]</span></div>
+          <p class="section-lead" data-i18n="projLead">Trabajo propio en producción y pruebas técnicas de extremo a extremo.</p>
+        </header>
         <div class="projects-grid" id="mainProjects"></div>
       </div>
     </section>
@@ -219,43 +299,66 @@
     <!-- ACHIEVEMENTS -->
     <section class="section" id="achievements">
       <div class="wrap">
-        <h2 class="section-title"><span class="sec-no">05</span> <span data-i18n="achTitle">Logros</span></h2>
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow"><span class="sec-no">05</span><span class="sec-cmd">cat achievements.log</span></p>
+          <div class="sec-title-row"><h2 class="section-title" data-i18n="achTitle">Logros</h2><span class="sec-type" aria-hidden="true">: Achievement[]</span></div>
+        </header>
         <div class="ach-grid" id="achievements-grid"></div>
       </div>
     </section>
 
     <!-- PORTFOLIO -->
-    <section class="section section-alt" id="portfolio">
+    <section class="section" id="portfolio">
       <div class="wrap">
-        <h2 class="section-title"><span class="sec-no">06</span> <span data-i18n="navPortfolio">Portafolio técnico</span></h2>
-        <p class="section-lead" data-i18n="portLead">Catálogo completo de proyectos: programación, ciencia, simulación y juegos.</p>
-        <div class="port-tabs" id="portTabs"></div>
-        <div class="port-content" id="portContent"></div>
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow"><span class="sec-no">06</span><span class="sec-cmd">open ~/portfolio</span></p>
+          <div class="sec-title-row"><h2 class="section-title" data-i18n="navPortfolio">Portafolio técnico</h2><span class="sec-type" aria-hidden="true">: Project[]</span></div>
+          <p class="section-lead" data-i18n="portLead">Catálogo completo de proyectos: programación, ciencia, simulación y juegos.</p>
+        </header>
+        <div class="editor port-editor">
+          <div class="port-tabs" id="portTabs" role="tablist"></div>
+          <div class="port-content" id="portContent"></div>
+        </div>
       </div>
     </section>
 
     <!-- SERVICES -->
     <section class="section" id="services">
       <div class="wrap">
-        <h2 class="section-title"><span class="sec-no">07</span> <span data-i18n="svcTitle">Servicios</span></h2>
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow"><span class="sec-no">07</span><span class="sec-cmd">cat services.json</span></p>
+          <div class="sec-title-row"><h2 class="section-title" data-i18n="svcTitle">Servicios</h2><span class="sec-type" aria-hidden="true">: Service[]</span></div>
+        </header>
         <div class="svc-grid" id="services-grid"></div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section section-alt" id="contact">
+    <section class="section" id="contact">
       <div class="wrap">
-        <h2 class="section-title"><span class="sec-no">08</span> <span data-i18n="navContact">Contacto</span></h2>
-        <div class="contact-grid" id="contact-grid"></div>
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow"><span class="sec-no">08</span><span class="sec-cmd">cat contact.env</span></p>
+          <div class="sec-title-row"><h2 class="section-title" data-i18n="navContact">Contacto</h2><span class="sec-type" aria-hidden="true">: Env</span></div>
+        </header>
+        <div class="term reveal">
+          <div class="term-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="term-title">~/contact — zsh</span></div>
+          <div class="term-body">
+            <p class="term-cmd"><span class="prompt">~ $</span> cat contact.env</p>
+            <div class="contact-grid" id="contact-grid"></div>
+          </div>
+        </div>
         <div class="hero-cta contact-cta">
           <a class="btn btn-primary" id="dl-cv2" href="pdf/CV_tech_es.pdf" download>
-            <span data-i18n="ctaCv">Descargar CV (PDF)</span>
+            <span data-i18n="ctaCv">Descargar CV (PDF)</span><span class="btn-ico" aria-hidden="true">↓</span>
           </a>
           <a class="btn btn-secondary" id="dl-ats2" href="pdf/CV_tech_ats_es.pdf" download>
             <span data-i18n="ctaAts">CV ATS</span>
           </a>
           <a class="btn btn-secondary" id="dl-ai2" href="pdf/CV_ai_es.pdf" download>
             <span data-i18n="ctaAi">CV completo (para bots)</span>
+          </a>
+          <a class="btn btn-wa" href="https://wa.me/573046374368" target="_blank" rel="noopener">
+            <span>WhatsApp</span><span class="btn-ico" aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
@@ -280,5 +383,6 @@
 
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script src="graph.js"></script>
 </body>
 </html>
