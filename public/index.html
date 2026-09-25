@@ -6,13 +6,13 @@
   <title>Steven Vallejo · CV técnico — hoja de vida (ingeniería/informática)</title>
   <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
   <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low" />
-  <!-- Wave3 SEO/Perf: HARD_BLOCK — .graph-zone clamp(340px,52vw,500px) ≡ graph.js (untouched).
-       LCP micro: Cormorant preload first bytes + critical .hero-name-2 explicit face (not inherit);
-       no unicode-range on critical Cormorant (faster bind); data/app preload deferred to body
-       (keeps late-inject TBT, frees ATF bandwidth). Geist preload low (no 43eb52f).
+  <!-- Wave3 SEO/Perf: HARD_BLOCK — .graph-zone clamp(400px,52vw,500px) ≡ graph.js FINAL painted H
+       (vertical@LH412 H=400; was clamp 340 → +60px inject push). Placeholder = reserved min-height;
+       graph.js inject layout no-op when reserve ≥ H. Keep late-inject data/app TBT; Geist low.
+       LCP: keep hero-name-2 wins + critical .hero-headline (Geist Fallback — no late swap LCP).
        CLS: swap + Georgia/Arial metrics + hero locks. blocking styles.css. graph.js ≥2.5s. -->
   <style id="critical-hero">
-    /* ATF ≡ final locks. LCP=span.hero-name-2 — explicit Cormorant metrics (no inherit cascade). */
+    /* ATF ≡ final locks. Opus graph-zone first; LCP=hero-name-2 + hero-headline critical. */
     @font-face{font-family:"Cormorant Garamond Fallback";src:local("Georgia"),local("Times New Roman"),local("Times"),local("Noto Serif"),local("DejaVu Serif");size-adjust:98.5%;ascent-override:93.8%;descent-override:29.1%;line-gap-override:0%}
     @font-face{font-family:"Geist Fallback";src:local("Arial"),local("Helvetica"),local("Helvetica Neue"),local("Segoe UI"),local("Roboto");size-adjust:100%;ascent-override:100.5%;descent-override:29.5%;line-gap-override:0%}
     @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
@@ -23,8 +23,10 @@
     .hero-name{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;margin:0;min-height:1.8em;opacity:1;visibility:visible}
     .hero-name-2{display:block;white-space:nowrap;font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;min-height:.9em;opacity:1;visibility:visible}
     .caret{animation:none}
-    /* Opus HARD_BLOCK: ≡ graph.js H=min(500,max(340,w*0.52)) — was aspect 4/3 (~285@412) then late push to 340 */
-    .graph-zone{position:relative;min-height:clamp(340px,52vw,500px);contain:layout}
+    /* LCP: p.hero-headline on Geist Fallback (metrics≈Geist) — no late webfont swap updating LCP; keep Geist preload low */
+    .hero-headline{font-family:"Geist Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:clamp(18px,1.55vw,22px);line-height:1.45;font-weight:500;color:#f6f1e8;max-width:34em;margin:0 0 14px;letter-spacing:-.005em;min-height:2.9em;opacity:1;visibility:visible}
+    /* Opus HARD_BLOCK: final painted H — vertical@LH412=400 (was clamp340 → +60 push); stacked h=min(500,max(400,w*0.52)) */
+    .graph-zone{position:relative;min-height:clamp(400px,52vw,500px);contain:layout}
     #heroGraph{position:absolute;inset:0;width:100%;height:100%;min-height:100%;display:block}
   </style>
   <link rel="stylesheet" href="styles.css" fetchpriority="high" />
