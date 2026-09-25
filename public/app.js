@@ -425,6 +425,7 @@
   /* ---------- Boot: light first paint, heavy DOM in idle slices (TBT) ----------
      698ebc6 sync renderAll + typewriter long-tasks ~445ms around LCP.
      Keep data.js defer (available at DCL). Skip typewriter on first boot;
+     skip ES i18n walk (SSR); push hero editor renderCode to idle;
      chunk below-fold fills via requestIdleCallback (short timeout — NOT 2.5s). */
   var heavyScheduled = false;
   var chromeReady = false;
@@ -563,11 +564,16 @@
     });
 
     var y = el("year"); if (y) y.textContent = new Date().getFullYear();
-    // SSR Spanish already in HTML. Light apply + static hero editor (no typewriter rAF).
-    applyI18n();
-    applyDownloads();
-    renderCode(false);
+    // SSR Spanish already in HTML — skip i18n walk on default ES (saves main-thread before LCP).
+    // EN/?lang=en still applies sync so copy matches. Hero editor DOM → idle (not LCP).
+    if (lang !== "es") {
+      applyI18n();
+      applyDownloads();
+    } else {
+      applyDownloads();
+    }
     booted = true;
+    runIdle(function () { renderCode(false); }, 100);
     scheduleHeavyBoot();
   }
 
