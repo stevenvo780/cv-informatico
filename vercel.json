@@ -70,18 +70,5 @@
         }
       ]
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "query",
-          "key": "lang",
-          "value": "en"
-        }
-      ],
-      "destination": "/index-en.html"
-    }
   ]
 }
