@@ -11,6 +11,10 @@
   var zone = document.getElementById("graphZone");
   var canvas = document.getElementById("heroGraph");
   if (!zone || !canvas || !canvas.getContext) return;
+  /* Opus: swap visible .graph-ph placeholder for live canvas (reserved box was never empty void) */
+  zone.classList.add("is-live");
+  var ph = document.getElementById("graphPh");
+  if (ph) ph.setAttribute("hidden", "");
   var ctx = canvas.getContext("2d");
   if (!ctx) return;
   var traceEl = document.getElementById("graphTraceV");
@@ -174,7 +178,8 @@
       // En la rejilla de dos columnas la altura la da el hero; apilado (una columna) la fija el grafo.
       var stacked = window.matchMedia && window.matchMedia("(max-width: 1100px)").matches;
       if (stacked) {
-        H = Math.round(Math.min(500, Math.max(340, w * 0.52)));
+        /* Opus: floor 400 ≡ CSS clamp(400px,52vw,500px) — was 340 (vertical LH +60 push lineage) */
+        H = Math.round(Math.min(500, Math.max(400, w * 0.52)));
         zone.style.height = H + "px";
       } else {
         if (zone.style.height) zone.style.height = "";
@@ -214,7 +219,9 @@
         y += 12;
       });
       H = Math.round(y);
-      zone.style.height = H + "px";
+      /* Opus: CSS already reserves final H (400@LH412). Only grow — never shrink; inject = layout no-op when reserve ≥ H. */
+      var reserved = Math.round(zone.getBoundingClientRect().height);
+      if (H > reserved) zone.style.height = H + "px";
     }
 
     dpr = Math.min(window.devicePixelRatio || 1, 2);

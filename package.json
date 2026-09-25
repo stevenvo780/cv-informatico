@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vercel/edge": "^1.3.3",
     "puppeteer-core": "^25.1.0"
-  }
+  },
+  "type": "module"
 }
