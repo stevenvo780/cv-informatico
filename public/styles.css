@@ -1,11 +1,12 @@
 /* =========================================================
    Self-hosted latin subsets (Wave3 SEO/Perf)
    Faces: Cormorant Garamond + Geist + JetBrains Mono — master Opus look.
-   Metric overrides live on *fallback* @font-face (local Georgia/Arial), NOT on
-   the webfont (size-adjust on webfont warped Cormorant → CLS 0.25 historically).
-   font-display:swap on all faces — optional/FOIT caused CLS variance (0.277).
-   Matched fallback metrics keep swap CLS-stable (≤0.05), like tip 698ebc6.
-   unicode-range + glyph-subset latin woff2 kept for Perf/LCP.
+   CLS approach (≠ async CSS tip 0d4cbdb):
+   - styles.css is RENDER-BLOCKING (no media=print/onload FOUC race)
+   - size-adjust/ascent/descent on local Georgia/Arial fallbacks ONLY
+   - font-display:swap on webfonts (no optional — Jefe: nada optional/FOIT)
+   - .hero-name / .hero-name-2 / .graph-zone explicit min sizes lock ATF box
+   unicode-range + glyph-subset latin woff2 + idle TBT kept for Perf/LCP.
    Tickets: W3-002 / W3-003 / W3-004 + CLS≤0.05 / LCP≤2.5 / Perf≥90
    ========================================================= */
 
@@ -329,7 +330,12 @@ a:hover { color: var(--gold-2); }
 }
 .hero-head { grid-area: head; align-self: end; }
 .hero-body { grid-area: body; align-self: start; padding-top: 22px; }
-.graph-zone { grid-area: zone; position: relative; min-height: 380px; }
+.graph-zone {
+  grid-area: zone; position: relative;
+  /* CLS lock: reserve final desktop box before graph.js paints */
+  min-height: 380px;
+  contain: layout;
+}
 .hero-editor { grid-area: editor; align-self: end; justify-self: end; width: min(100%, 560px); margin-top: 12px; }
 
 .hero-kicker {
@@ -342,8 +348,15 @@ a:hover { color: var(--gold-2); }
   font-size: clamp(56px, 7.4vw, 112px); line-height: 0.9; letter-spacing: -0.01em;
   color: var(--text-strong); margin: 0;
   text-shadow: 0 0 60px rgba(111, 211, 196, 0.12);
+  /* CLS lock: 2-line name box (line-height 0.9 × 2) — late font swap cannot shrink ATF */
+  min-height: 1.8em;
+  contain: layout style;
 }
-.hero-name-2 { display: block; white-space: nowrap; min-height: 0.9em; }
+.hero-name-2 {
+  display: block; white-space: nowrap;
+  /* CLS lock: second line reserved at final metrics */
+  min-height: 0.9em; line-height: 0.9;
+}
 .caret {
   display: inline-block; width: 0.07em; height: 0.66em; margin-left: 0.1em; vertical-align: -0.02em;
   background: var(--teal-2); box-shadow: 0 0 18px var(--teal), 0 0 4px var(--teal-2);
@@ -736,9 +749,11 @@ a:hover { color: var(--gold-2); }
   }
   .hero-head { align-self: start; }
   .graph-zone {
+    /* CLS lock: match critical-hero + final mobile box (LH 412px) */
     min-height: min(52vw, 320px);
     aspect-ratio: 4 / 3;
     margin: 28px 0 8px;
+    contain: layout;
   }
   .graph-zone canvas {
     position: absolute; inset: 0; left: 0; top: 0; width: 100%; height: 100%;
@@ -762,7 +777,10 @@ a:hover { color: var(--gold-2); }
   .eco-menu summary { width: 36px; padding: 0; justify-content: center; }
   .bar-actions { gap: 8px; }
   .lang-toggle button { padding: 0 10px; }
-  .hero-name { font-size: clamp(48px, 15vw, 64px); }
+  .hero-name {
+    font-size: clamp(48px, 15vw, 64px);
+    min-height: 1.8em; /* keep 2-line lock at mobile size */
+  }
   .hero-kicker { font-size: 10.5px; letter-spacing: 0.1em; }
   .hero-cta .btn { flex: 1 1 auto; }
   .hero-cta .btn-ghost { flex: 0 0 auto; }
