@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#05090b" />
   <link rel="canonical" href="https://informatico.stevenvallejo.com/" />
   <link rel="alternate" hreflang="es" href="https://informatico.stevenvallejo.com/" />
-  <link rel="alternate" hreflang="en" href="https://informatico.stevenvallejo.com/" />
+  <link rel="alternate" hreflang="en" href="https://informatico.stevenvallejo.com/?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://informatico.stevenvallejo.com/" />
   <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
@@ -96,9 +96,9 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Wave3 SEO/Perf: self-host Cormorant/Geist/JetBrains (latin) — master Opus faces, no render-blocking googleapis. W3-002/003/004 -->
+  <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -108,7 +108,7 @@
     <div class="bar-main">
       <a class="brand" href="https://stevenvallejo.com" aria-label="Steven Vallejo · CV técnico — parte de Mouseîon">
         <span class="brand-mark">
-          <img src="isotipo.png" alt="" width="30" height="30" />
+          <img src="icon.svg" alt="" width="30" height="30" decoding="async" />
         </span>
         <span class="brand-text">
           <strong class="brand-name">Steven Vallejo</strong>
@@ -381,8 +381,8 @@
     </div>
   </footer>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
-  <script src="graph.js"></script>
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+  <!-- Wave3: graph.js injected ≥2.5s post-load from app.js (keeps canvas#heroGraph; avoids LCP fight) -->
 </body>
 </html>

@@ -1,3 +1,51 @@
+/* =========================================================
+   Self-hosted latin subsets (Wave3 SEO/Perf)
+   Faces: Cormorant Garamond + Geist + JetBrains Mono — master Opus look.
+   font-display: swap; weight ranges + size-adjust; no Google Fonts CSS.
+   Tickets: W3-002 / W3-003 / W3-004
+   ========================================================= */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  size-adjust: 106%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  src: url("fonts/cormorant-garamond-italic-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  size-adjust: 106%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  src: url("fonts/cormorant-garamond-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  src: url("fonts/geist-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  size-adjust: 100%;
+  src: url("fonts/jetbrains-mono-latin.woff2") format("woff2");
+}
+
 /* ============================================================
    Steven Vallejo Ortiz — CV técnico · "el grafo compilado"
    Misma luz que la portada de stevenvallejo.com (negro profundo, acentos
