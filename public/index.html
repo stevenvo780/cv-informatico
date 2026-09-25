@@ -4,27 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Steven Vallejo · CV técnico — hoja de vida (ingeniería/informática)</title>
-  <!-- Wave3 SEO/Perf: HARD_BLOCK first — reserve .graph-zone ≡ graph.js stacked H
-       (clamp 340–500 / 52vw) from first paint so late canvas mount cannot push layout.
-       LCP: early Cormorant (high) + Geist preload (low — no 43eb52f race); blocking styles.css.
-       TBT: preload data/app as=script low; late-inject post-paint (no defer-at-DCL long tasks);
-       app idle-chunks below-fold after load. CLS: swap + Georgia/Arial metrics + hero locks.
-       #heroGraph abs; graph.js ≥2.5s. -->
   <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
   <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low" />
-  <link rel="preload" href="data.js" as="script" fetchpriority="low" />
-  <link rel="preload" href="app.js" as="script" fetchpriority="low" />
+  <!-- Wave3 SEO/Perf: HARD_BLOCK — .graph-zone clamp(340px,52vw,500px) ≡ graph.js (untouched).
+       LCP micro: Cormorant preload first bytes + critical .hero-name-2 explicit face (not inherit);
+       no unicode-range on critical Cormorant (faster bind); data/app preload deferred to body
+       (keeps late-inject TBT, frees ATF bandwidth). Geist preload low (no 43eb52f).
+       CLS: swap + Georgia/Arial metrics + hero locks. blocking styles.css. graph.js ≥2.5s. -->
   <style id="critical-hero">
-    /* ATF ≡ final locks. Opus: graph-zone min-height matches graph.js stacked H (no late push). */
+    /* ATF ≡ final locks. LCP=span.hero-name-2 — explicit Cormorant metrics (no inherit cascade). */
     @font-face{font-family:"Cormorant Garamond Fallback";src:local("Georgia"),local("Times New Roman"),local("Times"),local("Noto Serif"),local("DejaVu Serif");size-adjust:98.5%;ascent-override:93.8%;descent-override:29.1%;line-gap-override:0%}
     @font-face{font-family:"Geist Fallback";src:local("Arial"),local("Helvetica"),local("Helvetica Neue"),local("Segoe UI"),local("Roboto");size-adjust:100%;ascent-override:100.5%;descent-override:29.5%;line-gap-override:0%}
-    @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-2199,U+2212,U+2215,U+FEFF,U+FFFD}
-    @font-face{font-family:"Geist";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/geist-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-2199,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
+    @font-face{font-family:"Geist";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/geist-latin.woff2") format("woff2")}
     html,body{margin:0;background:#05090b;color:#e8e0d4}
     body{font-family:"Geist","Geist Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
     .topbar{min-height:94px}
     .hero-name{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;margin:0;min-height:1.8em;opacity:1;visibility:visible}
-    .hero-name-2{display:block;white-space:nowrap;font-family:inherit;font-weight:inherit;font-size:inherit;line-height:.9;letter-spacing:inherit;color:inherit;min-height:.9em}
+    .hero-name-2{display:block;white-space:nowrap;font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;min-height:.9em;opacity:1;visibility:visible}
+    .caret{animation:none}
     /* Opus HARD_BLOCK: ≡ graph.js H=min(500,max(340,w*0.52)) — was aspect 4/3 (~285@412) then late push to 340 */
     .graph-zone{position:relative;min-height:clamp(340px,52vw,500px);contain:layout}
     #heroGraph{position:absolute;inset:0;width:100%;height:100%;min-height:100%;display:block}
@@ -403,8 +401,10 @@
     </div>
   </footer>
 
-  <!-- TBT: download early (preload low) but execute after first paint so 85KB data.js
-       parse/eval is not a long task on the early-FCP window (09a711e TBT~1.2s). -->
+  <!-- TBT: preload data/app here (not in <head>) so Cormorant+styles.css own ATF bandwidth;
+       late-inject after paint unchanged — 85KB parse stays off FCP→LCP window. -->
+  <link rel="preload" href="data.js" as="script" fetchpriority="low" />
+  <link rel="preload" href="app.js" as="script" fetchpriority="low" />
   <script>
   (function () {
     var done = false;
@@ -423,6 +423,8 @@
     function afterPaint() {
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
+          var c = document.querySelector(".caret");
+          if (c) c.classList.add("is-on");
           if ("requestIdleCallback" in window) requestIdleCallback(inject, { timeout: 200 });
           else setTimeout(inject, 0);
         });
