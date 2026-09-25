@@ -1,40 +1,57 @@
 /* =========================================================
    Self-hosted latin subsets (Wave3 SEO/Perf)
    Faces: Cormorant Garamond + Geist + JetBrains Mono — master Opus look.
-   font-display: swap; weight ranges + size-adjust; no Google Fonts CSS.
-   Tickets: W3-002 / W3-003 / W3-004
+   Metric overrides live on *fallback* @font-face (local), NOT on the webfont
+   (overrides on the webfont warped Cormorant vs Georgia → CLS 0.25 on swap).
+   LCP face (Cormorant) uses font-display: optional to avoid late swap paint.
+   Tickets: W3-002 / W3-003 / W3-004 + CLS/LCP fix
    ========================================================= */
+
+/* Adjusted system fallbacks ≈ webfont metrics (next/font-style) */
+@font-face {
+  font-family: "Cormorant Garamond Fallback";
+  src: local("Georgia"), local("Times New Roman"), local("Times"), local("Noto Serif"), local("DejaVu Serif");
+  size-adjust: 98.5%;
+  ascent-override: 93.8%;
+  descent-override: 29.1%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial"), local("Helvetica"), local("Helvetica Neue"), local("Segoe UI"), local("Roboto");
+  size-adjust: 100%;
+  ascent-override: 100.5%;
+  descent-override: 29.5%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "JetBrains Mono Fallback";
+  src: local("ui-monospace"), local("SFMono-Regular"), local("Menlo"), local("Consolas"), local("Liberation Mono");
+  size-adjust: 100%;
+  ascent-override: 102%;
+  descent-override: 30%;
+  line-gap-override: 0%;
+}
+
 @font-face {
   font-family: "Cormorant Garamond";
   font-style: italic;
   font-weight: 300 700;
-  font-display: swap;
-  size-adjust: 106%;
-  ascent-override: 90%;
-  descent-override: 22%;
-  line-gap-override: 0%;
+  font-display: optional;
   src: url("fonts/cormorant-garamond-italic-latin.woff2") format("woff2");
 }
 @font-face {
   font-family: "Cormorant Garamond";
   font-style: normal;
   font-weight: 300 700;
-  font-display: swap;
-  size-adjust: 106%;
-  ascent-override: 90%;
-  descent-override: 22%;
-  line-gap-override: 0%;
+  font-display: optional;
   src: url("fonts/cormorant-garamond-latin.woff2") format("woff2");
 }
 @font-face {
   font-family: "Geist";
   font-style: normal;
   font-weight: 300 700;
-  font-display: swap;
-  size-adjust: 100%;
-  ascent-override: 90%;
-  descent-override: 22%;
-  line-gap-override: 0%;
+  font-display: optional;
   src: url("fonts/geist-latin.woff2") format("woff2");
 }
 @font-face {
@@ -42,7 +59,6 @@
   font-style: normal;
   font-weight: 300 700;
   font-display: swap;
-  size-adjust: 100%;
   src: url("fonts/jetbrains-mono-latin.woff2") format("woff2");
 }
 
@@ -76,9 +92,9 @@
   --violet-2: #a99ee0;
   --wa: #3fd97f;
 
-  --f-display: 'Cormorant Garamond', Georgia, serif;
-  --f-sans: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --f-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --f-display: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, 'Times New Roman', serif;
+  --f-sans: 'Geist', 'Geist Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --f-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, SFMono-Regular, Menlo, monospace;
   /* alias heredados */
   --font: var(--f-sans);
   --mono: var(--f-mono);
@@ -321,7 +337,7 @@ a:hover { color: var(--gold-2); }
   color: var(--text-strong); margin: 0;
   text-shadow: 0 0 60px rgba(111, 211, 196, 0.12);
 }
-.hero-name-2 { display: block; white-space: nowrap; }
+.hero-name-2 { display: block; white-space: nowrap; min-height: 0.9em; }
 .caret {
   display: inline-block; width: 0.07em; height: 0.66em; margin-left: 0.1em; vertical-align: -0.02em;
   background: var(--teal-2); box-shadow: 0 0 18px var(--teal), 0 0 4px var(--teal-2);
@@ -331,8 +347,9 @@ a:hover { color: var(--gold-2); }
 .hero-headline {
   font-size: clamp(18px, 1.55vw, 22px); line-height: 1.45; color: var(--text-strong); font-weight: 500;
   max-width: 34em; margin: 0 0 14px; letter-spacing: -0.005em;
+  min-height: 2.9em;
 }
-.hero-sub { font-size: 15.5px; color: var(--text-soft); max-width: 60ch; margin: 0 0 26px; }
+.hero-sub { font-size: 15.5px; color: var(--text-soft); max-width: 60ch; margin: 0 0 26px; min-height: 4.8em; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .hero-ats-note {
   font-family: var(--f-mono); font-size: 11.5px; line-height: 1.6; color: var(--comment); margin-top: 12px; max-width: 70ch;
@@ -341,7 +358,8 @@ a:hover { color: var(--gold-2); }
 .hero-ats-note + .hero-ats-note { margin-top: 4px; }
 
 /* Lienzo del grafo */
-.graph-zone canvas {
+.graph-zone canvas,
+#heroGraph {
   position: absolute; left: -36px; top: -28px; width: calc(100% + 72px); height: calc(100% + 56px);
   display: block; touch-action: pan-y;
 }
@@ -711,7 +729,14 @@ a:hover { color: var(--gold-2); }
     min-height: 0;
   }
   .hero-head { align-self: start; }
-  .graph-zone { min-height: 0; margin: 28px 0 8px; }
+  .graph-zone {
+    min-height: min(52vw, 320px);
+    aspect-ratio: 4 / 3;
+    margin: 28px 0 8px;
+  }
+  .graph-zone canvas {
+    position: absolute; inset: 0; left: 0; top: 0; width: 100%; height: 100%;
+  }
   .graph-trace { justify-self: start; margin: 4px 0 0; }
   .hero-editor { justify-self: stretch; width: 100%; margin-top: 32px; }
   .ach-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

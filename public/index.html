@@ -99,6 +99,15 @@
   <!-- Wave3 SEO/Perf: self-host Cormorant/Geist/JetBrains (latin) — master Opus faces, no render-blocking googleapis. W3-002/003/004 -->
   <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <style id="critical-hero">
+    /* Critical path for LCP span.hero-name-2 — same faces as styles.css */
+    @font-face{font-family:"Cormorant Garamond Fallback";src:local("Georgia"),local("Times New Roman"),local("Times"),local("Noto Serif"),local("DejaVu Serif");size-adjust:98.5%;ascent-override:93.8%;descent-override:29.1%;line-gap-override:0%}
+    @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:optional;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
+    .hero-name{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;margin:0}
+    .hero-name-2{display:block;white-space:nowrap;min-height:.9em}
+    .graph-zone{position:relative;min-height:min(52vw,320px);aspect-ratio:4/3}
+    #heroGraph{position:absolute;inset:0;width:100%;height:100%;display:block}
+  </style>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -172,13 +181,13 @@
         </div>
 
         <div class="graph-zone" id="graphZone">
-          <canvas id="heroGraph" aria-hidden="true"></canvas>
+          <canvas id="heroGraph" width="800" height="600" aria-hidden="true"></canvas>
         </div>
         <p class="graph-trace" id="graphTrace" aria-hidden="true"><span class="trace-k">trace</span><span class="trace-v" id="graphTraceV">@stevenvo780</span></p>
 
         <div class="hero-body">
-          <p class="hero-headline" data-i18n="heroHeadline"></p>
-          <p class="hero-sub" data-i18n="heroSub"></p>
+          <p class="hero-headline" data-i18n="heroHeadline">Construyo sistemas backend, plataformas SaaS, flujos de automatización e infraestructura cloud, y los llevo a producción de forma confiable.</p>
+          <p class="hero-sub" data-i18n="heroSub">Esto lo hago porque me apasiona: empecé de muy joven y sigo en lo mismo trece años después. Trabajo principalmente con Node.js/NestJS, PostgreSQL, Docker, Linux y GCP. He trabajado como CTO / Jefe de Sistemas, ingeniero backend senior y SysAdmin, y construí un ecosistema SaaS empresarial multi-tenant.</p>
           <div class="hero-cta">
             <a class="btn btn-primary" id="dl-cv" href="pdf/CV_tech_es.pdf" download>
               <span data-i18n="ctaCv">Descargar CV (PDF)</span><span class="btn-ico" aria-hidden="true">↓</span>
