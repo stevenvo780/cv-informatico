@@ -4,6 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Steven Vallejo · CV técnico — hoja de vida (ingeniería/informática)</title>
+  <!-- Wave3 SEO/Perf: HARD_BLOCK first — reserve .graph-zone ≡ graph.js stacked H
+       (clamp 340–500 / 52vw) from first paint so late canvas mount cannot push layout.
+       Then LCP: early-discover Cormorant (high) before JSON-LD; Geist preload kept
+       (b604978) at fetchpriority=low; blocking styles.css fetchpriority=high.
+       CLS: swap + Georgia/Arial metrics + hero locks. #heroGraph abs; graph.js ≥2.5s. -->
+  <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low" />
+  <style id="critical-hero">
+    /* ATF ≡ final locks. Opus: graph-zone min-height matches graph.js stacked H (no late push). */
+    @font-face{font-family:"Cormorant Garamond Fallback";src:local("Georgia"),local("Times New Roman"),local("Times"),local("Noto Serif"),local("DejaVu Serif");size-adjust:98.5%;ascent-override:93.8%;descent-override:29.1%;line-gap-override:0%}
+    @font-face{font-family:"Geist Fallback";src:local("Arial"),local("Helvetica"),local("Helvetica Neue"),local("Segoe UI"),local("Roboto");size-adjust:100%;ascent-override:100.5%;descent-override:29.5%;line-gap-override:0%}
+    @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-2199,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:"Geist";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/geist-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-2199,U+2212,U+2215,U+FEFF,U+FFFD}
+    html,body{margin:0;background:#05090b;color:#e8e0d4}
+    body{font-family:"Geist","Geist Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+    .topbar{min-height:94px}
+    .hero-name{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;margin:0;min-height:1.8em;opacity:1;visibility:visible}
+    .hero-name-2{display:block;white-space:nowrap;font-family:inherit;font-weight:inherit;font-size:inherit;line-height:.9;letter-spacing:inherit;color:inherit;min-height:.9em}
+    /* Opus HARD_BLOCK: ≡ graph.js H=min(500,max(340,w*0.52)) — was aspect 4/3 (~285@412) then late push to 340 */
+    .graph-zone{position:relative;min-height:clamp(340px,52vw,500px);contain:layout}
+    #heroGraph{position:absolute;inset:0;width:100%;height:100%;min-height:100%;display:block}
+  </style>
+  <link rel="stylesheet" href="styles.css" fetchpriority="high" />
   <meta name="description" content="Steven Vallejo · CV técnico — hoja de vida (ingeniería/informática). Software Engineer con 13 años programando · más de 10 en producción. Backend (NestJS/Node), PostgreSQL, Docker, Linux, GCP y automatización de procesos con IA. CV técnico bilingüe ES/EN con portafolio y descarga en PDF." />
   <meta name="keywords" content="Steven Vallejo, Software Engineer, Backend Developer, NestJS, Node.js, TypeScript, Docker, PostgreSQL, Linux, GCP, Cloud Run, DevOps, automatización, Next.js, React, Medellín, Colombia, CTO, SysAdmin" />
   <meta name="author" content="Steven Vallejo Ortiz" />
@@ -96,28 +119,6 @@
   }
   </script>
 
-  <!-- Wave3 SEO/Perf: self-host Cormorant/Geist/JetBrains — CLS via BLOCKING styles.css + fallback metrics + hero box locks.
-       font-display:swap (no optional/FOIT). Metrics on Georgia/Arial fallbacks only.
-       Restore 7c0ce9a critical-path: preload Cormorant (high) + Geist; both @font-face in critical
-       (43eb52f Cormorant-only + idle editor regressed mobile Perf 86→75 / LCP 2.68→3.11). -->
-  <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
-  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <style id="critical-hero">
-    /* ATF: match final styles.css hero locks so first paint ≡ post-CSS (no FOUC/CLS). styles.css is render-blocking. */
-    @font-face{font-family:"Cormorant Garamond Fallback";src:local("Georgia"),local("Times New Roman"),local("Times"),local("Noto Serif"),local("DejaVu Serif");size-adjust:98.5%;ascent-override:93.8%;descent-override:29.1%;line-gap-override:0%}
-    @font-face{font-family:"Geist Fallback";src:local("Arial"),local("Helvetica"),local("Helvetica Neue"),local("Segoe UI"),local("Roboto");size-adjust:100%;ascent-override:100.5%;descent-override:29.5%;line-gap-override:0%}
-    @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-2199,U+2212,U+2215,U+FEFF,U+FFFD}
-    @font-face{font-family:"Geist";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/geist-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-2199,U+2212,U+2215,U+FEFF,U+FFFD}
-    html,body{margin:0;background:#05090b;color:#e8e0d4}
-    body{font-family:"Geist","Geist Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-    .topbar{min-height:94px}
-    /* Hero CLS locks — sizes match styles.css mobile (LH) + desktop min-heights */
-    .hero-name{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;margin:0;min-height:1.8em;opacity:1;visibility:visible}
-    .hero-name-2{display:block;white-space:nowrap;min-height:.9em;line-height:.9}
-    .graph-zone{position:relative;min-height:min(52vw,320px);aspect-ratio:4/3;contain:layout}
-    #heroGraph{position:absolute;inset:0;width:100%;height:100%;display:block}
-  </style>
-  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skipLink">Saltar al contenido</a>

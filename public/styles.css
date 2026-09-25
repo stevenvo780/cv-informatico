@@ -6,6 +6,7 @@
    - size-adjust/ascent/descent on local Georgia/Arial fallbacks ONLY
    - font-display:swap on webfonts (no optional — Jefe: nada optional/FOIT)
    - .hero-name / .hero-name-2 / .graph-zone explicit min sizes lock ATF box
+  - .graph-zone min-height ≡ graph.js stacked H (clamp 340–500) — late canvas must not push
    unicode-range + glyph-subset latin woff2 + idle TBT kept for Perf/LCP.
    Tickets: W3-002 / W3-003 / W3-004 + CLS≤0.05 / LCP≤2.5 / Perf≥90
    ========================================================= */
@@ -332,7 +333,7 @@ a:hover { color: var(--gold-2); }
 .hero-body { grid-area: body; align-self: start; padding-top: 22px; }
 .graph-zone {
   grid-area: zone; position: relative;
-  /* CLS lock: reserve final desktop box before graph.js paints */
+  /* Opus: reserve final box before graph.js (≥2.5s) paints — desktop reads CSS height */
   min-height: 380px;
   contain: layout;
 }
@@ -380,7 +381,8 @@ a:hover { color: var(--gold-2); }
 .graph-zone canvas,
 #heroGraph {
   position: absolute; left: -36px; top: -28px; width: calc(100% + 72px); height: calc(100% + 56px);
-  display: block; touch-action: pan-y;
+  /* fill reserved .graph-zone — late graph.js mount must not invent size */
+  min-height: 100%; display: block; touch-action: pan-y;
 }
 .graph-trace {
   grid-area: trace; justify-self: end; position: relative; z-index: 2; max-width: min(100%, 560px); margin: 18px 0 0;
@@ -749,14 +751,16 @@ a:hover { color: var(--gold-2); }
   }
   .hero-head { align-self: start; }
   .graph-zone {
-    /* CLS lock: match critical-hero + final mobile box (LH 412px) */
-    min-height: min(52vw, 320px);
-    aspect-ratio: 4 / 3;
+    /* Opus HARD_BLOCK: ≡ graph.js stacked H=min(500,max(340,w*0.52)).
+       Was min(52vw,320)+aspect 4/3 ≈285@LH412 → late zone.style.height=340 pushed layout. */
+    min-height: clamp(340px, 52vw, 500px);
     margin: 28px 0 8px;
     contain: layout;
   }
-  .graph-zone canvas {
+  .graph-zone canvas,
+  #heroGraph {
     position: absolute; inset: 0; left: 0; top: 0; width: 100%; height: 100%;
+    min-height: 100%;
   }
   .graph-trace { justify-self: start; margin: 4px 0 0; }
   .hero-editor { justify-self: stretch; width: 100%; margin-top: 32px; }
