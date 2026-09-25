@@ -6,11 +6,14 @@
   <title>Steven Vallejo · CV técnico — hoja de vida (ingeniería/informática)</title>
   <!-- Wave3 SEO/Perf: HARD_BLOCK first — reserve .graph-zone ≡ graph.js stacked H
        (clamp 340–500 / 52vw) from first paint so late canvas mount cannot push layout.
-       Then LCP: early-discover Cormorant (high) before JSON-LD; Geist preload kept
-       (b604978) at fetchpriority=low; blocking styles.css fetchpriority=high.
-       CLS: swap + Georgia/Arial metrics + hero locks. #heroGraph abs; graph.js ≥2.5s. -->
+       LCP: early Cormorant (high) + Geist preload (low — no 43eb52f race); blocking styles.css.
+       TBT: preload data/app as=script low; late-inject post-paint (no defer-at-DCL long tasks);
+       app idle-chunks below-fold after load. CLS: swap + Georgia/Arial metrics + hero locks.
+       #heroGraph abs; graph.js ≥2.5s. -->
   <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
   <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low" />
+  <link rel="preload" href="data.js" as="script" fetchpriority="low" />
+  <link rel="preload" href="app.js" as="script" fetchpriority="low" />
   <style id="critical-hero">
     /* ATF ≡ final locks. Opus: graph-zone min-height matches graph.js stacked H (no late push). */
     @font-face{font-family:"Cormorant Garamond Fallback";src:local("Georgia"),local("Times New Roman"),local("Times"),local("Noto Serif"),local("DejaVu Serif");size-adjust:98.5%;ascent-override:93.8%;descent-override:29.1%;line-gap-override:0%}
@@ -400,8 +403,36 @@
     </div>
   </footer>
 
-  <script src="data.js" defer></script>
-  <script src="app.js" defer></script>
+  <!-- TBT: download early (preload low) but execute after first paint so 85KB data.js
+       parse/eval is not a long task on the early-FCP window (09a711e TBT~1.2s). -->
+  <script>
+  (function () {
+    var done = false;
+    function inject() {
+      if (done) return;
+      done = true;
+      var d = document.createElement("script");
+      d.src = "data.js";
+      d.onload = function () {
+        var a = document.createElement("script");
+        a.src = "app.js";
+        document.body.appendChild(a);
+      };
+      document.body.appendChild(d);
+    }
+    function afterPaint() {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          if ("requestIdleCallback" in window) requestIdleCallback(inject, { timeout: 200 });
+          else setTimeout(inject, 0);
+        });
+      });
+    }
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", afterPaint);
+    else afterPaint();
+    setTimeout(inject, 900);
+  })();
+  </script>
   <!-- Wave3: graph.js injected ≥2.5s post-load from app.js (keeps canvas#heroGraph; avoids LCP fight) -->
 </body>
 </html>
