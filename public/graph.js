@@ -11,6 +11,10 @@
   var zone = document.getElementById("graphZone");
   var canvas = document.getElementById("heroGraph");
   if (!zone || !canvas || !canvas.getContext) return;
+  /* Opus: swap visible .graph-ph placeholder for live canvas (reserved box was never empty void) */
+  zone.classList.add("is-live");
+  var ph = document.getElementById("graphPh");
+  if (ph) ph.setAttribute("hidden", "");
   var ctx = canvas.getContext("2d");
   if (!ctx) return;
   var traceEl = document.getElementById("graphTraceV");

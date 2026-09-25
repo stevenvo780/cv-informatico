@@ -7,6 +7,7 @@
    - font-display:swap on webfonts (no optional — Jefe: nada optional/FOIT)
    - .hero-name / .hero-name-2 / .graph-zone explicit min sizes lock ATF box
   - .graph-zone min-height ≡ graph.js FINAL H (clamp 400–500 / 52vw) — vertical@LH412=400; inject no-op
+  - .graph-ph visible SVG placeholder fills reserved box until graph.js (Opus: no empty void)
    unicode-range + glyph-subset latin woff2 + idle TBT kept for Perf/LCP.
    Tickets: W3-002 / W3-003 / W3-004 + CLS≤0.05 / LCP≤2.5 / Perf≥90
    ========================================================= */
@@ -336,7 +337,17 @@ a:hover { color: var(--gold-2); }
   /* Opus: reserve final box before graph.js (≥2.5s) paints — desktop reads CSS height */
   min-height: 380px;
   contain: layout;
+  background: var(--panel-solid);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
 }
+/* Opus HARD_BLOCK: visible placeholder in reserved box (not blank void) until graph.js ≥2.5s */
+.graph-ph {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none; display: block;
+}
+.graph-ph svg { width: 100%; height: 100%; display: block; }
+.graph-zone.is-live .graph-ph { visibility: hidden; opacity: 0; }
 .hero-editor { grid-area: editor; align-self: end; justify-self: end; width: min(100%, 560px); margin-top: 12px; }
 
 .hero-kicker {
@@ -391,7 +402,7 @@ a:hover { color: var(--gold-2); }
 #heroGraph {
   position: absolute; left: -36px; top: -28px; width: calc(100% + 72px); height: calc(100% + 56px);
   /* fill reserved .graph-zone — late graph.js mount must not invent size */
-  min-height: 100%; display: block; touch-action: pan-y;
+  min-height: 100%; display: block; touch-action: pan-y; z-index: 1;
 }
 .graph-trace {
   grid-area: trace; justify-self: end; position: relative; z-index: 2; max-width: min(100%, 560px); margin: 18px 0 0;
@@ -761,8 +772,8 @@ a:hover { color: var(--gold-2); }
   .hero-head { align-self: start; }
   .graph-zone {
     /* Opus HARD_BLOCK: reserve FINAL painted H so graph.js inject is layout no-op.
-       LH412 vertical layout H=400 (not stacked clamp340) → was +60px push + empty undersized void.
-       Floor 400 ≡ vertical@~340–540px wide; 52vw covers stacked-h up to 500. Placeholder = this min-height. */
+       LH412 vertical layout H=400; Floor 400 ≡ vertical@~340–540px wide; 52vw → 500.
+       Visible .graph-ph fills this box until graph.js (not empty void). */
     min-height: clamp(400px, 52vw, 500px);
     margin: 28px 0 8px;
     contain: layout;

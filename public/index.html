@@ -6,28 +6,29 @@
   <title>Steven Vallejo · CV técnico — hoja de vida (ingeniería/informática)</title>
   <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
   <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low" />
-  <!-- Wave3 SEO/Perf: HARD_BLOCK — .graph-zone clamp(400px,52vw,500px) ≡ graph.js FINAL painted H
-       (vertical@LH412 H=400; was clamp 340 → +60px inject push). Placeholder = reserved min-height;
-       graph.js inject layout no-op when reserve ≥ H. Keep late-inject data/app TBT; Geist low.
-       LCP: keep hero-name-2 wins + critical .hero-headline (Geist Fallback — no late swap LCP).
-       CLS: swap + Georgia/Arial metrics + hero locks. blocking styles.css. graph.js ≥2.5s. -->
+  <!-- Wave3 SEO/Perf: HARD_BLOCK — .graph-zone clamp(400px,52vw,500px) ≡ graph.js FINAL H
+       + visible .graph-ph SVG placeholder (not empty void) until graph.js ≥2.5s.
+       Opus placeholder > micro-LCP if conflict. Inject layout no-op when reserve ≥ H.
+       LCP: restore 4aba17c Cormorant early + critical .hero-name-2 (no critical Geist @font-face;
+       body Geist Fallback until styles.css) so Cormorant owns ATF. Headline Fallback stays in styles.css.
+       Keep late-inject data/app TBT; Geist preload low; blocking styles.css; swap; Georgia/Arial. -->
   <style id="critical-hero">
-    /* ATF ≡ final locks. Opus graph-zone first; LCP=hero-name-2 + hero-headline critical. */
+    /* ATF ≡ final locks. Opus graph-ph + clamp400 first; LCP=span.hero-name-2 Cormorant path. */
     @font-face{font-family:"Cormorant Garamond Fallback";src:local("Georgia"),local("Times New Roman"),local("Times"),local("Noto Serif"),local("DejaVu Serif");size-adjust:98.5%;ascent-override:93.8%;descent-override:29.1%;line-gap-override:0%}
     @font-face{font-family:"Geist Fallback";src:local("Arial"),local("Helvetica"),local("Helvetica Neue"),local("Segoe UI"),local("Roboto");size-adjust:100%;ascent-override:100.5%;descent-override:29.5%;line-gap-override:0%}
     @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
-    @font-face{font-family:"Geist";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/geist-latin.woff2") format("woff2")}
     html,body{margin:0;background:#05090b;color:#e8e0d4}
-    body{font-family:"Geist","Geist Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+    body{font-family:"Geist Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
     .topbar{min-height:94px}
     .hero-name{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;margin:0;min-height:1.8em;opacity:1;visibility:visible}
     .hero-name-2{display:block;white-space:nowrap;font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;min-height:.9em;opacity:1;visibility:visible}
     .caret{animation:none}
-    /* LCP: p.hero-headline on Geist Fallback (metrics≈Geist) — no late webfont swap updating LCP; keep Geist preload low */
-    .hero-headline{font-family:"Geist Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:clamp(18px,1.55vw,22px);line-height:1.45;font-weight:500;color:#f6f1e8;max-width:34em;margin:0 0 14px;letter-spacing:-.005em;min-height:2.9em;opacity:1;visibility:visible}
-    /* Opus HARD_BLOCK: final painted H — vertical@LH412=400 (was clamp340 → +60 push); stacked h=min(500,max(400,w*0.52)) */
-    .graph-zone{position:relative;min-height:clamp(400px,52vw,500px);contain:layout}
-    #heroGraph{position:absolute;inset:0;width:100%;height:100%;min-height:100%;display:block}
+    /* Opus HARD_BLOCK: reserve FINAL H + visible placeholder (not blank void) until graph.js */
+    .graph-zone{position:relative;min-height:clamp(400px,52vw,500px);contain:layout;background:#0a1215;border:1px solid rgba(232,224,212,.09);border-radius:12px;overflow:hidden}
+    .graph-ph{position:absolute;inset:0;z-index:0;pointer-events:none;display:block}
+    .graph-ph svg{width:100%;height:100%;display:block}
+    .graph-zone.is-live .graph-ph{visibility:hidden;opacity:0}
+    #heroGraph{position:absolute;inset:0;width:100%;height:100%;min-height:100%;display:block;z-index:1}
   </style>
   <link rel="stylesheet" href="styles.css" fetchpriority="high" />
   <meta name="description" content="Steven Vallejo · CV técnico — hoja de vida (ingeniería/informática). Software Engineer con 13 años programando · más de 10 en producción. Backend (NestJS/Node), PostgreSQL, Docker, Linux, GCP y automatización de procesos con IA. CV técnico bilingüe ES/EN con portafolio y descarga en PDF." />
@@ -194,6 +195,47 @@
         </div>
 
         <div class="graph-zone" id="graphZone">
+          <div class="graph-ph" id="graphPh" aria-hidden="true">
+            <svg viewBox="0 0 360 400" preserveAspectRatio="xMidYMid meet" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <text x="24" y="22" fill="rgba(224,168,94,.7)" font-family="ui-monospace,monospace" font-size="11">main()</text>
+              <g fill="none" stroke-width="1">
+                <path d="M180 52 L70 108 M180 52 L180 108 M180 52 L290 108" stroke="rgba(240,200,135,.22)"/>
+                <path d="M70 128 L50 188 M70 128 L120 188 M180 128 L160 188 M180 128 L220 188 M290 128 L270 188 M290 128 L320 188" stroke="rgba(111,211,196,.2)"/>
+                <path d="M50 208 L80 268 M120 208 L80 268 M160 208 L180 268 M220 208 L180 268 M270 208 L260 268 M320 208 L300 268" stroke="rgba(169,158,224,.18)"/>
+                <path d="M80 288 L70 348 M80 288 L130 348 M180 288 L180 348 M180 288 L250 348 M260 288 L300 348" stroke="rgba(229,138,96,.18)"/>
+              </g>
+              <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="10">
+                <rect x="130" y="32" width="100" height="22" rx="5" fill="rgba(20,30,33,.96)" stroke="rgba(246,241,232,.55)"/>
+                <circle cx="140" cy="43" r="2.4" fill="rgba(246,241,232,.95)"/><text x="148" y="46" fill="#f6f1e8">@stevenvo780</text>
+                <rect x="28" y="108" width="84" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(240,200,135,.4)"/>
+                <circle cx="38" cy="118" r="2.2" fill="rgba(240,200,135,.95)"/><text x="46" y="121" fill="rgba(232,224,212,.9)">cauce-v3</text>
+                <rect x="138" y="108" width="84" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(240,200,135,.4)"/>
+                <circle cx="148" cy="118" r="2.2" fill="rgba(240,200,135,.95)"/><text x="156" y="121" fill="rgba(232,224,212,.9)">agora</text>
+                <rect x="248" y="108" width="84" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(240,200,135,.4)"/>
+                <circle cx="258" cy="118" r="2.2" fill="rgba(240,200,135,.95)"/><text x="266" y="121" fill="rgba(232,224,212,.9)">humanizar</text>
+                <rect x="18" y="188" width="64" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(111,211,196,.4)"/>
+                <circle cx="28" cy="198" r="2.2" fill="rgba(111,211,196,.95)"/><text x="36" y="201" fill="rgba(232,224,212,.88)">NestJS</text>
+                <rect x="96" y="188" width="64" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(111,211,196,.4)"/>
+                <circle cx="106" cy="198" r="2.2" fill="rgba(111,211,196,.95)"/><text x="114" y="201" fill="rgba(232,224,212,.88)">Next.js</text>
+                <rect x="174" y="188" width="56" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(111,211,196,.4)"/>
+                <circle cx="184" cy="198" r="2.2" fill="rgba(111,211,196,.95)"/><text x="192" y="201" fill="rgba(232,224,212,.88)">MCP</text>
+                <rect x="246" y="188" width="72" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(111,211,196,.4)"/>
+                <circle cx="256" cy="198" r="2.2" fill="rgba(111,211,196,.95)"/><text x="264" y="201" fill="rgba(232,224,212,.88)">Express</text>
+                <rect x="40" y="268" width="80" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(169,158,224,.4)"/>
+                <circle cx="50" cy="278" r="2.2" fill="rgba(169,158,224,.95)"/><text x="58" y="281" fill="rgba(232,224,212,.88)">TypeScript</text>
+                <rect x="140" y="268" width="72" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(169,158,224,.4)"/>
+                <circle cx="150" cy="278" r="2.2" fill="rgba(169,158,224,.95)"/><text x="158" y="281" fill="rgba(232,224,212,.88)">Node.js</text>
+                <rect x="232" y="268" width="64" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(169,158,224,.4)"/>
+                <circle cx="242" cy="278" r="2.2" fill="rgba(169,158,224,.95)"/><text x="250" y="281" fill="rgba(232,224,212,.88)">Python</text>
+                <rect x="28" y="348" width="84" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(229,138,96,.45)"/>
+                <circle cx="38" cy="358" r="2.2" fill="rgba(229,138,96,.95)"/><text x="46" y="361" fill="rgba(232,224,212,.88)">PostgreSQL</text>
+                <rect x="132" y="348" width="64" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(229,138,96,.45)"/>
+                <circle cx="142" cy="358" r="2.2" fill="rgba(229,138,96,.95)"/><text x="150" y="361" fill="rgba(232,224,212,.88)">Docker</text>
+                <rect x="216" y="348" width="84" height="20" rx="5" fill="rgba(6,11,13,.92)" stroke="rgba(229,138,96,.45)"/>
+                <circle cx="226" cy="358" r="2.2" fill="rgba(229,138,96,.95)"/><text x="234" y="361" fill="rgba(232,224,212,.88)">Cloud Run</text>
+              </g>
+            </svg>
+          </div>
           <canvas id="heroGraph" width="800" height="600" aria-hidden="true"></canvas>
         </div>
         <p class="graph-trace" id="graphTrace" aria-hidden="true"><span class="trace-k">trace</span><span class="trace-v" id="graphTraceV">@stevenvo780</span></p>
