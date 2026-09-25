@@ -5,7 +5,7 @@
    ============================================================ */
 (function () {
   "use strict";
-  var D = window.CV_DATA;
+  var D = null; /* filled when data.js loads (deferred ≥2.5s post-load) */
   var lang = "es";
   var booted = false;
   var root = document.documentElement;
@@ -401,25 +401,21 @@
     nodes.forEach(function (n) { io.observe(n); });
   }
 
-  /* ---------- Render all ---------- */
+  /* ---------- Render all (lang toggle / post-boot) ---------- */
   function renderAll() {
-    applyI18n();
-    applyDownloads();
-    renderCode(!booted);
-    renderEpigraphs();
-    renderCapabilities();
-    renderStack();
-    renderSkills();
-    renderExperience();
-    renderEducation();
-    renderLanguages();
-    renderMainProjects();
-    renderAchievements();
-    renderPortfolio();
-    renderServices();
-    renderContact();
-    observeReveals();
-    if (window.CVGraph) window.CVGraph.setLang(lang);
+    ensureData(function () {
+      applyI18n();
+      applyDownloads();
+      if (!booted) {
+        // User flipped lang before deferred fill — run heavy now, skip duplicate schedule work.
+        heavyScheduled = true;
+        runHeavyRender(false);
+        booted = true;
+        initChrome();
+        return;
+      }
+      runHeavyRender(false);
+    });
   }
 
   /* ---------- Lang toggle ---------- */
@@ -436,7 +432,10 @@
   }
 
   /* ---------- Chrome: índice activo, progreso, luz de tarjetas, menú ---------- */
+  var chromeReady = false;
   function initChrome() {
+    if (chromeReady) return;
+    chromeReady = true;
     // Sección activa en el índice
     var links = {};
     document.querySelectorAll(".topnav a[href^='#']").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
@@ -504,7 +503,70 @@
     }
   }
 
-  /* ---------- Init ---------- */
+  /* ---------- Deferred heavy render (Wave3 Perf) ----------
+     Sync renderAll + typewriter on DOMContentLoaded inflated TBT and
+     held LCP span.hero-name-2 paint (~2s render-delay). Light i18n only
+     on boot; full DOM fill after load + ≥2.5s idle (same floor as graph). */
+  var heavyScheduled = false;
+  var dataLoading = null;
+  function ensureData(cb) {
+    if (D) { cb(); return; }
+    if (window.CV_DATA) { D = window.CV_DATA; cb(); return; }
+    if (dataLoading) { dataLoading.push(cb); return; }
+    dataLoading = [cb];
+    var s = document.createElement("script");
+    s.src = "data.js";
+    s.onload = function () {
+      D = window.CV_DATA;
+      var q = dataLoading; dataLoading = null;
+      q.forEach(function (fn) { fn(); });
+    };
+    s.onerror = function () { dataLoading = null; };
+    document.body.appendChild(s);
+  }
+  function runHeavyRender(animateCode) {
+    renderCode(!!animateCode);
+    renderEpigraphs();
+    renderCapabilities();
+    renderStack();
+    renderSkills();
+    renderExperience();
+    renderEducation();
+    renderLanguages();
+    renderMainProjects();
+    renderAchievements();
+    renderPortfolio();
+    renderServices();
+    renderContact();
+    observeReveals();
+    if (window.CVGraph) window.CVGraph.setLang(lang);
+  }
+  function scheduleHeavyRender() {
+    if (heavyScheduled) return;
+    heavyScheduled = true;
+    function kick() {
+      function go() {
+        if (booted) return;
+        ensureData(function () {
+          if (booted) return;
+          applyI18n();
+          applyDownloads();
+          runHeavyRender(true);
+          booted = true;
+          initChrome();
+        });
+      }
+      if ("requestIdleCallback" in window) requestIdleCallback(go, { timeout: 1200 });
+      else go();
+    }
+    function afterLoad(fn) {
+      if (document.readyState === "complete") fn();
+      else window.addEventListener("load", fn, { once: true });
+    }
+    afterLoad(function () { setTimeout(kick, 2500); });
+  }
+
+  /* ---------- Init (light path — do not block H1 paint) ---------- */
   function init() {
     try {
       var saved = localStorage.getItem("cv-lang");
@@ -523,9 +585,9 @@
     });
 
     var y = el("year"); if (y) y.textContent = new Date().getFullYear();
-    renderAll();
-    booted = true;
-    initChrome();
+    // SSR Spanish already in HTML. EN i18n waits with data.js (≥2.5s) so LCP stays clear.
+    applyDownloads();
+    scheduleHeavyRender();
   }
 
   if (document.readyState === "loading") {

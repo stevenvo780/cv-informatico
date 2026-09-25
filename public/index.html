@@ -96,14 +96,15 @@
   }
   </script>
 
-  <!-- Wave3 SEO/Perf: self-host Cormorant/Geist/JetBrains (latin) — master Opus faces, no render-blocking googleapis. W3-002/003/004 -->
+  <!-- Wave3 SEO/Perf: self-host Cormorant/Geist/JetBrains — preload LCP face only.
+       Cormorant swap + fallback metrics (size-adjust on local face, NOT webfont) = CLS-safe early H1 paint. -->
   <link rel="preload" href="fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style id="critical-hero">
-    /* Critical path for LCP span.hero-name-2 — same faces as styles.css */
+    /* Critical path for LCP span.hero-name-2 — paint full-size H1 before styles.css */
     @font-face{font-family:"Cormorant Garamond Fallback";src:local("Georgia"),local("Times New Roman"),local("Times"),local("Noto Serif"),local("DejaVu Serif");size-adjust:98.5%;ascent-override:93.8%;descent-override:29.1%;line-gap-override:0%}
-    @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:optional;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
-    .hero-name{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;margin:0}
+    @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
+    body{margin:0;background:#05090b;color:#e8e0d4}
+    .hero-name{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(48px,15vw,64px);line-height:.9;letter-spacing:-.01em;color:#f6f1e8;margin:0;opacity:1;visibility:visible}
     .hero-name-2{display:block;white-space:nowrap;min-height:.9em}
     .graph-zone{position:relative;min-height:min(52vw,320px);aspect-ratio:4/3}
     #heroGraph{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -390,8 +391,7 @@
     </div>
   </footer>
 
-  <script src="data.js" defer></script>
   <script src="app.js" defer></script>
-  <!-- Wave3: graph.js injected ≥2.5s post-load from app.js (keeps canvas#heroGraph; avoids LCP fight) -->
+  <!-- Wave3: data.js + graph.js injected ≥2.5s post-load from app.js (keeps canvas#heroGraph; cuts TBT/renderDelay) -->
 </body>
 </html>
