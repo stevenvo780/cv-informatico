@@ -5,7 +5,7 @@
    ============================================================ */
 (function () {
   "use strict";
-  var D = null; /* filled when data.js loads (deferred ≥2.5s post-load) */
+  var D = window.CV_DATA;
   var lang = "es";
   var booted = false;
   var root = document.documentElement;
@@ -401,21 +401,65 @@
     nodes.forEach(function (n) { io.observe(n); });
   }
 
-  /* ---------- Render all (lang toggle / post-boot) ---------- */
+  /* ---------- Render all (lang toggle = sync full fill) ---------- */
   function renderAll() {
-    ensureData(function () {
-      applyI18n();
-      applyDownloads();
-      if (!booted) {
-        // User flipped lang before deferred fill — run heavy now, skip duplicate schedule work.
-        heavyScheduled = true;
-        runHeavyRender(false);
-        booted = true;
-        initChrome();
-        return;
+    applyI18n();
+    applyDownloads();
+    renderCode(false);
+    renderEpigraphs();
+    renderCapabilities();
+    renderStack();
+    renderSkills();
+    renderExperience();
+    renderEducation();
+    renderLanguages();
+    renderMainProjects();
+    renderAchievements();
+    renderPortfolio();
+    renderServices();
+    renderContact();
+    observeReveals();
+    if (window.CVGraph) window.CVGraph.setLang(lang);
+  }
+
+  /* ---------- Boot: light first paint, heavy DOM in idle slices (TBT) ----------
+     698ebc6 sync renderAll + typewriter long-tasks ~445ms around LCP.
+     Keep data.js defer (available at DCL). Skip typewriter on first boot;
+     chunk below-fold fills via requestIdleCallback (short timeout — NOT 2.5s). */
+  var heavyScheduled = false;
+  var chromeReady = false;
+  function runIdle(fn, timeout) {
+    if ("requestIdleCallback" in window) requestIdleCallback(fn, { timeout: timeout || 400 });
+    else setTimeout(fn, 0);
+  }
+  function scheduleHeavyBoot() {
+    if (heavyScheduled) return;
+    heavyScheduled = true;
+    var steps = [
+      function () { renderEpigraphs(); renderCapabilities(); },
+      function () { renderStack(); renderSkills(); },
+      function () { renderExperience(); },
+      function () { renderEducation(); renderLanguages(); },
+      function () { renderMainProjects(); renderAchievements(); },
+      function () { renderPortfolio(); renderServices(); renderContact(); },
+      function () {
+        observeReveals();
+        if (!chromeReady) { chromeReady = true; initChrome(); }
+        if (window.CVGraph) window.CVGraph.setLang(lang);
       }
-      runHeavyRender(false);
-    });
+    ];
+    var i = 0;
+    function pump(deadline) {
+      var budget = deadline && typeof deadline.timeRemaining === "function"
+        ? deadline.timeRemaining()
+        : 12;
+      var start = performance.now();
+      while (i < steps.length && (performance.now() - start < Math.max(8, budget))) {
+        steps[i++]();
+      }
+      if (i < steps.length) runIdle(pump, 400);
+    }
+    runIdle(pump, 200);
   }
 
   /* ---------- Lang toggle ---------- */
@@ -432,10 +476,7 @@
   }
 
   /* ---------- Chrome: índice activo, progreso, luz de tarjetas, menú ---------- */
-  var chromeReady = false;
   function initChrome() {
-    if (chromeReady) return;
-    chromeReady = true;
     // Sección activa en el índice
     var links = {};
     document.querySelectorAll(".topnav a[href^='#']").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
@@ -503,70 +544,7 @@
     }
   }
 
-  /* ---------- Deferred heavy render (Wave3 Perf) ----------
-     Sync renderAll + typewriter on DOMContentLoaded inflated TBT and
-     held LCP span.hero-name-2 paint (~2s render-delay). Light i18n only
-     on boot; full DOM fill after load + ≥2.5s idle (same floor as graph). */
-  var heavyScheduled = false;
-  var dataLoading = null;
-  function ensureData(cb) {
-    if (D) { cb(); return; }
-    if (window.CV_DATA) { D = window.CV_DATA; cb(); return; }
-    if (dataLoading) { dataLoading.push(cb); return; }
-    dataLoading = [cb];
-    var s = document.createElement("script");
-    s.src = "data.js";
-    s.onload = function () {
-      D = window.CV_DATA;
-      var q = dataLoading; dataLoading = null;
-      q.forEach(function (fn) { fn(); });
-    };
-    s.onerror = function () { dataLoading = null; };
-    document.body.appendChild(s);
-  }
-  function runHeavyRender(animateCode) {
-    renderCode(!!animateCode);
-    renderEpigraphs();
-    renderCapabilities();
-    renderStack();
-    renderSkills();
-    renderExperience();
-    renderEducation();
-    renderLanguages();
-    renderMainProjects();
-    renderAchievements();
-    renderPortfolio();
-    renderServices();
-    renderContact();
-    observeReveals();
-    if (window.CVGraph) window.CVGraph.setLang(lang);
-  }
-  function scheduleHeavyRender() {
-    if (heavyScheduled) return;
-    heavyScheduled = true;
-    function kick() {
-      function go() {
-        if (booted) return;
-        ensureData(function () {
-          if (booted) return;
-          applyI18n();
-          applyDownloads();
-          runHeavyRender(true);
-          booted = true;
-          initChrome();
-        });
-      }
-      if ("requestIdleCallback" in window) requestIdleCallback(go, { timeout: 1200 });
-      else go();
-    }
-    function afterLoad(fn) {
-      if (document.readyState === "complete") fn();
-      else window.addEventListener("load", fn, { once: true });
-    }
-    afterLoad(function () { setTimeout(kick, 2500); });
-  }
-
-  /* ---------- Init (light path — do not block H1 paint) ---------- */
+  /* ---------- Init (light path — no sync below-fold DOM / no typewriter) ---------- */
   function init() {
     try {
       var saved = localStorage.getItem("cv-lang");
@@ -585,9 +563,12 @@
     });
 
     var y = el("year"); if (y) y.textContent = new Date().getFullYear();
-    // SSR Spanish already in HTML. EN i18n waits with data.js (≥2.5s) so LCP stays clear.
+    // SSR Spanish already in HTML. Light apply + static hero editor (no typewriter rAF).
+    applyI18n();
     applyDownloads();
-    scheduleHeavyRender();
+    renderCode(false);
+    booted = true;
+    scheduleHeavyBoot();
   }
 
   if (document.readyState === "loading") {
