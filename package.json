@@ -1,9 +1,10 @@
 {
   "name": "cv-informatico",
   "version": "1.0.0",
-  "description": "Sitio web estático, bilingüe (ES/EN), del CV técnico de Steven Vallejo Ortiz. Sin paso de build: HTML + CSS + un único `app.js` (vanilla JS) que renderiza los datos y maneja el toggle ES/EN. Cero riesgo de build en Vercel.",
+  "description": "Sitio web estático y bilingüe (ES/EN) del CV técnico de Steven Vallejo Ortiz. HTML, CSS y JavaScript vanilla; el build copia los archivos a dist e integra Vercel Web Analytics cuando está habilitado.",
   "main": "index.js",
   "scripts": {
+    "build": "node scripts/build.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
