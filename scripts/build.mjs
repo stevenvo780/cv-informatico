@@ -17,14 +17,15 @@ const scriptSrc = config?.analytics?.scriptSrc;
 let snippet = '';
 
 if (scriptSrc !== undefined) {
-  if (typeof scriptSrc !== 'string' || !/^\/[a-zA-Z0-9_./%-]+\/script\.js$/.test(scriptSrc)) {
+  if (typeof scriptSrc !== 'string' || !/^\/?[a-zA-Z0-9_-]+(?:\/[a-zA-Z0-9_-]+)*\/script\.js$/.test(scriptSrc)) {
     throw new Error('Vercel entregó una ruta inválida para Web Analytics.');
   }
 
+  const absoluteScriptSrc = scriptSrc.startsWith('/') ? scriptSrc : `/${scriptSrc}`;
   snippet = `<script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
-<script defer src="${scriptSrc}"></script>
+<script defer src="${absoluteScriptSrc}"></script>
 `;
 } else {
   console.warn('Web Analytics aún no tiene ruta de script en la configuración de Vercel.');
