@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /index-en
+Disallow: /index-en.html
 
 Sitemap: https://informatico.stevenvallejo.com/sitemap.xml

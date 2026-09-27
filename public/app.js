@@ -219,7 +219,10 @@
         '<div class="skill-tiers">' + tiers + "</div></div>";
     }).join("");
 
-    /* "Ver más": complete flat inventory, alphabetical, nothing trimmed */
+  }
+
+  /* Flat inventory (separate idle slice — was bundled into renderSkills long-task) */
+  function renderSkillsAll() {
     var all = [];
     D.skillCategories.forEach(function (cat) {
       cat.skills.forEach(function (s) { if (all.indexOf(s[lang]) === -1) all.push(s[lang]); });
@@ -237,12 +240,9 @@
     }
   }
 
-  /* ---------- Experience: git branch graph ---------- */
-  function renderExperience() {
-    var featured = window.CV_RESUME.featuredOrgs.map(function (org) {
-      return D.experience.find(function (e) { return e.org === org; });
-    });
-    function cards(entries) { return entries.map(function (e) {
+  /* ---------- Experience: git branch graph (featured + archive = separate TBT slices) ---------- */
+  function cardsExperience(entries) {
+    return entries.map(function (e) {
       var tags = (e.tags || []).map(function (tg) {
         return '<span class="tag ' + (tg.t || "") + '">' + esc(tg[lang]) + "</span>";
       }).join("");
@@ -266,9 +266,16 @@
           (e.tech ? '<p class="tl-tech"><b>' + t("tech") + "</b>" + esc(pick(e.tech)) + "</p>" : "") +
           (note ? '<p class="tl-note">' + esc(note) + "</p>" : "") +
         "</div></article>";
-    }).join(""); }
-    el("timeline").innerHTML = cards(featured);
-    el("timeline-full").innerHTML = cards(D.experience);
+    }).join("");
+  }
+  function renderExperience() {
+    var featured = window.CV_RESUME.featuredOrgs.map(function (org) {
+      return D.experience.find(function (e) { return e.org === org; });
+    });
+    el("timeline").innerHTML = cardsExperience(featured);
+  }
+  function renderExperienceArchive() {
+    el("timeline-full").innerHTML = cardsExperience(D.experience);
   }
 
   /* ---------- Education ---------- */
@@ -401,16 +408,18 @@
     nodes.forEach(function (n) { io.observe(n); });
   }
 
-  /* ---------- Render all ---------- */
+  /* ---------- Render all (lang toggle = sync full fill) ---------- */
   function renderAll() {
     applyI18n();
     applyDownloads();
-    renderCode(!booted);
+    renderCode(false);
     renderEpigraphs();
     renderCapabilities();
     renderStack();
     renderSkills();
+    renderSkillsAll();
     renderExperience();
+    renderExperienceArchive();
     renderEducation();
     renderLanguages();
     renderMainProjects();
@@ -420,6 +429,60 @@
     renderContact();
     observeReveals();
     if (window.CVGraph) window.CVGraph.setLang(lang);
+  }
+
+  /* ---------- Boot: TBT-first (09a711e mobile Perf~70 / TBT~1.2s / styleLayout~2.5s) ----------
+     Early CSS+Cormorant cut FCP so defer-at-DCL data/app + multi-step idle pump landed
+     as long tasks in the FCP→TTI window. Bias:
+     1) scripts late-injected post-paint (index.html) — not defer-at-DCL
+     2) skip typewriter + ES i18n walk (SSR); idle renderCode (h1 is SSR LCP, not editor)
+     3) gate below-fold fills until window load, then ONE step per idle (no while-batch)
+     4) split skills inventory + experience archive into own slices
+     HARD: graph-zone clamp untouched; graph.js ≥2.5s; Geist preload kept. */
+  var heavyScheduled = false;
+  var chromeReady = false;
+  function runIdle(fn, timeout) {
+    if ("requestIdleCallback" in window) requestIdleCallback(fn, { timeout: timeout || 600 });
+    else setTimeout(fn, 0);
+  }
+  function scheduleHeavyBoot() {
+    if (heavyScheduled) return;
+    heavyScheduled = true;
+    var steps = [
+      function () { renderEpigraphs(); },
+      function () { renderCapabilities(); },
+      function () { renderStack(); },
+      function () { renderSkills(); },
+      function () { renderSkillsAll(); },
+      function () { renderExperience(); },
+      function () { renderExperienceArchive(); },
+      function () { renderEducation(); },
+      function () { renderLanguages(); },
+      function () { renderMainProjects(); },
+      function () { renderAchievements(); },
+      function () { renderPortfolio(); },
+      function () { renderServices(); },
+      function () { renderContact(); },
+      function () {
+        observeReveals();
+        if (!chromeReady) { chromeReady = true; initChrome(); }
+        if (window.CVGraph) window.CVGraph.setLang(lang);
+      }
+    ];
+    var i = 0;
+    function pump() {
+      if (i < steps.length) {
+        steps[i++]();
+        // Yield every slice — never batch (09a711e while-pump → styleLayout~2.5s / TBT~1.2s).
+        runIdle(pump, 500);
+      }
+    }
+    function afterLoad(fn) {
+      if (document.readyState === "complete") fn();
+      else window.addEventListener("load", fn, { once: true });
+    }
+    // Start after load so LCP/FCP window is clear; short idle then first slice.
+    afterLoad(function () { runIdle(pump, 300); });
   }
 
   /* ---------- Lang toggle ---------- */
@@ -504,7 +567,7 @@
     }
   }
 
-  /* ---------- Init ---------- */
+  /* ---------- Init (light path — no sync below-fold DOM / no typewriter) ---------- */
   function init() {
     try {
       var saved = localStorage.getItem("cv-lang");
@@ -523,12 +586,45 @@
     });
 
     var y = el("year"); if (y) y.textContent = new Date().getFullYear();
-    renderAll();
+    // SSR Spanish already in HTML — skip i18n walk on default ES (safe TBT).
+    // EN/?lang=en still applies sync. Hero editor → idle (h1.hero-name is SSR LCP).
+    if (lang !== "es") {
+      applyI18n();
+      applyDownloads();
+    } else {
+      applyDownloads();
+    }
     booted = true;
-    initChrome();
+    runIdle(function () { renderCode(false); }, 200);
+    scheduleHeavyBoot();
   }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else { init(); }
+})();
+
+
+/* =========================================================
+   WAVE3 SEO/Perf: defer dependency graph (graph.js) post-LCP.
+   canvas#heroGraph stays in DOM; early-return guard in graph.js
+   requires the canvas. Hard floor 2.5s after window load.
+   ========================================================= */
+(function loadGraphPostLcp() {
+  var done = false;
+  function inject() {
+    if (done) return;
+    done = true;
+    var s = document.createElement("script");
+    s.src = "graph.js";
+    s.defer = true;
+    document.body.appendChild(s);
+  }
+  function afterLoad(fn) {
+    if (document.readyState === "complete") fn();
+    else window.addEventListener("load", fn, { once: true });
+  }
+  afterLoad(function () {
+    setTimeout(inject, 2500);
+  });
 })();
