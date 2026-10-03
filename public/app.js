@@ -62,8 +62,8 @@
   }
 
   /* ---------- i18n for [data-i18n] static nodes ---------- */
-  function applyI18n() {
-    document.querySelectorAll("[data-i18n]").forEach(function (n) {
+  function applyI18n(selector) {
+    document.querySelectorAll(selector || "[data-i18n]").forEach(function (n) {
       var v = t(n.getAttribute("data-i18n"));
       if (v != null) n.textContent = v;
     });
@@ -435,7 +435,7 @@
      Early CSS+Cormorant cut FCP so defer-at-DCL data/app + multi-step idle pump landed
      as long tasks in the FCP→TTI window. Bias:
      1) scripts late-injected post-paint (index.html) — not defer-at-DCL
-     2) skip typewriter + ES i18n walk (SSR); idle renderCode (h1 is SSR LCP, not editor)
+     2) skip typewriter + full ES i18n walk (SSR); idle renderCode (h1 is SSR LCP, not editor)
      3) gate below-fold fills until window load, then ONE step per idle (no while-batch)
      4) split skills inventory + experience archive into own slices
      HARD: graph-zone clamp untouched; graph.js ≥2.5s; Geist preload kept. */
@@ -586,12 +586,13 @@
     });
 
     var y = el("year"); if (y) y.textContent = new Date().getFullYear();
-    // SSR Spanish already in HTML — skip i18n walk on default ES (safe TBT).
+    // Spanish labels are SSR; only the profile starts empty. Keep the ES fill narrow.
     // EN/?lang=en still applies sync. Hero editor → idle (h1.hero-name is SSR LCP).
     if (lang !== "es") {
       applyI18n();
       applyDownloads();
     } else {
+      applyI18n('[data-i18n="aboutProfile"]');
       applyDownloads();
     }
     booted = true;
